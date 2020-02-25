@@ -40,3 +40,4 @@ msbuild.log
 msbuild.err
 msbuild.wrn
 .vs/
+package-lock.json
