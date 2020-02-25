@@ -1,4 +1,4 @@
-import 'scss/index';
+import 'assets/scss';
 
 import React from 'react';
 import { render } from 'react-dom';

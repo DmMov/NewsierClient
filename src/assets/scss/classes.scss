@@ -1,0 +1,20 @@
+@import "./vars";
+
+.container {
+  padding: {
+    left: 2rem;
+    right: 2rem;
+  };
+}
+
+.image-wrap {
+  display: flex;
+  overflow: hidden;
+  height: 205px;
+
+  img {
+    width: 100%;
+    object-fit: cover;
+    vertical-align: middle;
+  }
+}

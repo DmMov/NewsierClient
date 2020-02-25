@@ -1,4 +1,4 @@
-@import "scss/vars";
+@import "./vars";
 
 * {
   padding: 0;
@@ -35,4 +35,10 @@ h6 {
 img {
   display: block;
   max-width: 100%;
+}
+
+a {
+  color: currentColor;
+  text-decoration: none;
+  outline: none;
 }
