@@ -1,6 +1,6 @@
 import React from 'react';
 import { BrowserRouter as Router } from 'react-router-dom';
-import { Navbar } from 'components';
+import { Header } from 'components';
 
 // * Sass
 import './App.scss';
@@ -8,6 +8,6 @@ import './App.scss';
 export const App = () =>
   <Router>
     <>
-      <Navbar />
+      <Header />
     </>
   </Router>
