@@ -22,4 +22,45 @@
 .logo {
   text-transform: capitalize;
   font-family: 'KaushanScript', cursive;
+  font-size: 1.5rem;
+}
+
+.btn {
+  display: block;
+  padding: 0.75rem 1rem;
+  font-size: .85rem;
+  transition: $transition;
+
+  &::first-letter {
+    text-transform: capitalize;
+  }
+
+  &:hover {
+    color: $gray;
+  }
+
+  &.bordered {
+    border: 1px solid $light;
+    border-radius: 3px;
+  }
+
+  &.primary {
+    border-color: $primary;
+    color: $primary;
+
+    &:hover {
+      border-color: darken($primary, 10%);
+      color: darken($primary, 10%);
+    }
+
+    &.filled {
+      background-color: $primary;
+      color: #ffffff;
+
+      &:hover {
+        background: none;
+        color: $primary;
+      }
+    }
+  }
 }

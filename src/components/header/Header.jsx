@@ -1,14 +1,22 @@
 import React from 'react';
 
 // * Components
-import { AuthStatusChecker } from 'components';
+import {
+  AuthStatusChecker,
+  Link
+} from 'components';
 
 // * Sass
 import './Header.scss';
 
 export const Header = () =>
   <header id="newsier-header">
-    <h2 className="logo logo-title">newsier</h2>
+    <Link
+      exact
+      to="/"
+      classes={['logo']}
+      label="newsier"
+    />
     <div></div>
     <AuthStatusChecker />
   </header>

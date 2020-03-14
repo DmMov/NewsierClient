@@ -1,9 +1,8 @@
 import React from 'react';
+import { AuthButtonSet } from './AuthButtonSet';
 
 export const AuthStatusChecker = () => {
   return (
-    <div>
-
-    </div>
+    <AuthButtonSet />
   )
 }
