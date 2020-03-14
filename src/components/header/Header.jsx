@@ -8,7 +8,7 @@ import './Header.scss';
 
 export const Header = () =>
   <header id="newsier-header">
-    <h1 className="logo logo-title">newsier</h1>
+    <h2 className="logo logo-title">newsier</h2>
     <div></div>
     <AuthStatusChecker />
   </header>
