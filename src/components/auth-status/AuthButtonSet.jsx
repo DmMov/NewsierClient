@@ -15,7 +15,7 @@ export const AuthButtonSet = () =>
     />
     <Link
       to="/sign-in"
-      classes={['btn', 'primary', 'filled', 'bordered', 'sign-in-btn']}
+      classes={['btn', 'primary', 'bordered', 'sign-in-btn']}
       label="вхід"
     />
   </div>
