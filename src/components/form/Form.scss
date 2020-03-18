@@ -1,0 +1,18 @@
+@import "assets/scss/vars";
+
+.form {
+  display: grid;
+  grid-gap: 1rem;
+  padding: 1rem;
+  min-width: 20rem;
+
+  &__title {
+    text-transform: capitalize;
+    text-align: center;
+    position: relative;
+  }
+
+  .submit-btn {
+    justify-self: center;
+  }
+}

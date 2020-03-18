@@ -1,7 +1,12 @@
-import React from 'react'
-import { SignInModule } from './SignInModule'
+import React from 'react';
+
+// * Components
+import { SignInModule } from './SignInModule';
+
+// * Sass
+import './SignInPage.scss';
 
 export const SignInPage = () =>
-  <div className="page">
+  <div id="sign-in-page" className="page">
     <SignInModule />
   </div>

@@ -1,12 +1,5 @@
 @import "./vars";
 
-.container {
-  padding: {
-    left: 2rem;
-    right: 2rem;
-  };
-}
-
 .image-wrap {
   display: flex;
   overflow: hidden;
@@ -22,39 +15,44 @@
 .logo {
   text-transform: capitalize;
   font-family: 'KaushanScript', cursive;
-  font-size: 1.5rem;
 }
 
 .btn {
   display: block;
   padding: 0.75rem 1rem;
-  font-size: .85rem;
+  font-size: .75rem;
+  font-weight: 500;
+  text-transform: capitalize;
+  cursor: pointer;
   transition: $transition;
 
-  &::first-letter {
-    text-transform: capitalize;
-  }
-
   &:hover {
-    color: $gray;
+    color: $primary;
   }
 
   &.bordered {
-    border: 1px solid $light;
+    color: $gray;
+    border: 1px solid $gray;
     border-radius: 3px;
+
+    &:hover {
+      border-color: $primary;
+      color: $primary;
+    }
   }
 
   &.primary {
-    border-color: $primary;
-    color: $primary;
+    border-color: $black;
+    color: $black;
 
     &:hover {
-      border-color: darken($primary, 10%);
-      color: darken($primary, 10%);
+      border-color: $primary;
+      color: $primary;
     }
 
     &.filled {
       background-color: $primary;
+      border-color: $primary;
       color: #ffffff;
 
       &:hover {
@@ -63,4 +61,9 @@
       }
     }
   }
+}
+
+.page {
+  padding: 1rem;
+  align-self: start;
 }

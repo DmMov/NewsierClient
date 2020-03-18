@@ -12,10 +12,10 @@ import './App.scss';
 
 export const App = () =>
   <Router>
-    <>
+    <div id="app">
       <Header />
       <Switch>
         <Route path="/sign-in" component={SignInPage} />
       </Switch>
-    </>
+    </div>
   </Router>

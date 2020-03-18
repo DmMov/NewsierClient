@@ -8,6 +8,7 @@ import {
 
 export const SingInForm = ({ fields, submit }) =>
   <Form
+    title="вхід"
     classes={['sign-in-form']}
     submit={submit}
     buttonText="увійти"

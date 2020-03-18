@@ -1,18 +1,22 @@
-import React from 'react'
+import React from 'react';
 import classnames from 'classnames';
+import { string, func } from 'prop-types';
+
+// * Sass
+import './Field.scss';
 
 export const Field = ({ control: Control, label, placeholder, name, value, type, change, error }) =>
   <label
     htmlFor={`${name}-control`}
-    className={classnames('field', `${name}-field`, error)}
+    className={classnames('field', `${name}-field`, !!error && 'error')}
   >
     <span className="field__label">{ label }</span>
     <Control
-      id={`${name}-control`}
+      id={`${name}__control`}
       name={name}
       value={value}
       type={type}
-      className={classnames(`${name}-control`)}
+      className={classnames('field__control', `${name}-field__control`)}
       onChange={change}
       placeholder={placeholder}
     />
@@ -22,4 +26,15 @@ export const Field = ({ control: Control, label, placeholder, name, value, type,
 Field.defaultProps = {
   control: 'input',
   type: 'text'
+}
+
+Field.propTypes = {
+  control: string,
+  label: string,
+  placeholder: string,
+  name: string,
+  value: string,
+  type: string,
+  change: func,
+  error: string
 }
