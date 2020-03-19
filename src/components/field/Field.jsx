@@ -30,11 +30,11 @@ Field.defaultProps = {
 
 Field.propTypes = {
   control: string,
-  label: string,
-  placeholder: string,
-  name: string,
-  value: string,
+  label: string.isRequired,
+  placeholder: string.isRequired,
+  name: string.isRequired,
+  value: string.isRequired,
   type: string,
-  change: func,
+  change: func.isRequired,
   error: string
 }

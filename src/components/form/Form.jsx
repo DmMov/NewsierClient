@@ -1,5 +1,6 @@
 import React from 'react';
 import classnames from 'classnames';
+import { arrayOf, func, any } from 'prop-types';
 
 // * Sass
 import './Form.scss';
@@ -18,3 +19,11 @@ export const Form = ({ classes, submit, title, buttonText, children }) =>
       { buttonText }
     </button>
   </form>
+
+Form.propTypes = {
+  classes: arrayOf(string),
+  submit: func.isRequired,
+  title: string.isRequired,
+  buttonText: string.isRequired,
+  children: any
+}
