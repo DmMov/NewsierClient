@@ -1,5 +1,6 @@
 import { combineReducers } from 'redux';
+import { publisher } from 'store/reducers';
 
-const state = {};
-
-export const root = combineReducers({});
+export const root = combineReducers({
+  publisher
+});

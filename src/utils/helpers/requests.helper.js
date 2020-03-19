@@ -24,7 +24,7 @@ export const getRequest = async (url) => {
   try {
     return await get(api + url, !!headers && headers)
       .then(response => response)
-      .catch(error => error);
+      .catch(error => error.response);
   } catch (err) {
     console.log(err);
   }
@@ -36,7 +36,7 @@ export const postRequest = async (url, data) => {
   try {
     return await post(api + url, data, !!headers && headers)
       .then(response => response)
-      .catch(error => error);
+      .catch(error => error.response);
   } catch (err) {
     console.log(err);
   }
@@ -48,7 +48,7 @@ export const putRequest = async (url, data) => {
   try {
     return await put(api + url, data, !!headers && headers)
       .then(response => response)
-      .catch(error => error);
+      .catch(error => error.response);
   } catch (err) {
     console.log(err);
   }
@@ -60,7 +60,7 @@ export const deleteRequest = async (url) => {
   try {
     return await del(api + url, !!headers && headers)
       .then(response => response)
-      .catch(error => error);
+      .catch(error => error.response);
   } catch (err) {
     console.log(err);
   }

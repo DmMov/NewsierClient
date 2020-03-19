@@ -1,5 +1,6 @@
 import React from 'react';
 import { isEmail } from 'validator';
+import { set } from 'js-cookie';
 
 // * Components
 import { SingInForm } from './SingInForm';
@@ -8,8 +9,11 @@ import { SingInForm } from './SingInForm';
 import { useFormValidation } from 'utils/hooks';
 
 // * Helpers
-import { checkIsValid } from 'utils/helpers';
-import { postRequest } from 'utils/helpers';
+import {
+  checkIsValid,
+  getRequest,
+  postRequest
+} from 'utils/helpers';
 
 const initialState = {
   email: '',
@@ -56,11 +60,15 @@ export const SignInModule = () => {
     const isValid = checkIsValid(data, validate, validationParams);
 
     if (isValid) {
-      console.log("sign-in form is valid");
-
       const response = await postRequest('/auth', data);
 
-      console.log('sign-in response', response);
+      if (response.status === 200) {
+        set('token', response.data.token);
+
+        const publisherResponse = await getRequest('/auth');
+
+        console.log('publisher ', publisherResponse.data);
+      }
     }
   };
 
