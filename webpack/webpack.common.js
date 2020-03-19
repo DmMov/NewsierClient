@@ -17,7 +17,7 @@ module.exports = {
     filename: 'js/[name].js'
   },
   resolve: {
-    modules: ['node_modules/', 'src/'], 
+    modules: ['node_modules/', 'src/'],
     extensions: [ '.js', '.jsx', '.json', '.jpg', '.css', '.scss', '.sass', '.ttf' ]
   },
   optimization: {
@@ -79,13 +79,13 @@ module.exports = {
       template:'public/index.html',
       favicon: 'public/favicon.ico'
     }),
-    new MiniCssExtractPlugin({ 
+    new MiniCssExtractPlugin({
       filename: '[name].css'
     }),
-    new ImageminPlugin({ 
+    new ImageminPlugin({
       test: /\.(png|jpe?g|gif|svg)$/
     }),
-    new MomentLocalesPlugin({ 
+    new MomentLocalesPlugin({
       localesToKeep: ['uk-ua']
     })
   ]
