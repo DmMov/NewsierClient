@@ -1,4 +1,5 @@
 import React from 'react';
+import { useDispatch } from 'react-redux';
 import { isEmail } from 'validator';
 import { set } from 'js-cookie';
 
@@ -15,6 +16,9 @@ import {
   postRequest
 } from 'utils/helpers';
 
+// * Actions
+import { setPublisher } from 'store/actions';
+
 const initialState = {
   email: '',
   password: ''
@@ -22,6 +26,7 @@ const initialState = {
 
 export const SignInModule = () => {
   const { data, errors, change, validate, reset } = useFormValidation(initialState, initialState);
+  const dispatch = useDispatch();
 
   const fields = [
     {
@@ -66,6 +71,10 @@ export const SignInModule = () => {
         set('token', response.data.token);
 
         const publisherResponse = await getRequest('/auth');
+
+        if (publisherResponse.status == 200) {
+          dispatch(setPublisher(publisherResponse.data));
+        }
 
         console.log('publisher ', publisherResponse.data);
       }

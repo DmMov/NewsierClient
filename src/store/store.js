@@ -1,18 +1,27 @@
 import { createStore } from 'redux';
 import { get } from 'js-cookie';
 
-// * Constants
-import { api } from 'assets/constants';
+// * Helpers
+import { getRequest } from 'utils/helpers';
 
 // * Root
-import { root } from './reducers';
+import { root } from './reducers/root.reducer';
+
+// * Actions
+import { setPublisher } from 'store/actions';
 
 export const store = createStore(root);
 
 const checkAuthentication = async () => {
   const token = get('token');
 
-  console.log(api);
+  const response = await getRequest('/auth');
+
+  if (response.status == 200) {
+    store.dispatch(setPublisher(response.data));
+  }
+
+  console.log('publisher ', response.data);
 
   if (typeof(token) !== 'undefined') { }
 };

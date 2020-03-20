@@ -1,5 +1,5 @@
 import { combineReducers } from 'redux';
-import { publisher } from 'store/reducers';
+import { publisher } from './publisher.reducer';
 
 export const root = combineReducers({
   publisher

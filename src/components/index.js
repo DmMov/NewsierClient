@@ -4,4 +4,5 @@ export { AuthStatusChecker } from './auth-status/AuthStatusChecker';
 export { Form } from './form/Form';
 export { SignInPage } from './sign-in/SignInPage';
 export { Field } from './field/Field';
+export { RedirectChecker } from './redirect-checker/RedirectChecker';
 export { Link } from './link/Link';
