@@ -13,17 +13,11 @@ import { setPublisher } from 'store/actions';
 export const store = createStore(root);
 
 const checkAuthentication = async () => {
-  const token = get('token');
-
   const response = await getRequest('/auth');
 
   if (response.status == 200) {
     store.dispatch(setPublisher(response.data));
   }
-
-  console.log('publisher ', response.data);
-
-  if (typeof(token) !== 'undefined') { }
 };
 
 checkAuthentication();

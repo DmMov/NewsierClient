@@ -3,7 +3,6 @@
 .image-wrap {
   display: flex;
   overflow: hidden;
-  height: 205px;
 
   img {
     width: 100%;
@@ -30,24 +29,13 @@
     color: $primary;
   }
 
-  &.bordered {
-    color: $gray;
-    border: 1px solid $gray;
-    border-radius: 3px;
-
-    &:hover {
-      border-color: $primary;
-      color: $primary;
-    }
-  }
-
   &.primary {
-    border-color: $black;
-    color: $black;
+    border-color: $primary;
+    color: $primary;
 
     &:hover {
-      border-color: $primary;
-      color: $primary;
+      border-color: darken($primary, 10%);
+      color: darken($primary, 10%);
     }
 
     &.filled {
@@ -58,6 +46,47 @@
       &:hover {
         background: none;
         color: $primary;
+      }
+    }
+  }
+
+  &.red {
+    border-color: $red;
+    color: $red;
+
+    &:hover {
+      border-color: darken($red, 10%);
+      color: darken($red, 10%);
+    }
+
+    &.filled {
+      background-color: $red;
+      border-color: $red;
+      color: #ffffff;
+
+      &:hover {
+        background: none;
+        color: $primary;
+      }
+    }
+  }
+
+  &.bordered {
+    color: $gray;
+    border: 1px solid $gray;
+    border-radius: 3px;
+
+    &.primary {
+      &:hover {
+        border-color: $primary;
+        color: $primary;
+      }
+    }
+
+    &.red {
+      &:hover {
+        border-color: $red;
+        color: $red;
       }
     }
   }

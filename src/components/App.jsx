@@ -16,7 +16,6 @@ import './App.scss';
 
 export const App = () => {
   const publisher = useSelector(selectPublisher);
-  console.log('publisher in the App component ', publisher);
 
   return (
     <Router>
