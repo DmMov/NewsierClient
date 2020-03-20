@@ -20,14 +20,14 @@
     "js-cookie": "^2.2.1",
     "moment": "^2.24.0",
     "prop-types": "^15.7.2",
-    "react": "^16.13.0",
-    "react-dom": "^16.13.0",
+    "react": "^16.13.1",
+    "react-dom": "^16.13.1",
     "react-redux": "^7.2.0",
     "react-router-dom": "^5.1.2",
     "react-transition-group": "^4.3.0",
     "redux": "^4.0.5",
     "reselect": "^4.0.0",
-    "validator": "^12.2.0"
+    "validator": "^13.0.0"
   },
   "devDependencies": {
     "@babel/core": "^7.8.7",
