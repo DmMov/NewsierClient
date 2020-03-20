@@ -1,6 +1,6 @@
 import React from 'react';
 import classnames from 'classnames';
-import { arrayOf, func, any } from 'prop-types';
+import { arrayOf, func, any, string } from 'prop-types';
 
 // * Sass
 import './Form.scss';
