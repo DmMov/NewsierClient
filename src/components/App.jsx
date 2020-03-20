@@ -1,19 +1,15 @@
 import React from 'react';
 import { useSelector } from 'react-redux';
-import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
+import { BrowserRouter as Router, Switch } from 'react-router-dom';
+
+// * Routes
+import { SignInRoute } from 'routes';
 
 // * Components
-import {
-  SignInPage,
-  RedirectChecker,
-  Header
-} from 'components';
+import { Header } from 'components';
 
 // * Selectors
 import { selectPublisher } from 'utils/selectors';
-
-// * Constants
-import { signInRedirectParams } from 'assets/constants';
 
 // * Sass
 import './App.scss';
@@ -27,17 +23,7 @@ export const App = () => {
       <div id="app">
         <Header />
         <Switch>
-          <Route
-            path="/sign-in"
-            component={
-              () =>
-                <RedirectChecker
-                  condition={publisher == null}
-                  component={SignInPage}
-                  redirectParams={signInRedirectParams}
-                />
-            }
-          />
+          <SignInRoute publisher={publisher} />
         </Switch>
       </div>
     </Router>

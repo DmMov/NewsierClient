@@ -1,7 +1,7 @@
 import React from 'react';
 
 // * Components
-import { SignInModule } from './SignInModule';
+import { SignInModule } from 'components';
 
 // * Sass
 import './SignInPage.scss';
