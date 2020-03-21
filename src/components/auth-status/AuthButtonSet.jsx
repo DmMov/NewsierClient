@@ -11,11 +11,13 @@ export const AuthButtonSet = () =>
     <Link
       to="/sign-up"
       classes={['btn', 'sign-up-btn']}
-      label="реєстрація"
-    />
+    >
+      реєстрація
+    </Link>
     <Link
       to="/sign-in"
       classes={['btn', 'primary', 'filled', 'bordered', 'sign-in-btn']}
-      label="вхід"
-    />
+    >
+      вхід
+    </Link>
   </div>
