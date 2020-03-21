@@ -1,5 +1,5 @@
 import React from 'react';
-import { string, bool, arrayOf } from 'prop-types';
+import { string, bool, arrayOf, any } from 'prop-types';
 import { Link as RouterLink, Route } from 'react-router-dom';
 import classnames from 'classnames';
 
