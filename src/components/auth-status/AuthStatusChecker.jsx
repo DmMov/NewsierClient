@@ -27,5 +27,5 @@ export const AuthStatusChecker = () => {
 
   return publisher == null ?
     <AuthButtonSet /> :
-    <AuthenticatedPanel publisher={publisher} signOut={() => signOut()} />
+    <AuthenticatedPanel image={publisher.image} signOut={() => signOut()} />
 }
