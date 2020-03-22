@@ -4,24 +4,35 @@
   position: relative;
 
   .slide-wrap {
-    height: 100%
+    height: 100%;
   }
 
   /*#region fade*/
+  .fade-appear {
+    opacity: 0;
+    z-index: 1;
+
+    &.fade-appear-active {
+      opacity: 1;
+      transition: opacity 500ms linear;
+    }
+  }
+
   .fade-enter{
     opacity: 0;
 
     &.fade-enter-active {
       opacity: 1;
-      transition: opacity 1000ms ease-in-out;
+      transition: opacity 500ms linear;
     }
   }
+
   .fade-exit{
     opacity: 1;
 
     &.fade-exit-active {
       opacity: 0;
-      transition: opacity 1000ms ease-in-out;
+      transition: opacity 500ms linear;
     }
 
     &-done {
