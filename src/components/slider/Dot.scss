@@ -1,17 +1,14 @@
-.dot{
-  margin-right: .75rem;
-  opacity: .5;
+@import 'assets/scss/vars';
+
+.dot {
+  color: $light;
   cursor: pointer;
 
   & &-icon {
-    font-size: .875rem;
+    font-size: .75rem;
   }
 
   &.active {
-    opacity: 1;
-  }
-
-  &:last-child {
-    margin: 0;
+    color: $primary
   }
 }

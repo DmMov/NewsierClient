@@ -1,8 +1,19 @@
 @import "assets/scss/vars";
 
-.slide{
-  display: flex;
+.slide {
+  display: grid;
+  position: relative;
   height: 100%;
+  padding: 3rem;
+
+  &__image-wrap {
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    z-index: -1;
+  }
 
   &::before {
     content: '';
@@ -11,6 +22,6 @@
     right: 0;
     bottom: 0;
     left: 0;
-    background: rgba($black, .2);
+    background: rgba($black, .75);
   }
 }
