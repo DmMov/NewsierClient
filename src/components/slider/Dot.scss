@@ -1,0 +1,17 @@
+.dot{
+  margin-right: .75rem;
+  opacity: .5;
+  cursor: pointer;
+
+  & &-icon {
+    font-size: .875rem;
+  }
+
+  &.active {
+    opacity: 1;
+  }
+
+  &:last-child {
+    margin: 0;
+  }
+}

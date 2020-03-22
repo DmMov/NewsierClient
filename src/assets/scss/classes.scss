@@ -2,12 +2,12 @@
 
 .image-wrap {
   display: flex;
-  overflow: hidden;
+  width: 100%;
 
   img {
-    width: 100%;
-    object-fit: cover;
     vertical-align: middle;
+    object-fit: cover;
+    width: 100%;
   }
 }
 

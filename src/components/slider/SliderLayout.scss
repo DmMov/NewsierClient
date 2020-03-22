@@ -1,0 +1,40 @@
+#slider {
+  height: 40rem;
+  overflow: hidden;
+  position: relative;
+
+  .slide-wrap {
+    height: 100%
+  }
+
+  .dots {
+    transform: translateY(calc(-3rem - 100%));
+
+    .dot {
+      color: #ffffff
+    }
+  }
+  /*#region fade*/
+  .fade-enter{
+    opacity: 0;
+
+    &.fade-enter-active {
+      opacity: 1;
+      transition: opacity 1000ms ease-in-out;
+    }
+  }
+  .fade-exit{
+    opacity: 1;
+
+    &.fade-exit-active {
+      opacity: 0;
+      transition: opacity 1000ms ease-in-out;
+    }
+
+    &-done {
+      opacity: 0
+    }
+  }
+  /*#endregion*/
+}
+
