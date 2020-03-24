@@ -13,7 +13,7 @@ import { selectPublisher } from 'utils/selectors';
 
 // * Sass
 import './App.scss';
-import { Slider } from './slider/Slider';
+import { SliderModule } from 'components';
 
 export const App = () => {
   const publisher = useSelector(selectPublisher);
@@ -22,7 +22,7 @@ export const App = () => {
     <Router>
       <div id="app">
         <Header />
-        <Slider />
+        <SliderModule />
         <Switch>
           <SignInRoute publisher={publisher} />
         </Switch>

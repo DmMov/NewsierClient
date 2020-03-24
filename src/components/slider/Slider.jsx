@@ -7,7 +7,7 @@ import { Slide } from './Slide';
 import { Dots } from './Dots';
 
 // * Sass
-import './SliderL.scss';
+import './Slider.scss';
 
 export const Slider = ({ slide, index, dots, jumpTo }) =>
   <div id="slider">

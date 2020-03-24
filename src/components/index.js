@@ -4,5 +4,6 @@ export { AuthStatusChecker } from './auth-status/AuthStatusChecker';
 export { Form } from './form/Form';
 export { Field } from './field/Field';
 export { SignInModule } from './sign-in/SignInModule';
+export { SliderModule } from './slider/SliderModule';
 export { RedirectChecker } from './redirect-checker/RedirectChecker';
 export { Link } from './link/Link';
