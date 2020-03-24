@@ -15,7 +15,7 @@ export const SliderModule = () => {
   }, []);
 
   const fetchPublications = async () => {
-    const response = await getRequest('/publications');
+    const response = await getRequest('/publications/popular?count=5');
 
     console.log("publications", response.data);
 
