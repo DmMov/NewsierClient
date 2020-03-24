@@ -1,33 +1,37 @@
-import React, { useState, useEffect } from 'react';
+import React from 'react';
+import { object, number, array, func } from 'prop-types';
+import { CSSTransition, TransitionGroup } from 'react-transition-group';
 
 // * Components
-import { SliderLayout } from './SliderLayout';
+import { Slide } from './Slide';
+import { Dots } from './Dots';
 
-// * Helpers
-import { getRequest } from 'utils/helpers';
+// * Sass
+import './SliderL.scss';
 
-export const Slider = () => {
-  const [index, setIndex] = useState(0);
-  const [publications, setPublications] = useState([]);
+export const Slider = ({ slide, index, dots, jumpTo }) =>
+  <div id="slider">
+    <TransitionGroup className="slides-wrap">
+      <CSSTransition
+        key={slide.id}
+        in={true}
+        appear={true}
+        timeout={1000}
+        classNames="fade"
+      >
+        <Slide slide={slide} index={index} />
+      </CSSTransition>
+    </TransitionGroup>
+    <Dots
+      dots={dots}
+      jumpTo={jumpTo}
+      activeIndex={index}
+    />
+  </div>
 
-  useEffect(() => {
-    fetchPublications();
-  }, []);
-
-  const fetchPublications = async () => {
-    const response = await getRequest('/publications');
-
-    console.log("publications", response.data);
-
-    if (response.status == 200) {
-      setPublications(() => response.data)
-    }
-  }
-
-  return publications.length != 0 && <SliderLayout
-    slide={publications[index]}
-    index={index}
-    dots={publications}
-    jumpTo={setIndex}
-  />
-};
+Slider.propTypes = {
+  slide: object,
+  index: number,
+  dots: array,
+  jumpTo: func
+}
