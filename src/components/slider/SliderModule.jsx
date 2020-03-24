@@ -17,8 +17,6 @@ export const SliderModule = () => {
   const fetchPublications = async () => {
     const response = await getRequest('/publications/popular?count=5');
 
-    console.log("publications", response.data);
-
     if (response.status == 200) {
       setPublications(() => response.data)
     }

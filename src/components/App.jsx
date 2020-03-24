@@ -3,7 +3,10 @@ import { useSelector } from 'react-redux';
 import { BrowserRouter as Router, Switch } from 'react-router-dom';
 
 // * Routes
-import { SignInRoute } from 'routes';
+import {
+  MainRoute,
+  SignInRoute
+} from 'routes';
 
 // * Components
 import { Header } from 'components';
@@ -13,7 +16,6 @@ import { selectPublisher } from 'utils/selectors';
 
 // * Sass
 import './App.scss';
-import { SliderModule } from 'components';
 
 export const App = () => {
   const publisher = useSelector(selectPublisher);
@@ -22,10 +24,8 @@ export const App = () => {
     <Router>
       <div id="app">
         <Header />
-        <SliderModule />
-        <Switch>
-          <SignInRoute publisher={publisher} />
-        </Switch>
+        <MainRoute />
+        <SignInRoute publisher={publisher} />
       </div>
     </Router>
   )
