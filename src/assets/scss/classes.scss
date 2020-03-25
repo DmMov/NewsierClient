@@ -1,16 +1,5 @@
 @import "./vars";
 
-.image-wrap {
-  display: flex;
-  width: 100%;
-
-  img {
-    vertical-align: middle;
-    object-fit: cover;
-    width: 100%;
-  }
-}
-
 .logo {
   text-transform: capitalize;
   font-family: 'KaushanScript', cursive;

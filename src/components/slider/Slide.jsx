@@ -9,12 +9,14 @@ import { assets } from 'assets/constants';
 
 // * Sass
 import './Slide.scss';
+import { ResponsiveImage } from '../responsive-image/ResponsiveImage';
 
 export const Slide = ({ slide, index }) =>
   <div className="slide">
-    <div className="image-wrap slide__image-wrap">
-      <img src={`${assets}/images/${slide.image}`} className="slide__image" />
-    </div>
+    <ResponsiveImage
+      src={`${assets}/images/${slide.image}`}
+      classes={['slide__imageContainer']}
+    />
     <IndexBox index={index} />
   </div>
 

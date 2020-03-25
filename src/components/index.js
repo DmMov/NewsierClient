@@ -7,3 +7,8 @@ export { SignInModule } from './sign-in/SignInModule';
 export { SliderModule } from './slider/SliderModule';
 export { RedirectChecker } from './redirect-checker/RedirectChecker';
 export { Link } from './link/Link';
+export { ResponsiveImage } from './responsive-image/ResponsiveImage';
+export { PublicationDetails } from './publication-details/PublicationDetails';
+export { Publication } from './publication/Publication';
+export { PublicationList } from './publication-list/PublicationList';
+export { PublicationsSectionModule } from './publications-section/PublicationsSectionModule';
