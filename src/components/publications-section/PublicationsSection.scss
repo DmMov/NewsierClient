@@ -2,7 +2,7 @@
 
 .publicationsSection {
   display: grid;
-  grid-gap: 1rem;
+  grid-gap: 2rem;
   max-width: 80rem;
   margin: 0 auto;
   padding: 3rem;
@@ -10,5 +10,6 @@
   &__title {
     font-size: 2rem;
     text-transform: capitalize;
+    text-align: center;
   }
 }
