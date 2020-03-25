@@ -5,6 +5,9 @@ import {
   ResponsiveImage
 } from 'components';
 
+// * Constants
+import { assets } from 'assets/constants';
+
 // * Sass
 import './Publication.scss';
 
