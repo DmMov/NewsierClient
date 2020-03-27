@@ -2,7 +2,8 @@ import React from 'react';
 
 // * Components
 import {
-  ResponsiveImage
+  ResponsiveImage,
+  PublicationDetails
 } from 'components';
 
 // * Constants
@@ -17,4 +18,5 @@ export const Publication = ({ image, ...props }) =>
       src={`${assets}/images/${image}`}
       classes={['publication__imageContainer']}
     />
+    <PublicationDetails {...props} />
   </div>

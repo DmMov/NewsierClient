@@ -1,5 +1,19 @@
+@import "assets/scss/vars";
+
 .publication {
-  &__imageContainer {
+  box-shadow: 0 0 6px 1px rgba($black, .075);
+
+  &__imageContainer.imageContainer {
     height: 10rem;
+
+    &::before {
+      transition: $transition;
+    }
+
+    &:hover {
+      &::before {
+        background: rgba($black, .5);
+      }
+    }
   }
 }

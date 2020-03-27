@@ -7,10 +7,10 @@
 
 .btn {
   display: block;
-  padding: 0.75rem 1rem;
-  font-size: .75rem;
+  padding: 0.75rem 1.5rem;
+  font-size: .7rem;
   font-weight: 500;
-  text-transform: capitalize;
+  text-transform: uppercase;
   cursor: pointer;
   transition: $transition;
 
@@ -63,7 +63,6 @@
   &.bordered {
     color: $gray;
     border: 1px solid $gray;
-    border-radius: 3px;
 
     &.primary {
       &:hover {
