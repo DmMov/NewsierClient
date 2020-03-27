@@ -1,5 +1,5 @@
 import React from 'react';
-import { FiberManualRecordRounded, ChevronRight, VisibilityOutlined } from '@material-ui/icons';
+import { FiberManualRecordRounded, ChevronRight, Visibility } from '@material-ui/icons';
 
 // * Components
 import { Link } from 'components';
@@ -12,12 +12,12 @@ export const PublicationDetails = ({ id, category, categoryId, title, createdAt,
     <Link
       to={`/publications/by-category/${categoryId}`}
     >
-      <span className="publicationDetails_category">{ category }</span>
+      <span className="publicationDetails__category">{ category }</span>
     </Link>
     <Link
       to={`/publication/${id}`}
     >
-      <h3 className="publicationDetails__title">{ title }</h3>
+      <h4 className="publicationDetails__title">{ title }</h4>
     </Link>
     <div className="publicationDetails__relatedInfo">
       <p className="publisher">
@@ -26,17 +26,16 @@ export const PublicationDetails = ({ id, category, categoryId, title, createdAt,
       </p>
       <FiberManualRecordRounded className="dotIcon"/>
       <p className="views">
-        <VisibilityOutlined className="views__statIcon"/>
+        <Visibility className="statIcon"/>
         <span className="views__count">{ views }</span>
       </p>
     </div>
     <Link
       to={`/publication/${id}`}
+      classes={['btn', 'primary', 'publicationDetails__readMore']}
     >
-      <span className="publicationDetails__readMore">
-        читати більше
-      </span>
-      <ChevronRight className="arrow-icon"/>
+      <span className="readMore__text">читати більше</span>
+      <ChevronRight className="arrowIcon"/>
     </Link>
     <span className="publicationDetails__createdAt">{ createdAt }</span>
   </div>
