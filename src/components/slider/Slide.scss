@@ -2,7 +2,9 @@
 
 .slide {
   display: grid;
+  grid-template-rows: auto 1fr;
   position: absolute;
+  grid-gap: 3rem;
   top: 0;
   right: 0;
   bottom: 0;
@@ -16,5 +18,20 @@
     bottom: 0;
     left: 0;
     z-index: -1;
+  }
+
+  .publicationDetails {
+    align-self: end;
+    padding: 0 0 5rem;
+
+    &__title {
+      max-width: 60vw;
+      color: #ffffff;
+      font-size: 2rem;
+
+      &:hover {
+        color: darken(#ffffff, 20%);
+      }
+    }
   }
 }

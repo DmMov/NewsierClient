@@ -7,7 +7,7 @@ import { Link } from 'components';
 // * Sass
 import './PublicationDetails.scss';
 
-export const PublicationDetails = ({ id, category, categoryId, title, createdAt, publisher, views }) =>
+export const PublicationDetails = ({ id, category, categoryId, title, publisher, views }) =>
   <div className="publicationDetails">
     <Link
       to={`/publications/by-category/${categoryId}`}
@@ -30,12 +30,4 @@ export const PublicationDetails = ({ id, category, categoryId, title, createdAt,
         <span className="views__count">{ views }</span>
       </p>
     </div>
-    <Link
-      to={`/publication/${id}`}
-      classes={['btn', 'primary', 'publicationDetails__readMore']}
-    >
-      <span className="readMore__text">читати більше</span>
-      <ChevronRight className="arrowIcon"/>
-    </Link>
-    <span className="publicationDetails__createdAt">{ createdAt }</span>
   </div>

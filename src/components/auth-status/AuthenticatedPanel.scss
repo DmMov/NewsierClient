@@ -1,23 +1,19 @@
 @import 'assets/scss/vars';
 
-#authenticated-panel {
+.authenticatedPanel {
   display: grid;
-  grid-template-columns: repeat(3, auto);
+  grid-template-columns: repeat(2, auto);
   grid-gap: 1rem;
   align-items: center;
 
-  .publisher-image-wrap {
-    width: 2.5rem;
-    height: 2.5rem;
+  &__imageContainer.imageContainer {
+    width: 2rem;
+    height: 2rem;
     border-radius: 50px;
     overflow: hidden;
-    box-shadow: 0 0 6px 1px rgba(0, 0, 0, .15);
-  }
 
-  .publisher-name {
-    text-transform: capitalize;
-    font-weight: 500;
-    font-size: 0.9rem;
-    color: darken($light, 8%);
+    &::before {
+      display: none;
+    }
   }
 }

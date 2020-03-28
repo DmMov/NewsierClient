@@ -1,6 +1,9 @@
 import React from 'react';
 import { string, func } from 'prop-types';
 
+// * Components
+import { ResponsiveImage } from 'components';
+
 // * Constants
 import { assets } from 'assets/constants';
 
@@ -8,11 +11,12 @@ import { assets } from 'assets/constants';
 import './AuthenticatedPanel.scss';
 
 export const AuthenticatedPanel = ({ image, signOut }) =>
-  <div id="authenticated-panel">
-    <div className="image-wrap publisher-image-wrap">
-      <img src={`${assets}/images/${image}`} alt=""/>
-    </div>
-    <button className="btn red" onClick={signOut}>Вийти</button>
+  <div className="authenticatedPanel">
+    <ResponsiveImage
+      src={`${assets}/images/${image}`}
+      classes={['authenticatedPanel__imageContainer']}
+    />
+    <button className="btn red bordered filled" onClick={signOut}>Вийти</button>
   </div>
 
 AuthenticatedPanel.propTypes = {

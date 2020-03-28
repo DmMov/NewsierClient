@@ -3,13 +3,16 @@ import { object, number } from 'prop-types';
 
 // * Components
 import { IndexBox } from './IndexBox';
+import {
+  ResponsiveImage,
+  PublicationDetails
+} from 'components';
 
 // * Constants
 import { assets } from 'assets/constants';
 
 // * Sass
 import './Slide.scss';
-import { ResponsiveImage } from '../responsive-image/ResponsiveImage';
 
 export const Slide = ({ slide, index }) =>
   <div className="slide">
@@ -18,6 +21,7 @@ export const Slide = ({ slide, index }) =>
       classes={['slide__imageContainer']}
     />
     <IndexBox index={index} />
+    <PublicationDetails {...slide} />
   </div>
 
 Slide.propTypes = {

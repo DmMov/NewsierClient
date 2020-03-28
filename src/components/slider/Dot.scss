@@ -1,7 +1,7 @@
 @import 'assets/scss/vars';
 
 .dot {
-  color: $light;
+  color: $gray;
   cursor: pointer;
 
   & &-icon {
@@ -9,6 +9,6 @@
   }
 
   &.active {
-    color: $primary
+    color: #fff;
   }
 }
