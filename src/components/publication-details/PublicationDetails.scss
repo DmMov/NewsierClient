@@ -39,6 +39,10 @@
       &__name {
         text-transform: capitalize;
         color: $primary;
+
+        &:hover {
+          text-decoration: underline;
+        }
       }
     }
 
