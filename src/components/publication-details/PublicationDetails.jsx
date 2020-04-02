@@ -7,7 +7,7 @@ import { Link } from 'components';
 // * Sass
 import './PublicationDetails.scss';
 
-export const PublicationDetails = ({ id, category, categoryId, title, publisher, publisherId, views }) =>
+export const PublicationDetails = ({ id, category, categoryId, title, publisher, publisherId, views, tags }) =>
   <div className="publicationDetails">
     <Link
       to={`/publications/by-category/${categoryId}`}
@@ -33,5 +33,18 @@ export const PublicationDetails = ({ id, category, categoryId, title, publisher,
         <Visibility className="statIcon" />
         <span className="views__count">{views}</span>
       </p>
+    </div>
+    <div className="publicationDetails__tags">
+      {
+        tags.map(
+          tag =>
+            <Link
+              key={tag.id}
+              to={`/publications/by-tag/${tag.id}`}
+            >
+              <span className="tag">{tag.value}</span>
+            </Link>
+        )
+      }
     </div>
   </div>
