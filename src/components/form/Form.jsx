@@ -23,7 +23,7 @@ export const Form = ({ classes, submit, title, buttonText, children }) =>
 Form.propTypes = {
   classes: arrayOf(string),
   submit: func.isRequired,
-  title: string.isRequired,
+  title: string,
   buttonText: string.isRequired,
   children: any
 }

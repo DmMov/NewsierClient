@@ -12,3 +12,4 @@ export { PublicationDetails } from './publication-details/PublicationDetails';
 export { Publication } from './publication/Publication';
 export { PublicationList } from './publication-list/PublicationList';
 export { PublicationsSectionModule } from './publications-section/PublicationsSectionModule';
+export { Banner } from './banner/Banner';
