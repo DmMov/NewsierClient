@@ -11,6 +11,7 @@ import { getRequest } from 'utils/helpers';
 
 // * Sass
 import './PublicationPage.scss';
+import { CommentsBox } from '../../components';
 
 export const PublicationPage = () => {
   const [publication, setPublication] = useState(null);
@@ -31,6 +32,7 @@ export const PublicationPage = () => {
   return (
     <div id="publicationPage" className="page">
       <DetailedPublication {...publication} />
+      <CommentsBox {...publication} />
     </div>
   );
 }

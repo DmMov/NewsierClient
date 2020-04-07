@@ -15,3 +15,4 @@ export { PublicationsSectionModule } from './publications-section/PublicationsSe
 export { Banner } from './banner/Banner';
 export { DetailedPublication } from './detailed-publication/DetailedPublication';
 export { TagsBox } from './tags-box/TagsBox';
+export { CommentsBox } from './comments-box/CommentsBox';
