@@ -1,0 +1,23 @@
+@import "assets/scss/vars";
+
+.detailedPublication {
+  display: grid;
+  grid-gap: 1rem;
+
+  &__title {
+    font-size: 2.5rem;
+    font-weight: 500;
+    line-height: 3rem;
+  }
+
+  &__category {
+    color: $primary;
+    font-weight: 500;
+    transition: $transition;
+
+    &:hover {
+      text-decoration: underline;
+      color: darken($primary, 5%);
+    }
+  }
+}

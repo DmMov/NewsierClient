@@ -2,14 +2,26 @@ import React from 'react';
 
 // * Components
 import {
-  ResponsiveImage
+  ResponsiveImage,
+  Link
 } from 'components';
+import { PublisherBox } from './PublisherBox';
 
 // * Constants
 import { assets } from 'assets/constants';
 
-export const DetailedPublication = ({ image }) =>
+// * Sass
+import './DetailedPublication.scss';
+
+export const DetailedPublication = ({ title, categoryId, category, image, ...props }) =>
   <div className="detailedPublication">
+    <h1 className="detailedPublication__title">{title}</h1>
+    <Link
+      to={`/publications/by-category/${categoryId}`}
+    >
+      <span className="detailedPublication__category">{category}</span>
+    </Link>
+    <PublisherBox {...props} />
     <ResponsiveImage
       src={`${assets}/images/${image}`}
       classes={['detailedPublication__imageContainer']}

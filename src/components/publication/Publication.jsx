@@ -21,7 +21,7 @@ export const Publication = ({ id, image, createdAt, ...props }) =>
       src={`${assets}/images/${image}`}
       classes={['publication__imageContainer']}
     />
-    <PublicationDetails {...props} />
+    <PublicationDetails id={id} {...props} />
     <Link
       to={`/publication/${id}`}
       classes={['btn', 'primary', 'publication__readMore']}
