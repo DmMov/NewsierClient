@@ -3,7 +3,8 @@ import React from 'react';
 // * Components
 import {
   ResponsiveImage,
-  Link
+  Link,
+  TagsBox
 } from 'components';
 import { PublisherBox } from './PublisherBox';
 
@@ -13,7 +14,7 @@ import { assets } from 'assets/constants';
 // * Sass
 import './DetailedPublication.scss';
 
-export const DetailedPublication = ({ title, categoryId, category, image, value, ...props }) =>
+export const DetailedPublication = ({ title, categoryId, category, image, value, tags, ...props }) =>
   <div className="detailedPublication">
     <h1 className="detailedPublication__title">{title}</h1>
     <Link
@@ -29,4 +30,5 @@ export const DetailedPublication = ({ title, categoryId, category, image, value,
     <p className="detailedPublication__value">
       {value}
     </p>
+    <TagsBox tags={!!tags ? tags : []} />
   </div>
