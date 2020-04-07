@@ -4,7 +4,7 @@
   display: grid;
   grid-gap: 1rem;
   padding: 1rem;
-  box-shadow: 0 0 4px 2px rgba($black, .05);
+  border-left: 2px solid $primary;
 
   &__value {
     font-weight: 500;

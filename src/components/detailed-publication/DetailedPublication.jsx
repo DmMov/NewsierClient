@@ -4,9 +4,9 @@ import React from 'react';
 import {
   ResponsiveImage,
   Link,
-  TagsBox
+  TagsBox,
+  PublisherBox
 } from 'components';
-import { PublisherBox } from './PublisherBox';
 
 // * Constants
 import { assets } from 'assets/constants';
@@ -23,10 +23,10 @@ export const DetailedPublication = ({ title, categoryId, category, image, value,
       <span className="detailedPublication__category">{category}</span>
     </Link>
     <PublisherBox {...props} />
-    {/* <ResponsiveImage
+    <ResponsiveImage
       src={`${assets}/images/${image}`}
       classes={['detailedPublication__imageContainer']}
-    /> */}
+    />
     <p className="detailedPublication__value">
       {value}
     </p>
