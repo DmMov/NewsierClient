@@ -1,0 +1,25 @@
+@import "assets/scss/vars";
+
+.comment {
+  display: grid;
+  grid-gap: 1rem;
+  padding: 1rem;
+  box-shadow: 0 0 4px 2px rgba($black, .05);
+
+  &__value {
+    font-weight: 500;
+    color: $gray;
+
+    &::first-letter {
+      text-transform: capitalize;
+    }
+  }
+
+  &__innerComments {
+    padding-left: 1rem;
+
+    &.none {
+      display: none;
+    }
+  }
+}
