@@ -13,3 +13,4 @@ export { Publication } from './publication/Publication';
 export { PublicationList } from './publication-list/PublicationList';
 export { PublicationsSectionModule } from './publications-section/PublicationsSectionModule';
 export { Banner } from './banner/Banner';
+export { DetailedPublication } from './detailed-publication/DetailedPublication';

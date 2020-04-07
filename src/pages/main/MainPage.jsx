@@ -7,7 +7,7 @@ import {
 } from 'components';
 
 export const MainPage = () =>
-  <div id="main-page" className="page">
+  <div id="mainPage" className="page">
     <SliderModule />
     <PublicationsSectionModule />
   </div>

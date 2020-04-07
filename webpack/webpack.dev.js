@@ -5,8 +5,8 @@ module.exports = merge(common, {
   mode: 'development',
   devtool: 'inline-source-map',
   devServer: {
+    overlay: true,
     contentBase: './dist',
-    historyApiFallback: true,
-    overlay: true
-  },
+    historyApiFallback: true
+  }
 });
