@@ -13,7 +13,7 @@ import { assets } from 'assets/constants';
 // * Sass
 import './DetailedPublication.scss';
 
-export const DetailedPublication = ({ title, categoryId, category, image, ...props }) =>
+export const DetailedPublication = ({ title, categoryId, category, image, value, ...props }) =>
   <div className="detailedPublication">
     <h1 className="detailedPublication__title">{title}</h1>
     <Link
@@ -26,4 +26,7 @@ export const DetailedPublication = ({ title, categoryId, category, image, ...pro
       src={`${assets}/images/${image}`}
       classes={['detailedPublication__imageContainer']}
     />
+    <p className="detailedPublication__value">
+      {value}
+    </p>
   </div>

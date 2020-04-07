@@ -20,4 +20,9 @@
       color: darken($primary, 5%);
     }
   }
+
+  &__value {
+    font-size: 1.25rem;
+    text-indent: 2rem;
+  }
 }
