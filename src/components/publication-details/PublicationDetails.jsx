@@ -2,7 +2,10 @@ import React from 'react';
 import { FiberManualRecordRounded, Visibility } from '@material-ui/icons';
 
 // * Components
-import { Link } from 'components';
+import {
+  Link,
+  TagsBox
+} from 'components';
 
 // * Sass
 import './PublicationDetails.scss';
@@ -34,17 +37,5 @@ export const PublicationDetails = ({ id, category, categoryId, title, publisher,
         <span className="views__count">{views}</span>
       </p>
     </div>
-    <div className="publicationDetails__tags">
-      {
-        tags.map(
-          tag =>
-            <Link
-              key={tag.id}
-              to={`/publications/by-tag/${tag.id}`}
-            >
-              <span className="tag">{tag.value}</span>
-            </Link>
-        )
-      }
-    </div>
+    <TagsBox tags={tags} />
   </div>
