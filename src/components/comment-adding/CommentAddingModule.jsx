@@ -16,7 +16,7 @@ const initialState = {
   comment: ''
 }
 
-export const CommentAddingModule = ({ refreshComments }) => {
+export const CommentAddingModule = ({ publicationId, refreshComments }) => {
   const { data, errors, change, validate, reset } = useFormValidation(initialState, initialState);
 
   const fields = [
@@ -31,7 +31,7 @@ export const CommentAddingModule = ({ refreshComments }) => {
 
   const validationParams = {
     comment: {
-      condition: data.comment.lengh < 5,
+      condition: data.comment.length < 5,
       errorText: 'мінімальна довжина коментаря 5 символів'
     }
   }
@@ -42,7 +42,11 @@ export const CommentAddingModule = ({ refreshComments }) => {
     const isValid = checkIsValid(data, validate, validationParams);
 
     if (isValid) {
-      const response = await postRequest('/сomments', data);
+      const requestData = {
+        ...data,
+        publicationId
+      };
+      const response = await postRequest('/comments', requestData);
 
       if (response.status === 200) {
         reset();
@@ -51,7 +55,5 @@ export const CommentAddingModule = ({ refreshComments }) => {
     }
   };
 
-  return (
-    <CommentAddingForm submit={submit} fields={fields} />
-  )
+  return <CommentAddingForm submit={submit} fields={fields} />
 }

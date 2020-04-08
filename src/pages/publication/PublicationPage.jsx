@@ -44,7 +44,7 @@ export const PublicationPage = () => {
     <div className="publicationPage page">
       <DetailedPublication {...publication} />
       <h3 className="publicationPage__subTitle">коментарі</h3>
-      <CommentAddingModule refreshComments={fetchComments} />
+      <CommentAddingModule publicationId={id} refreshComments={fetchComments} />
       <CommentsBox comments={!!comments && comments} />
     </div>
   );

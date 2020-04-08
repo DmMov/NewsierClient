@@ -28,7 +28,10 @@
 
   &__error {
     font-size: .7rem;
-    text-transform: capitalize;
     color: $red;
+
+    &::first-letter {
+      text-transform: capitalize;
+    }
   }
 }
