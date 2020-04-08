@@ -15,10 +15,12 @@ import { CommentsBox } from '../../components';
 
 export const PublicationPage = () => {
   const [publication, setPublication] = useState(null);
+  const [comments, setComments] = useState(null);
   const { id } = useParams();
 
   useEffect(() => {
     fetchPublication();
+    fetchComments();
   }, []);
 
   const fetchPublication = async () => {
@@ -29,10 +31,18 @@ export const PublicationPage = () => {
     }
   }
 
+  const fetchComments = async () => {
+    const response = await getRequest(`/comments/by-publication/${id}`);
+
+    if (response.status == 200) {
+      setComments(() => response.data)
+    }
+  }
+
   return (
     <div id="publicationPage" className="page">
       <DetailedPublication {...publication} />
-      <CommentsBox {...publication} />
+      <CommentsBox comments={!!comments && comments} />
     </div>
   );
 }
