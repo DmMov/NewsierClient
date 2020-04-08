@@ -3,7 +3,9 @@ import { useParams } from 'react-router-dom';
 
 // * Components
 import {
-  DetailedPublication
+  DetailedPublication,
+  CommentsBox,
+  CommentAddingModule
 } from 'components';
 
 // * Helpers
@@ -11,7 +13,6 @@ import { getRequest } from 'utils/helpers';
 
 // * Sass
 import './PublicationPage.scss';
-import { CommentsBox } from '../../components';
 
 export const PublicationPage = () => {
   const [publication, setPublication] = useState(null);
@@ -40,8 +41,10 @@ export const PublicationPage = () => {
   }
 
   return (
-    <div id="publicationPage" className="page">
+    <div className="publicationPage page">
       <DetailedPublication {...publication} />
+      <h3 className="publicationPage__subTitle">коментарі</h3>
+      <CommentAddingModule refreshComments={fetchComments} />
       <CommentsBox comments={!!comments && comments} />
     </div>
   );

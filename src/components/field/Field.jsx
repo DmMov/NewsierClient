@@ -8,7 +8,7 @@ import './Field.scss';
 export const Field = ({ control: Control, label, placeholder, name, value, type, change, error }) =>
   <label
     htmlFor={`${name}-control`}
-    className={classnames('field', `${name}-field`, !!error && 'error')}
+    className={classnames('field', `${name}Field`, !!error && 'error')}
   >
     <span className="field__label">{ label }</span>
     <Control
@@ -16,7 +16,7 @@ export const Field = ({ control: Control, label, placeholder, name, value, type,
       name={name}
       value={value}
       type={type}
-      className={classnames('field__control', `${name}-field__control`)}
+      className={classnames('field__control', `${name}Field__control`)}
       onChange={change}
       placeholder={placeholder}
     />
@@ -30,7 +30,7 @@ Field.defaultProps = {
 
 Field.propTypes = {
   control: string,
-  label: string.isRequired,
+  label: string,
   placeholder: string.isRequired,
   name: string.isRequired,
   value: string.isRequired,

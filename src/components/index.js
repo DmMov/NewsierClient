@@ -17,3 +17,4 @@ export { DetailedPublication } from './detailed-publication/DetailedPublication'
 export { TagsBox } from './tags-box/TagsBox';
 export { CommentsBox } from './comments-box/CommentsBox';
 export { PublisherBox } from './publisher-box/PublisherBox';
+export { CommentAddingModule } from './comment-adding/CommentAddingModule';

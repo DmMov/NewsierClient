@@ -10,11 +10,20 @@ export const Form = ({ classes, submit, title, buttonText, children }) =>
     className={classnames('form', classes)}
     onSubmit={submit}
   >
-    <h2 className="form__title">{ title }</h2>
+    { title && <h2 className="form__title">{ title }</h2>}
     {children}
     <button
       type="submit"
-      className={classnames('btn', 'bordered', 'primary', 'filled', 'submit-btn')}
+      className={
+        classnames(
+          'btn',
+          'bordered',
+          'primary',
+          'filled',
+          'form__submitBtn',
+          ...classes.map(cl => `${cl}__submitBtn`)
+        )
+      }
     >
       { buttonText }
     </button>
