@@ -16,7 +16,7 @@ const initialState = {
   comment: ''
 }
 
-export const CommentAddingModule = ({ publicationId, refreshComments }) => {
+export const CommentAddingModule = ({ publicationId, refreshComments, ...props }) => {
   const { data, errors, change, validate, reset } = useFormValidation(initialState, initialState);
 
   const fields = [
@@ -44,7 +44,8 @@ export const CommentAddingModule = ({ publicationId, refreshComments }) => {
     if (isValid) {
       const requestData = {
         ...data,
-        publicationId
+        publicationId,
+        parentId: props.commentToReply.id
       };
       const response = await postRequest('/comments', requestData);
 
@@ -55,5 +56,5 @@ export const CommentAddingModule = ({ publicationId, refreshComments }) => {
     }
   };
 
-  return <CommentAddingForm submit={submit} fields={fields} />
+  return <CommentAddingForm submit={submit} fields={fields} {...props} />
 }

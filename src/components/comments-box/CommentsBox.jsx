@@ -6,7 +6,7 @@ import { Comment } from './Comment';
 // * Sass
 import './CommentsBox.scss';
 
-export const CommentsBox = ({ comments }) =>
+export const CommentsBox = ({ comments, reply }) =>
   <div className="commentsBox">
     {
       !!!comments || comments.length == 0 &&
@@ -14,6 +14,6 @@ export const CommentsBox = ({ comments }) =>
     }
     {
       !!comments && comments.length != 0 &&
-        comments.map(comment => <Comment key={comment.id} {...comment} />)
+        comments.map(comment => <Comment key={comment.id} reply={reply} {...comment} />)
     }
   </div>

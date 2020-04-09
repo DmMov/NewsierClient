@@ -4,7 +4,7 @@
   display: grid;
   grid-gap: 1rem;
   padding: 1rem;
-  border-left: 2px solid $primary;
+  border-left: 1px solid $primary;
 
   &__value {
     font-weight: 500;
@@ -15,9 +15,19 @@
     }
   }
 
-  &__innerComments {
-    padding-left: 1rem;
+  &__replyBtn {
+    justify-self: start;
+    text-transform: capitalize;
+    color: darken($light, 10%);
+    cursor: pointer;
+    transition: $transition;
 
+    &:hover {
+      color: $primary;
+    }
+  }
+
+  &__innerComments {
     &.none {
       display: none;
     }

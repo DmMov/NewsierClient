@@ -17,6 +17,7 @@ import './PublicationPage.scss';
 export const PublicationPage = () => {
   const [publication, setPublication] = useState(null);
   const [comments, setComments] = useState(null);
+  const [commentToReply, setCommentToReply] = useState(null);
   const { id } = useParams();
 
   useEffect(() => {
@@ -40,12 +41,20 @@ export const PublicationPage = () => {
     }
   }
 
+  const reply = async id => {
+    const response = await getRequest(`/comments/${id}`);
+
+    if (response.status == 200) {
+      setCommentToReply(() => response.data)
+    }
+  }
+
   return (
     <div className="publicationPage page">
       <DetailedPublication {...publication} />
       <h3 className="publicationPage__subTitle">коментарі</h3>
-      <CommentAddingModule publicationId={id} refreshComments={fetchComments} />
-      <CommentsBox comments={!!comments && comments} />
+      <CommentAddingModule cancel={() => setCommentToReply(null)} commentToReply={commentToReply} publicationId={id} refreshComments={fetchComments} />
+      <CommentsBox reply={reply} comments={!!comments && comments} />
     </div>
   );
 }
