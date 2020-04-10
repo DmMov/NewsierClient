@@ -6,7 +6,8 @@
   grid-gap: .5rem;
   position: relative;
   padding: 1rem;
-  border-left: 1px solid $primary;
+  border: 1px solid $light;
+  border-left: 3px solid $primary;
 
   &__imageContainer {
     width: 1.5rem;
@@ -31,8 +32,11 @@
   &__value {
     font-weight: 500;
     color: $gray;
-    text-transform: capitalize;
     grid-column: 1 / 3;
+
+    &::first-letter {
+      text-transform: capitalize;
+    }
   }
 
   &__cancelBtn {

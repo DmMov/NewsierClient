@@ -3,9 +3,9 @@ import React from 'react';
 // * Components
 import {
   Form,
-  Field
+  Field,
+  CommentToReply
 } from 'components';
-import { CommentToReply } from './CommentToReply';
 
 // * Sass
 import './CommentAddingForm.scss';

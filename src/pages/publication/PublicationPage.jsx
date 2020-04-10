@@ -3,9 +3,8 @@ import { useParams } from 'react-router-dom';
 
 // * Components
 import {
-  DetailedPublication,
-  CommentsBox,
-  CommentAddingModule
+  DetailedPublicationModule,
+  CommentsSectionModule
 } from 'components';
 
 // * Helpers
@@ -15,46 +14,16 @@ import { getRequest } from 'utils/helpers';
 import './PublicationPage.scss';
 
 export const PublicationPage = () => {
-  const [publication, setPublication] = useState(null);
-  const [comments, setComments] = useState(null);
-  const [commentToReply, setCommentToReply] = useState(null);
   const { id } = useParams();
-
-  useEffect(() => {
-    fetchPublication();
-    fetchComments();
-  }, []);
-
-  const fetchPublication = async () => {
-    const response = await getRequest(`/publications/${id}`);
-
-    if (response.status == 200) {
-      setPublication(() => response.data)
-    }
-  }
-
-  const fetchComments = async () => {
-    const response = await getRequest(`/comments/by-publication/${id}`);
-
-    if (response.status == 200) {
-      setComments(() => response.data)
-    }
-  }
-
-  const reply = async id => {
-    const response = await getRequest(`/comments/${id}`);
-
-    if (response.status == 200) {
-      setCommentToReply(() => response.data)
-    }
-  }
+  
 
   return (
     <div className="publicationPage page">
-      <DetailedPublication {...publication} />
-      <h3 className="publicationPage__subTitle">коментарі</h3>
+      <DetailedPublicationModule publicationId={id} />
+      <CommentsSectionModule publicationId={id} />
+      {/* <h3 className="publicationPage__subTitle">коментарі</h3>
       <CommentAddingModule cancel={() => setCommentToReply(null)} commentToReply={commentToReply} publicationId={id} refreshComments={fetchComments} />
-      <CommentsBox reply={reply} comments={!!comments && comments} />
+      <CommentsBox reply={reply} comments={!!comments && comments} /> */}
     </div>
   );
 }

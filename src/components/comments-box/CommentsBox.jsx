@@ -1,7 +1,7 @@
 import React from 'react';
 
 // * Components
-import { Comment } from './Comment';
+import { Comment } from 'components';
 
 // * Sass
 import './CommentsBox.scss';

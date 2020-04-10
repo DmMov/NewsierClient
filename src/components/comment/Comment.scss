@@ -4,7 +4,8 @@
   display: grid;
   grid-gap: 1rem;
   padding: 1rem;
-  border-left: 1px solid $primary;
+  border: 1px solid $light;
+  border-left: 3px solid $primary;
 
   &__value {
     font-weight: 500;
