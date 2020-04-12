@@ -16,7 +16,7 @@ export const AuthenticatedPanel = ({ image, signOut }) =>
       src={`${assets}/images/${image}`}
       classes={['authenticatedPanel__imageContainer']}
     />
-    <button className="btn red bordered filled" onClick={signOut}>Вийти</button>
+    <button className="btn red authenticatedPanel__logoutBtn" onClick={signOut}>Вийти</button>
   </div>
 
 AuthenticatedPanel.propTypes = {

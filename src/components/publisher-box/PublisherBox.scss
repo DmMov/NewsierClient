@@ -28,6 +28,7 @@
   &__publisherName {
     font-size: .9rem;
     color: $primary;
+    text-transform: capitalize;
     transition: $transition;
 
     &:hover {
