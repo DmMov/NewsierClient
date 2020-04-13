@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { useSelector, useDispatch } from 'react-redux';
+import { useParams } from 'react-router-dom';
 
 // * Components
 import { CommentsSection } from './CommentsSection';
@@ -13,10 +14,11 @@ import { getRequest } from 'utils/helpers';
 // * Actions
 import { setComments } from 'store/actions';
 
-export const CommentsSectionModule = ({ publicationId }) => {
+export const CommentsSectionModule = () => {
   const comments = useSelector(selectComments);
   const dispatch = useDispatch();
   const [commentToReply, setCommentToReply] = useState(null);
+  const { publicationId } = useParams();
 
   useEffect(() => {
     fetchComments();
