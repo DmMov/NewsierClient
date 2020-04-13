@@ -1,24 +1,35 @@
 import React, { useState, useEffect } from 'react';
+import { useSelector, useDispatch } from 'react-redux';
 
 // * Components
 import { CommentsSection } from './CommentsSection';
 
+// * Selectors
+import { selectComments } from 'utils/selectors';
+
 // * Helpers
 import { getRequest } from 'utils/helpers';
 
+// * Actions
+import { setComments } from 'store/actions';
+
 export const CommentsSectionModule = ({ publicationId }) => {
-  const [comments, setComments] = useState(null);
+  const comments = useSelector(selectComments);
+  const dispatch = useDispatch();
   const [commentToReply, setCommentToReply] = useState(null);
 
   useEffect(() => {
     fetchComments();
+    return () => {
+      dispatch(setComments(null));
+    }
   }, []);
 
   const fetchComments = async () => {
     const response = await getRequest(`/comments/by-publication/${publicationId}`);
 
     if (response.status == 200) {
-      setComments(() => response.data)
+      dispatch(setComments(response.data));
     }
   }
 
@@ -26,7 +37,7 @@ export const CommentsSectionModule = ({ publicationId }) => {
     const response = await getRequest(`/comments/${id}`);
 
     if (response.status == 200) {
-      setCommentToReply(() => response.data)
+      setCommentToReply(() => response.data);
     }
   }
 
