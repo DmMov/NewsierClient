@@ -3,7 +3,7 @@ import React from 'react';
 // * Components
 import {
   CommentAddingModule,
-  CommentsBox
+  CommentList
 } from 'components';
 
 // * Sass
@@ -13,5 +13,5 @@ export const CommentsSection = ({ ...props }) =>
   <div className="commentsSection">
     <h3 className="commentsSection__title">коментарі</h3>
     <CommentAddingModule {...props} />
-    <CommentsBox {...props} />
+    <CommentList {...props} />
   </div>
