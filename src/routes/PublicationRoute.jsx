@@ -6,6 +6,6 @@ import { PublicationPage } from 'pages';
 
 export const PublicationRoute = () =>
   <Route
-    path="/publications/by-id/:id"
+    path="/publication/:id"
     component={PublicationPage}
   />
