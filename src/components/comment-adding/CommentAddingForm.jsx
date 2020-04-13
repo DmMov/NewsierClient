@@ -4,24 +4,25 @@ import React from 'react';
 import {
   Form,
   Field,
-  CommentToReply
+  ReplyAim
 } from 'components';
 
 // * Sass
 import './CommentAddingForm.scss';
 
-export const CommentAddingForm = ({ fields, submit, commentToReply, cancel }) =>
+export const CommentAddingForm = ({ fields, submit, replyAim, cancel }) =>
   <Form
     classes={['commentAddingForm']}
     submit={submit}
     buttonText="залишити коментар"
   >
     {
-      !!commentToReply &&
+      !!replyAim && <>
         <span className="commentAddingForm__replyMessage">
           доданий вами коментар буде відповіддю на коментар, що ви бачите нижче.
         </span>
+        <ReplyAim cancel={cancel} {...replyAim} />
+      </>
     }
-    {!!commentToReply && <CommentToReply cancel={cancel} {...commentToReply} />}
     {fields.map(field => <Field key={field.name} {...field} />)}
   </Form>

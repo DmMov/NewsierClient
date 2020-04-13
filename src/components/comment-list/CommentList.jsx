@@ -1,16 +1,16 @@
 import React from 'react';
 
 // * Components
-import { Comment } from 'components';
+import { CommentModule } from 'components';
 
 // * Sass
 import './CommentList.scss';
 
-export const CommentList = ({ comments, reply }) =>
+export const CommentList = ({ comments, replyToComment }) =>
   <div className="commentList">
     {
       !!comments && comments.length != 0 ?
-        comments.map(comment => <Comment key={comment.id} reply={reply} {...comment} />) :
+        comments.map(comment => <CommentModule key={comment.id} replyToComment={replyToComment} comment={comment} />) :
         <span className="commentList__noComments">публікація, поки що, не містить коментарів</span>
     }
   </div>

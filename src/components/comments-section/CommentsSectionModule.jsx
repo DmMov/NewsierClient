@@ -1,12 +1,15 @@
-import React, { useState, useEffect } from 'react';
-import { useSelector, useDispatch } from 'react-redux';
+import React, { useEffect } from 'react';
 import { useParams } from 'react-router-dom';
+import { useDispatch, useSelector } from 'react-redux';
 
 // * Components
 import { CommentsSection } from './CommentsSection';
 
 // * Selectors
-import { selectComments } from 'utils/selectors';
+import {
+  selectComments,
+  selectAuthStatus
+} from 'utils/selectors';
 
 // * Helpers
 import { getRequest } from 'utils/helpers';
@@ -15,9 +18,9 @@ import { getRequest } from 'utils/helpers';
 import { setComments } from 'store/actions';
 
 export const CommentsSectionModule = () => {
-  const comments = useSelector(selectComments);
   const dispatch = useDispatch();
-  const [commentToReply, setCommentToReply] = useState(null);
+  const comments = useSelector(selectComments);
+  const authenticated = useSelector(selectAuthStatus);
   const { publicationId } = useParams();
 
   useEffect(() => {
@@ -30,25 +33,13 @@ export const CommentsSectionModule = () => {
   const fetchComments = async () => {
     const response = await getRequest(`/comments/by-publication/${publicationId}`);
 
-    if (response.status == 200) {
+    if (response.status == 200)
       dispatch(setComments(response.data));
-    }
-  }
-
-  const reply = async id => {
-    const response = await getRequest(`/comments/${id}`);
-
-    if (response.status == 200) {
-      setCommentToReply(() => response.data);
-    }
   }
 
   return <CommentsSection
     comments={comments}
-    publicationId={publicationId}
     refreshComments={fetchComments}
-    commentToReply={commentToReply}
-    cancel={() => setCommentToReply(null)}
-    reply={reply}
+    authenticated={authenticated}
   />
 }

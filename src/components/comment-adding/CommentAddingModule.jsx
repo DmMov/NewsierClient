@@ -1,4 +1,6 @@
 import React from 'react';
+import { useParams } from 'react-router-dom';
+import { useSelector, useDispatch } from 'react-redux';
 
 // * Components
 import { CommentAddingForm } from './CommentAddingForm';
@@ -12,12 +14,21 @@ import {
   postRequest
 } from 'utils/helpers';
 
+// * Selectors
+import { selectReplyAim } from '../../utils/selectors';
+
+// * Actions
+import { setReplyAim } from '../../store/actions';
+
 const initialState = {
   comment: ''
 }
 
-export const CommentAddingModule = ({ publicationId, refreshComments, commentToReply, cancel, ...props }) => {
+export const CommentAddingModule = ({ refreshComments }) => {
   const { data, errors, change, validate, reset } = useFormValidation(initialState, initialState);
+  const { publicationId } = useParams();
+  const dispatch = useDispatch();
+  const replyAim = useSelector(selectReplyAim);
 
   const fields = [
     {
@@ -36,6 +47,8 @@ export const CommentAddingModule = ({ publicationId, refreshComments, commentToR
     }
   }
 
+  const cancel = () => dispatch(setReplyAim(null));
+
   const submit = async (e) => {
     e.preventDefault();
 
@@ -45,7 +58,7 @@ export const CommentAddingModule = ({ publicationId, refreshComments, commentToR
       const requestData = {
         ...data,
         publicationId,
-        parentId: !!commentToReply ? commentToReply.id : null
+        parentId: !!replyAim ? replyAim.id : null
       };
       const response = await postRequest('/comments', requestData);
 
@@ -57,5 +70,10 @@ export const CommentAddingModule = ({ publicationId, refreshComments, commentToR
     }
   };
 
-  return <CommentAddingForm submit={submit} fields={fields} cancel={cancel} commentToReply={commentToReply} {...props} />
+  return <CommentAddingForm
+    submit={submit}
+    fields={fields}
+    cancel={cancel}
+    replyAim={replyAim}
+  />
 }

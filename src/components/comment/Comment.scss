@@ -29,8 +29,17 @@
   }
 
   &__innerComments {
+    display: grid;
+    grid-gap: 1rem;
+
     &.none {
       display: none;
+    }
+
+    .innerComments__title {
+      text-transform: capitalize;
+      color: $gray;
+      margin-bottom: -.5rem;
     }
   }
 }

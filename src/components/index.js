@@ -18,6 +18,6 @@ export { PublisherBox } from './publisher-box/PublisherBox';
 export { TagsBox } from './tags-box/TagsBox';
 export { CommentsSectionModule } from './comments-section/CommentsSectionModule';
 export { CommentAddingModule } from './comment-adding/CommentAddingModule';
-export { CommentToReply } from './comment-to-reply/CommentToReply';
+export { ReplyAim } from './reply-aim/ReplyAim';
 export { CommentList } from './comment-list/CommentList';
-export { Comment } from './comment/Comment';
+export { CommentModule } from './comment/CommentModule';
