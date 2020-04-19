@@ -21,7 +21,7 @@ import { selectReplyAim } from 'utils/selectors';
 import { setReplyAim } from 'store/actions';
 
 const initialState = {
-  comment: ''
+  value: ''
 }
 
 export const CommentAddingModule = ({ refreshComments }) => {
@@ -32,17 +32,17 @@ export const CommentAddingModule = ({ refreshComments }) => {
 
   const fields = [
     {
-      value: data.comment,
-      error: errors.comment,
-      name: 'comment',
+      value: data.value,
+      error: errors.value,
+      name: 'value',
       placeholder: 'Залиште ваш коментар...',
       change
     }
   ];
 
   const validationParams = {
-    comment: {
-      condition: data.comment.length < 5,
+    value: {
+      condition: data.value.length < 5,
       errorText: 'мінімальна довжина коментаря 5 символів'
     }
   }
