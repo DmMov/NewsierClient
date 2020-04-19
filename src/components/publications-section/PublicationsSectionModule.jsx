@@ -16,9 +16,8 @@ export const PublicationsSectionModule = () => {
   const fetchPublications = async () => {
     const response = await getRequest('/publications');
 
-    if (response.status == 200) {
+    if (response.status == 200)
       setPublications(() => response.data)
-    }
   }
 
   return <PublicationsSection publications={publications} />

@@ -59,7 +59,7 @@ export const SignInModule = () => {
     }
   }
 
-  const submit = async (e) => {
+  const submit = async e => {
     e.preventDefault();
 
     const isValid = checkIsValid(data, validate, validationParams);
@@ -72,11 +72,8 @@ export const SignInModule = () => {
 
         const publisherResponse = await getRequest('/auth');
 
-        if (publisherResponse.status == 200) {
+        if (publisherResponse.status == 200)
           dispatch(setPublisher(publisherResponse.data));
-        }
-
-        console.log('publisher ', publisherResponse.data);
       }
     }
   };

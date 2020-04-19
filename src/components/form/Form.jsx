@@ -10,7 +10,7 @@ export const Form = ({ classes, submit, title, buttonText, children }) =>
     className={classnames('form', classes)}
     onSubmit={submit}
   >
-    { title && <h2 className="form__title">{ title }</h2>}
+    {title && <h2 className="form__title">{title}</h2>}
     {children}
     <button
       type="submit"
@@ -25,7 +25,7 @@ export const Form = ({ classes, submit, title, buttonText, children }) =>
         )
       }
     >
-      { buttonText }
+      {buttonText}
     </button>
   </form>
 

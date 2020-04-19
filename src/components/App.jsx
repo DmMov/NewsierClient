@@ -21,14 +21,12 @@ import './App.scss';
 export const App = () => {
   const publisher = useSelector(selectPublisher);
 
-  return (
-    <Router>
-      <div id="app">
-        <Header />
-        <MainRoute />
-        <SignInRoute publisher={publisher} />
-        <PublicationRoute />
-      </div>
-    </Router>
-  )
+  return <Router>
+    <div id="app">
+      <Header />
+      <MainRoute />
+      <SignInRoute publisher={publisher} />
+      <PublicationRoute />
+    </div>
+  </Router>
 }

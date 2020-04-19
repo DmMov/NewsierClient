@@ -11,7 +11,7 @@ import './Slider.scss';
 
 export const Slider = ({ slide, index, dots, jumpTo }) =>
   <div id="slider">
-    <TransitionGroup className="slides-wrap">
+    <TransitionGroup className="slidesWrap">
       <CSSTransition
         key={slide.id}
         in={true}

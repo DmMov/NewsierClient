@@ -1,7 +1,6 @@
 import React from 'react';
 import { ChevronRight } from '@material-ui/icons';
 
-
 // * Components
 import {
   ResponsiveImage,
@@ -27,7 +26,7 @@ export const Publication = ({ id, image, createdAt, ...props }) =>
       classes={['btn', 'primary', 'publication__readMore']}
     >
       <span className="readMore__text">читати більше</span>
-      <ChevronRight className="arrowIcon"/>
+      <ChevronRight className="arrowIcon" />
     </Link>
-    <span className="publication__createdAt">{ createdAt }</span>
+    <span className="publication__createdAt">{createdAt}</span>
   </div>

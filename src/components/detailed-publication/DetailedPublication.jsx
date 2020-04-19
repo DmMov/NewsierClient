@@ -30,5 +30,5 @@ export const DetailedPublication = ({ title, categoryId, category, image, value,
     <p className="detailedPublication__value">
       {value}
     </p>
-    <TagsBox tags={!!tags ? tags : []} />
+    {!!tags && <TagsBox tags={tags} />}
   </div>

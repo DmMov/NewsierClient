@@ -7,7 +7,7 @@ import './Field.scss';
 
 export const Field = ({ control: Control, label, placeholder, name, value, type, change, error }) =>
   <label
-    htmlFor={`${name}-control`}
+    htmlFor={`${name}__control`}
     className={classnames('field', `${name}Field`, !!error && 'error')}
   >
     <span className="field__label">{ label }</span>

@@ -15,10 +15,10 @@ import {
 } from 'utils/helpers';
 
 // * Selectors
-import { selectReplyAim } from '../../utils/selectors';
+import { selectReplyAim } from 'utils/selectors';
 
 // * Actions
-import { setReplyAim } from '../../store/actions';
+import { setReplyAim } from 'store/actions';
 
 const initialState = {
   comment: ''

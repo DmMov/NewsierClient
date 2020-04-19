@@ -20,12 +20,11 @@ export const AuthStatusChecker = () => {
     remove('token');
     const token = get('token');
 
-    if (typeof(token) == 'undefined') {
+    if (typeof(token) == 'undefined')
       dispatch(setPublisher(null));
-    }
   }
 
   return publisher == null ?
     <AuthButtonSet /> :
-    <AuthenticatedPanel image={publisher.image} signOut={() => signOut()} />
+    <AuthenticatedPanel image={publisher.image} signOut={signOut} />
 }

@@ -17,9 +17,8 @@ export const SliderModule = () => {
   const fetchPublications = async () => {
     const response = await getRequest('/publications/popular?count=5');
 
-    if (response.status == 200) {
+    if (response.status == 200)
       setPublications(() => response.data)
-    }
   }
 
   return publications.length != 0 && <Slider

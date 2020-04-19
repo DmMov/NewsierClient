@@ -10,7 +10,7 @@ import {
 import './Header.scss';
 
 export const Header = () =>
-  <header id="newsier-header">
+  <header id="newsierHeader">
     <Link
       exact
       to="/"

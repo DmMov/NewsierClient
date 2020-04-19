@@ -7,16 +7,16 @@ import { Link } from 'components';
 import './AuthButtonSet.scss';
 
 export const AuthButtonSet = () =>
-  <div className="auth-button-set">
+  <div className="authButtonSet">
     <Link
       to="/sign-up"
-      classes={['btn', 'sign-up-btn']}
+      classes={['btn', 'authButtonSet__signUpBtn']}
     >
       реєстрація
     </Link>
     <Link
       to="/sign-in"
-      classes={['btn', 'primary', 'filled', 'bordered', 'sign-in-btn']}
+      classes={['btn', 'primary', 'filled', 'bordered', 'authButtonSet__signInBtn']}
     >
       вхід
     </Link>
