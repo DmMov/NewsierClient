@@ -1,3 +1,5 @@
+@import "assets/scss/vars";
+
 .authenticatedPanel {
   display: grid;
   grid-template-columns: repeat(2, auto);
@@ -12,6 +14,15 @@
 
     &::before {
       display: none;
+    }
+  }
+
+  &__signOutBtn {
+    font-weight: 600;
+    color: darken($light, 10%);
+
+    &:hover {
+      color: $red;
     }
   }
 }
