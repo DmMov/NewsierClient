@@ -41,5 +41,6 @@ export const CommentsSectionModule = () => {
     comments={comments}
     refreshComments={fetchComments}
     authenticated={authenticated}
+    fetchComments={fetchComments}
   />
 }

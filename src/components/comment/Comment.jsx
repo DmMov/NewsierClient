@@ -10,7 +10,7 @@ import {
 // * Sass
 import './Comment.scss';
 
-export const Comment = ({ id, value, comments, authenticated, replyToComment, ...props }) =>
+export const Comment = ({ id, value, comments, authenticated, replyToComment, canDelete, onDelete, fetchComments, ...props }) =>
   <div className="comment">
     <PublisherBox {...props} />
     <span className="comment__value">{value}</span>
@@ -19,7 +19,8 @@ export const Comment = ({ id, value, comments, authenticated, replyToComment, ..
       <h5 className="innerComments__title">відповіді</h5>
       {
         !!comments && comments.length != 0 &&
-          comments.map(comment => <CommentModule key={comment.id} comment={comment} />)
+          comments.map(comment => <CommentModule key={comment.id} comment={comment} fetchComments={fetchComments} />)
       }
     </div>
+    {canDelete && <button className="comment__deleteBtn" onClick={onDelete}>+</button>}
   </div>

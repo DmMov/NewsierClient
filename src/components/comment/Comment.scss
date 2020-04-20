@@ -6,6 +6,7 @@
   padding: 1rem;
   border: 1px solid $light;
   border-left: 3px solid $primary;
+  position: relative;
 
   &__value {
     font-weight: 500;
@@ -40,6 +41,22 @@
       text-transform: capitalize;
       color: $gray;
       margin-bottom: -.5rem;
+    }
+  }
+
+  &__deleteBtn {
+    padding: .25rem;
+    font-weight: 700;
+    color: $gray;
+    position: absolute;
+    top: .75rem;
+    right: .75rem;
+    transform: rotate(45deg);
+    transition: $transition;
+
+    &:hover {
+      cursor: pointer;
+      color: $red;
     }
   }
 }

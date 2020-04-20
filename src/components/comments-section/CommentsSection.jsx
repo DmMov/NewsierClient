@@ -9,9 +9,9 @@ import {
 // * Sass
 import './CommentsSection.scss';
 
-export const CommentsSection = ({ comments, refreshComments, authenticated }) =>
+export const CommentsSection = ({ refreshComments, authenticated, ...props }) =>
   <div className="commentsSection">
     <h3 className="commentsSection__title">коментарі</h3>
     {authenticated && <CommentAddingModule refreshComments={refreshComments} />}
-    <CommentList comments={comments} />
+    <CommentList {...props}  />
   </div>

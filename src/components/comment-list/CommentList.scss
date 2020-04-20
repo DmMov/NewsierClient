@@ -1,4 +1,16 @@
+@import "assets/scss/vars";
+
 .commentList {
   display: grid;
   grid-gap: 1rem;
+
+  &__noComments {
+    color: $gray;
+    font-size: .9rem;
+    font-weight: 600;
+
+    &::first-letter {
+      text-transform: capitalize;
+    }
+  }
 }
