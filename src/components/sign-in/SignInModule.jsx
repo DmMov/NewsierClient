@@ -72,7 +72,7 @@ export const SignInModule = () => {
         const token = get('token');
 
         if(!!token)
-          dispatch(getPublisher());
+          dispatch(await getPublisher());
       }
     }
   };
