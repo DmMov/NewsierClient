@@ -18,13 +18,16 @@ import {
 import { selectReplyAim } from 'utils/selectors';
 
 // * Actions
-import { setReplyAim } from 'store/actions';
+import {
+  setReplyAim,
+  getComments
+} from 'store/actions';
 
 const initialState = {
   value: ''
 }
 
-export const CommentAddingModule = ({ refreshComments }) => {
+export const CommentAddingModule = () => {
   const { data, errors, change, validate, reset } = useFormValidation(initialState, initialState);
   const { publicationId } = useParams();
   const dispatch = useDispatch();
@@ -65,7 +68,7 @@ export const CommentAddingModule = ({ refreshComments }) => {
       if (response.status === 200) {
         reset();
         cancel();
-        refreshComments();
+        dispatch(getComments(publicationId));
       }
     }
   };

@@ -11,11 +11,11 @@ import {
   selectAuthStatus
 } from 'utils/selectors';
 
-// * Helpers
-import { getRequest } from 'utils/helpers';
-
 // * Actions
-import { setComments } from 'store/actions';
+import {
+  getComments,
+  setComments
+} from 'store/actions';
 
 export const CommentsSectionModule = () => {
   const dispatch = useDispatch();
@@ -24,23 +24,14 @@ export const CommentsSectionModule = () => {
   const { publicationId } = useParams();
 
   useEffect(() => {
-    fetchComments();
+    dispatch(getComments(publicationId));
     return () => {
       dispatch(setComments(null));
     }
   }, []);
 
-  const fetchComments = async () => {
-    const response = await getRequest(`/comments/by-publication/${publicationId}`);
-
-    if (response.status == 200)
-      dispatch(setComments(response.data));
-  }
-
   return <CommentsSection
     comments={comments}
-    refreshComments={fetchComments}
     authenticated={authenticated}
-    fetchComments={fetchComments}
   />
 }

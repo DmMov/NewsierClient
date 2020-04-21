@@ -1,17 +1,15 @@
 import React from 'react';
 import { useDispatch, useSelector } from 'react-redux';
+import { useParams } from 'react-router-dom';
 
 // * Components
 import { Comment } from './Comment';
 
 // * Actions
-import { setReplyAim } from 'store/actions';
-
-// * Helpers
 import {
-  getRequest,
-  deleteRequest
-} from 'utils/helpers';
+  replyToComment,
+  deleteComment
+} from 'store/actions';
 
 // * Selectors
 import {
@@ -19,31 +17,21 @@ import {
   selectPublisher
 } from 'utils/selectors';
 
-export const CommentModule = ({ comment, fetchComments }) => {
+export const CommentModule = ({ comment }) => {
   const dispatch = useDispatch();
   const authenticated = useSelector(selectAuthStatus);
   const publisher = useSelector(selectPublisher);
+  const { publicationId } = useParams();
 
-  const replyToComment = async () => {
-    const response = await getRequest(`/comments/${comment.id}`);
+  const onReply = () => dispatch(replyToComment(comment.id));
 
-    if (response.status == 200)
-      dispatch(setReplyAim(response.data));
-  }
-
-  const onDelete = async () => {
-    const response = await deleteRequest(`/comments/${comment.id}`);
-
-    if (response.status == 204)
-      await fetchComments();
-  }
+  const onDelete = () => dispatch(deleteComment(comment.id, publicationId));
 
   return <Comment
     authenticated={authenticated}
-    replyToComment={replyToComment}
+    onReply={onReply}
     canDelete={!!publisher && publisher.role == 'admin' || !!publisher && publisher.id == comment.publisherId}
     onDelete={onDelete}
-    fetchComments={fetchComments}
     {...comment}
   />
 }
