@@ -18,7 +18,7 @@ export const Publication = ({ id, image, createdAt, ...props }) =>
   <div className="publication">
     <ResponsiveImage
       src={`${assets}/images/${image}`}
-      classes={['publication__imageContainer']}
+      classes={['publication__imageContainer', 'withOverlay']}
     />
     <PublicationDetails id={id} {...props} />
     <Link

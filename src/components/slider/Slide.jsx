@@ -18,7 +18,7 @@ export const Slide = ({ slide, index }) =>
   <div className="slide">
     <ResponsiveImage
       src={`${assets}/images/${slide.image}`}
-      classes={['slide__imageContainer']}
+      classes={['slide__imageContainer', 'withOverlay']}
     />
     <IndexBox index={index} />
     <PublicationDetails {...slide} />

@@ -11,7 +11,7 @@ export const Banner = ({ image, title }) =>
   <div className="banner">
     <ResponsiveImage
       src={image}
-      classes={['banner__imageContainer']}
+      classes={['banner__imageContainer', 'withOverlay']}
     />
     <h2 className="banner__title">{title}</h2>
   </div>

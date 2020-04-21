@@ -25,7 +25,7 @@ export const DetailedPublication = ({ title, categoryId, category, image, value,
     <PublisherBox {...props} />
     <ResponsiveImage
       src={`${assets}/images/${image}`}
-      classes={['detailedPublication__imageContainer']}
+      classes={['detailedPublication__imageContainer', 'withOverlay']}
     />
     <p className="detailedPublication__value">
       {value}

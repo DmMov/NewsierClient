@@ -5,7 +5,7 @@
   grid-template-rows: auto auto auto 1fr;
   box-shadow: 0 0 6px 1px rgba($black, .075);
 
-  &__imageContainer.imageContainer {
+  &__imageContainer.imageContainer.withOverlay {
     height: 10rem;
 
     &::before {
