@@ -1,4 +1,5 @@
 import React from 'react';
+import { string, func } from 'prop-types';
 
 // * Components
 import { ResponsiveImage } from 'components';
@@ -23,3 +24,10 @@ export const ReplyAim = ({ publisherImage, publisher, value, cancel }) =>
     </span>
     <button className="replyAim__cancelBtn" onClick={cancel}>+</button>
   </div>
+
+ReplyAim.propTypes = {
+  publisherImage: string.isRequired,
+  publisher: string.isRequired,
+  value: string.isRequired,
+  cancel: func.isRequired
+};

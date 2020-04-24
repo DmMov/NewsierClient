@@ -1,4 +1,5 @@
 import React from 'react';
+import { string, arrayOf, bool, func } from 'prop-types';
 import classnames from 'classnames';
 
 // * Components
@@ -6,6 +7,9 @@ import {
   PublisherBox,
   CommentModule
 } from 'components';
+
+// * Constants
+import { comment } from 'assets/constants';
 
 // * Sass
 import './Comment.scss';
@@ -24,3 +28,13 @@ export const Comment = ({ id, value, comments, authenticated, onReply, canDelete
     </div>
     {canDelete && <button className="comment__deleteBtn" type="button" onClick={onDelete}>+</button>}
   </div>
+
+Comment.propTypes = {
+  id: string.isRequired,
+  value: string.isRequired,
+  comments: arrayOf(comment),
+  authenticated: bool.isRequired,
+  onReply: func.isRequired,
+  canDelete: bool.isRequired,
+  onDelete: func.isRequired
+};

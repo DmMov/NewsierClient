@@ -1,10 +1,14 @@
 import React from 'react';
+import { bool, arrayOf } from 'prop-types';
 
 // * Components
 import {
   CommentAddingModule,
   CommentList
 } from 'components';
+
+// * Constants
+import { comment } from 'assets/constants';
 
 // * Sass
 import './CommentsSection.scss';
@@ -15,3 +19,8 @@ export const CommentsSection = ({ authenticated, comments }) =>
     {authenticated && <CommentAddingModule />}
     <CommentList comments={comments}  />
   </div>
+
+CommentsSection.propTypes = {
+  authenticated: bool.isRequired,
+  comments: arrayOf(comment)
+};

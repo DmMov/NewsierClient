@@ -1,4 +1,5 @@
 import React from 'react';
+import { string } from 'prop-types';
 import { ChevronRight } from '@material-ui/icons';
 
 // * Components
@@ -9,7 +10,10 @@ import {
 } from 'components';
 
 // * Constants
-import { assets } from 'assets/constants';
+import {
+  assets,
+  publication
+} from 'assets/constants';
 
 // * Sass
 import './Publication.scss';
@@ -30,3 +34,9 @@ export const Publication = ({ id, image, createdAt, ...props }) =>
     </Link>
     <span className="publication__createdAt">{createdAt}</span>
   </div>
+
+Publication.propTypes = {
+  id: string.isRequired,
+  image: string.isRequired,
+  createdAt: string.isRequired
+};

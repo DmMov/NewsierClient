@@ -1,11 +1,14 @@
 import React from 'react';
-import { arrayOf, shape, string, func } from 'prop-types';
+import { arrayOf, func } from 'prop-types';
 
 // * Components
 import {
   Form,
   Field
 } from 'components';
+
+// * Constants
+import { field } from 'assets/constants';
 
 export const SingInForm = ({ fields, submit }) =>
   <Form
@@ -17,17 +20,6 @@ export const SingInForm = ({ fields, submit }) =>
   </Form>
 
 SingInForm.propTypes = {
-  fields: arrayOf(
-    shape({
-      control: string,
-      label: string.isRequired,
-      placeholder: string.isRequired,
-      name: string.isRequired,
-      value: string.isRequired,
-      type: string,
-      change: func.isRequired,
-      error: string
-    })
-  ),
-  submit: func
-}
+  fields: arrayOf(field),
+  submit: func.isRequired
+};

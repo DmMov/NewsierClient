@@ -5,6 +5,9 @@ import { useParams } from 'react-router-dom';
 // * Components
 import { Comment } from './Comment';
 
+// * Constants
+import { comment } from 'assets/constants';
+
 // * Actions
 import {
   replyToComment,
@@ -35,3 +38,7 @@ export const CommentModule = ({ comment }) => {
     {...comment}
   />
 }
+
+CommentModule.propTypes = {
+  comment: comment
+};

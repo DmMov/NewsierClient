@@ -13,4 +13,4 @@ export const ResponsiveImage = ({ src, classes }) =>
 ResponsiveImage.propTypes = {
   src: string.isRequired,
   classes: arrayOf(string)
-}
+};

@@ -1,4 +1,5 @@
 import React from 'react';
+import { string } from 'prop-types';
 
 // * Components
 import {
@@ -34,3 +35,10 @@ export const PublisherBox = ({ publisherId, publisherImage, publisher, createdAt
       {createdAt}
     </span>
   </div>
+
+PublisherBox.propTypes = {
+  publisherId: string.isRequired,
+  publisherImage: string.isRequired,
+  publisher: string.isRequired,
+  createdAt: string.isRequired
+};

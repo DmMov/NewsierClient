@@ -19,4 +19,4 @@ Link.propTypes = {
   exact: bool,
   classes: arrayOf(string),
   children: any
-}
+};

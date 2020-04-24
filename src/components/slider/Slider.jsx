@@ -19,7 +19,7 @@ export const Slider = ({ slide, index, dots, jumpTo }) =>
         timeout={1000}
         classNames="fade"
       >
-        <Slide slide={slide} index={index} />
+        <Slide slide={slide} index={index + 1} />
       </CSSTransition>
     </TransitionGroup>
     <Dots
@@ -30,8 +30,8 @@ export const Slider = ({ slide, index, dots, jumpTo }) =>
   </div>
 
 Slider.propTypes = {
-  slide: object,
-  index: number,
-  dots: array,
-  jumpTo: func
-}
+  slide: object.isRequired,
+  index: number.isRequired,
+  dots: array.isRequired,
+  jumpTo: func.isRequired
+};

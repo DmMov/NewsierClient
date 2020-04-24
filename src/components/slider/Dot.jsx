@@ -14,4 +14,4 @@ export const Dot = ({ jumpTo, isActive }) =>
 Dot.propTypes = {
   jumpTo: func.isRequired,
   isActive: bool.isRequired
-}
+};

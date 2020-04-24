@@ -27,4 +27,4 @@ export const Slide = ({ slide, index }) =>
 Slide.propTypes = {
   slide: object.isRequired,
   index: number.isRequired
-}
+};

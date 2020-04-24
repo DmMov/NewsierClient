@@ -1,7 +1,11 @@
 import React from 'react';
+import { arrayOf } from 'prop-types';
 
 // * Components
 import { Link } from 'components';
+
+// * Constants
+import { tag } from 'assets/constants';
 
 // * Sass
 import './TagsBox.scss';
@@ -20,3 +24,7 @@ export const TagsBox = ({ tags }) =>
       )
     }
   </div>
+
+TagsBox.propTypes = {
+  tags: arrayOf(tag)
+};

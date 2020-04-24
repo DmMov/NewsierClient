@@ -1,4 +1,5 @@
 import React from 'react';
+import { string, number, arrayOf } from 'prop-types';
 import { FiberManualRecordRounded, Visibility } from '@material-ui/icons';
 
 // * Components
@@ -6,6 +7,9 @@ import {
   Link,
   TagsBox
 } from 'components';
+
+// * Constants
+import { tag } from 'assets/constants';
 
 // * Sass
 import './PublicationDetails.scss';
@@ -31,5 +35,16 @@ export const PublicationDetails = ({ id, category, categoryId, title, publisher,
         <span className="views__count">{views}</span>
       </p>
     </div>
-    <TagsBox tags={tags} />
+    {!!tags || tags.length != 0 && <TagsBox tags={tags} />}
   </div>
+
+PublicationDetails.propTypes = {
+  id: string.isRequired,
+  category: string.isRequired,
+  categoryId: string.isRequired,
+  title: string.isRequired,
+  publisher: string.isRequired,
+  publisherId: string.isRequired,
+  views: number.isRequired,
+  tags: arrayOf(tag)
+}

@@ -12,4 +12,4 @@ RedirectChecker.propTypes = {
     from: string.isRequired,
     to: string.isRequired
   }).isRequired
-}
+};

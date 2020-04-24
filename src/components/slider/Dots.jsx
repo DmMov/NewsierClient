@@ -16,4 +16,4 @@ Dots.propTypes = {
   dots: array.isRequired,
   jumpTo: func.isRequired,
   activeIndex: number.isRequired
-}
+};

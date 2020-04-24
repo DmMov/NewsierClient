@@ -1,4 +1,5 @@
 import React from 'react';
+import { string, number, arrayOf } from 'prop-types';
 import { Visibility } from '@material-ui/icons';
 
 // * Components
@@ -10,7 +11,10 @@ import {
 } from 'components';
 
 // * Constants
-import { assets } from 'assets/constants';
+import {
+  assets,
+  tag
+} from 'assets/constants';
 
 // * Sass
 import './DetailedPublication.scss';
@@ -36,3 +40,13 @@ export const DetailedPublication = ({ title, categoryId, category, image, value,
     </p>
     {!!tags && <TagsBox tags={tags} />}
   </div>
+
+DetailedPublication.propTypes = {
+  title: string.isRequired,
+  categoryId: string.isRequired,
+  category: string.isRequired,
+  image: string.isRequired,
+  value: string.isRequired,
+  views: number.isRequired,
+  tags: arrayOf(tag)
+}

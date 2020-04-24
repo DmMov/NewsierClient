@@ -1,4 +1,5 @@
 import React from 'react';
+import { number } from 'prop-types';
 
 // * Sass
 import './IndexBox.scss';
@@ -6,7 +7,7 @@ import './IndexBox.scss';
 export const IndexBox = ({ index }) =>
   <div className="index-box">
     <div className="index-box__square">
-      { index + 1 }
+      {index}
     </div>
     <span className="index-box__dash">
       —
@@ -15,3 +16,7 @@ export const IndexBox = ({ index }) =>
       популярні
     </span>
   </div>
+
+IndexBox.propTypes = {
+  index: number.isRequired
+};
