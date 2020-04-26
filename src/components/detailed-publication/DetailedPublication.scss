@@ -43,3 +43,12 @@
     text-indent: 2rem;
   }
 }
+
+@media (max-width: 1000px) {
+  .detailedPublication {
+    &__title {
+      font-size: 1.5rem;
+      line-height: 2rem;
+    }
+  }
+}
