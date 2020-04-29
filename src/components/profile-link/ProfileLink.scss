@@ -1,12 +1,11 @@
 @import "assets/scss/vars";
 
-.authenticatedPanel {
+.profileLink {
   display: grid;
-  grid-template-columns: repeat(2, auto);
+  grid-template-columns: auto auto;
   grid-gap: 1rem;
   align-items: center;
   padding: .5rem 1rem;
-  position: relative;
   transition: $transition;
 
   &__publisher {

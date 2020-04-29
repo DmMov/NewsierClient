@@ -1,5 +1,6 @@
 export { Header } from './header/Header';
-export { AuthStatusChecker } from './auth-status/AuthStatusChecker';
+export { AuthNav } from './auth-nav/AuthNav';
+export { ProfileLink } from './profile-link/ProfileLink';
 export { Form } from './form/Form';
 export { Field } from './field/Field';
 export { SignInModule } from './sign-in/SignInModule';

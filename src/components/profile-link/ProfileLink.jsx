@@ -11,21 +11,21 @@ import {
 import { assets } from 'assets/constants';
 
 // * Sass
-import './AuthenticatedPanel.scss';
+import './ProfileLink.scss';
 
-export const AuthenticatedPanel = ({ name, surname, image }) =>
+export const ProfileLink = ({ name, surname, image }) =>
   <Link
     to="/profile"
-    classes={['authenticatedPanel']}
+    classes={['profileLink']}
   >
-    <span className="authenticatedPanel__publisher">{`${name} ${surname}`}</span>
+    <span className="profileLink__publisher">{`${name} ${surname}`}</span>
     <ResponsiveImage
       src={`${assets}/images/${image}`}
-      classes={['authenticatedPanel__imageContainer']}
+      classes={['profileLink__imageContainer']}
     />
   </Link>
 
-AuthenticatedPanel.propTypes = {
+ProfileLink.propTypes = {
   name: string.isRequired,
   surname: string.isRequired,
   image: string.isRequired,

@@ -23,7 +23,7 @@ export const App = () => {
 
   return <Router>
     <div id="app">
-      <Header />
+      <Header publisher={publisher} />
       <MainRoute />
       <SignInRoute publisher={publisher} />
       <PublicationRoute />

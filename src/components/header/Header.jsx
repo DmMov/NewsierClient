@@ -2,14 +2,15 @@ import React from 'react';
 
 // * Components
 import {
-  AuthStatusChecker,
-  Link
+  Link,
+  AuthNav,
+  ProfileLink
 } from 'components';
 
 // * Sass
 import './Header.scss';
 
-export const Header = () =>
+export const Header = ({ publisher }) =>
   <header id="newsierHeader">
     <Link
       exact
@@ -20,5 +21,5 @@ export const Header = () =>
       </h2>
     </Link>
     <div></div>
-    <AuthStatusChecker />
+    {!publisher ? <AuthNav /> : <ProfileLink {...publisher}/>}
   </header>
