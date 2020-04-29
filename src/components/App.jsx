@@ -6,6 +6,7 @@ import { BrowserRouter as Router } from 'react-router-dom';
 import {
   MainRoute,
   SignInRoute,
+  ProfileRoute,
   PublicationRoute
 } from 'routes';
 
@@ -26,6 +27,7 @@ export const App = () => {
       <Header publisher={publisher} />
       <MainRoute />
       <SignInRoute publisher={publisher} />
+      <ProfileRoute publisher={publisher} />
       <PublicationRoute />
     </div>
   </Router>
