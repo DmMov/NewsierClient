@@ -20,3 +20,4 @@ export { CommentAddingModule } from './comment-adding/CommentAddingModule';
 export { ReplyAim } from './reply-aim/ReplyAim';
 export { CommentList } from './comment-list/CommentList';
 export { CommentModule } from './comment/CommentModule';
+export { Loader } from './loader/Loader';

@@ -12,7 +12,7 @@ import {
 // * Sass
 import './SignInPage.scss';
 
-export const SignInPage = () =>
+const SignInPage = () =>
   <div id="sign-in-page" className="page">
     <Banner
       image={bannerImage}
@@ -20,3 +20,5 @@ export const SignInPage = () =>
     />
     <SignInModule />
   </div>
+
+export default SignInPage;

@@ -1,11 +1,14 @@
-import React from 'react';
+import React, { Suspense, lazy } from 'react';
 import { Route } from 'react-router-dom';
 
 // * Pages
-import { SignInPage } from 'pages';
+const SignInPage = lazy(() => import('pages/sign-in/SignInPage'));
 
 // * Components
-import { RedirectChecker } from 'components';
+import {
+  RedirectChecker,
+  Loader
+} from 'components';
 
 // * Constants
 import { signInRedirectParams } from 'assets/constants';
@@ -17,7 +20,12 @@ export const SignInRoute = ({ publisher }) =>
       () =>
         <RedirectChecker
           condition={publisher == null}
-          component={SignInPage}
+          component={
+            () =>
+              <Suspense fallback={<Loader />}>
+                <SignInPage />
+              </Suspense>
+          }
           redirectParams={signInRedirectParams}
         />
     }

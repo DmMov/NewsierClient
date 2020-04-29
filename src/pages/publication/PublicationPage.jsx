@@ -9,8 +9,10 @@ import {
 // * Sass
 import './PublicationPage.scss';
 
-export const PublicationPage = () =>
+const PublicationPage = () =>
   <div className="publicationPage page">
     <DetailedPublicationModule />
     <CommentsSectionModule />
   </div>
+
+export default PublicationPage;

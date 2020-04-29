@@ -6,8 +6,10 @@ import {
   PublicationsSectionModule
 } from 'components';
 
-export const MainPage = () =>
+const MainPage = () =>
   <div id="mainPage" className="page">
     <SliderModule />
     <PublicationsSectionModule />
   </div>
+
+export default MainPage;
