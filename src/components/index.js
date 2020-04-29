@@ -13,7 +13,7 @@ export { PublicationCard } from './publication-card/PublicationCard';
 export { PublicationCardList } from './publication-card-list/PublicationCardList';
 export { PublicationsSectionModule } from './publications-section/PublicationsSectionModule';
 export { Banner } from './banner/Banner';
-export { DetailedPublicationModule } from './detailed-publication/DetailedPublicationModule';
+export { PublicationModule } from './publication/PublicationModule';
 export { PublisherBox } from './publisher-box/PublisherBox';
 export { TagsBox } from './tags-box/TagsBox';
 export { CommentsSectionModule } from './comments-section/CommentsSectionModule';

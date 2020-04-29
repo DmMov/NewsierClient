@@ -4,8 +4,8 @@
   display: grid;
   grid-gap: 1rem;
   padding: 1rem;
-  border: 1px solid $light;
   border-left: 3px solid $primary;
+  background-color: $light;
   position: relative;
 
   &__value {
@@ -20,11 +20,12 @@
   &__replyBtn {
     justify-self: start;
     text-transform: capitalize;
-    color: darken($light, 10%);
-    cursor: pointer;
+    color: $gray;
+    font-size: .85rem;
     transition: $transition;
 
     &:hover {
+      cursor: pointer;
       color: $primary;
     }
   }

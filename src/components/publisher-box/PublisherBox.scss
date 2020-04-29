@@ -13,8 +13,8 @@
   }
 
   &__imageContainer {
-    width: 3rem;
-    height: 3rem;
+    width: 2.5rem;
+    height: 2.5rem;
 
     .image {
       border-radius: 50%;
@@ -22,20 +22,21 @@
   }
 
   &__publisherName {
-    font-size: .9rem;
+    font-size: .85rem;
+    font-weight: 500;
     color: $primary;
     text-transform: capitalize;
     transition: $transition;
 
     &:hover {
       text-decoration: underline;
+      color: darken($primary, 5%);
     }
   }
 
   &__createdAt {
-    font-size: 0.8rem;
-    font-weight: 500;
-    color: darken($light, 10%);
+    font-size: .8rem;
+    color: $gray;
     text-transform: capitalize;
   }
 }

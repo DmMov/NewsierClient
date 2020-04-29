@@ -23,7 +23,7 @@
 
   &__control {
     padding: .75rem 1rem;
-    border: 1px solid $light;
+    border: 1px solid darken($light, 10%);
   }
 
   &__error {

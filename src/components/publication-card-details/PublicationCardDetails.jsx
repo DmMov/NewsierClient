@@ -1,6 +1,6 @@
 import React from 'react';
 import { string, number, arrayOf } from 'prop-types';
-import { FiberManualRecordRounded, Visibility } from '@material-ui/icons';
+import { FiberManualRecord, Visibility } from '@material-ui/icons';
 
 // * Components
 import {
@@ -35,7 +35,7 @@ export const PublicationCardDetails = ({ id, category, categoryId, title, publis
           {publisher}
         </Link>
       </p>
-      <FiberManualRecordRounded className="dotIcon" />
+      <FiberManualRecord className="dotIcon" />
       <p className="views">
         <Visibility className="statIcon" />
         <span className="views__count">{views}</span>

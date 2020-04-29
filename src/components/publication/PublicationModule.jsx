@@ -2,12 +2,12 @@ import React, { useEffect, useState } from 'react';
 import { useParams } from 'react-router-dom';
 
 // * Components
-import { DetailedPublication } from './DetailedPublication';
+import { Publication } from './Publication';
 
 // * Helpers
 import { getRequest } from 'utils/helpers';
 
-export const DetailedPublicationModule = () => {
+export const PublicationModule = () => {
   const [publication, setPublication] = useState(null);
   const { publicationId } = useParams();
 
@@ -22,5 +22,5 @@ export const DetailedPublicationModule = () => {
       setPublication(() => response.data);
   }
 
-  return !!publication ? <DetailedPublication {...publication} /> : <div className="publicationPlaceholder"></div>
+  return !!publication && <Publication {...publication} />;
 }

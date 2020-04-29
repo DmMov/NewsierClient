@@ -2,7 +2,7 @@ import React from 'react';
 
 // * Components
 import {
-  DetailedPublicationModule,
+  PublicationModule,
   CommentsSectionModule
 } from 'components';
 
@@ -11,7 +11,7 @@ import './PublicationPage.scss';
 
 const PublicationPage = () =>
   <div className="publicationPage page">
-    <DetailedPublicationModule />
+    <PublicationModule />
     <CommentsSectionModule />
   </div>
 
