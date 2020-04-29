@@ -10,7 +10,7 @@ import { tag } from 'assets/constants';
 // * Sass
 import './TagsBox.scss';
 
-export const TagsBox = ({ tags }) =>
+export const TagsBox = ({ tags }) => !!tags && tags.length != 0 &&
   <div className="tagsBox">
     {
       tags.map(

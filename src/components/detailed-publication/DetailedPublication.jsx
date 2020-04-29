@@ -38,7 +38,7 @@ export const DetailedPublication = ({ title, categoryId, category, image, value,
       <Visibility className="statIcon" />
       <span className="detailedPublication__views__count">{views}</span>
     </p>
-    {!!tags && <TagsBox tags={tags} />}
+    <TagsBox tags={tags} />
   </div>
 
 DetailedPublication.propTypes = {

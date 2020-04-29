@@ -1,12 +1,13 @@
 @import "assets/scss/vars";
 
-.publicationDetails {
+.publicationCardDetails {
   display: grid;
   grid-gap: .5rem;
   padding: 1rem;
 
   &__category {
     font-size: .85rem;
+    font-weight: 500;
     color: $primary;
 
     &:hover {
@@ -26,19 +27,17 @@
     display: grid;
     grid-template-columns: auto auto 1fr;
     align-items: center;
+    justify-self: start;
     grid-gap: .5rem;
+    color: $gray;
+    font-size: .8rem;
 
     .publisher {
-      color: darken($light, 10%);
-      font-size: .8rem;
-
-      &__prefix {
-        text-transform: capitalize;
-      }
+      text-transform: capitalize;
 
       &__name {
-        text-transform: capitalize;
         color: $primary;
+        font-weight: 500;
 
         &:hover {
           text-decoration: underline;
@@ -47,7 +46,6 @@
     }
 
     .dotIcon {
-      color: darken($light, 10%);
       font-size: .5rem;
     }
 
@@ -55,8 +53,6 @@
       display: grid;
       grid-template-columns: auto 1fr;
       grid-gap: 0.25rem;
-      color: darken($light, 10%);
-      font-size: 0.8rem;
       align-items: center;
 
       .statIcon {

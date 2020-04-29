@@ -5,7 +5,7 @@ import { object, number } from 'prop-types';
 import { IndexBox } from './IndexBox';
 import {
   ResponsiveImage,
-  PublicationDetails
+  PublicationCardDetails
 } from 'components';
 
 // * Constants
@@ -21,7 +21,7 @@ export const Slide = ({ slide, index }) =>
       classes={['slide__imageContainer', 'withOverlay']}
     />
     <IndexBox index={index} />
-    <PublicationDetails {...slide} />
+    <PublicationCardDetails {...slide} />
   </div>
 
 Slide.propTypes = {

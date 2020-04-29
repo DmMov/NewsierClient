@@ -20,7 +20,7 @@
     z-index: -1;
   }
 
-  .publicationDetails {
+  .publicationCardDetails {
     align-self: end;
     padding: 0 0 5rem;
 
@@ -34,10 +34,8 @@
       }
     }
 
-    .tagsBox {
-      &__tag {
-        color: #ffffff;
-      }
+    &__relatedInfo {
+      color: lighten($gray, 25%);
     }
   }
 }

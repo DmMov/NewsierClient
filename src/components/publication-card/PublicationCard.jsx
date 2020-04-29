@@ -5,7 +5,7 @@ import { ChevronRight } from '@material-ui/icons';
 // * Components
 import {
   ResponsiveImage,
-  PublicationDetails,
+  PublicationCardDetails,
   Link
 } from 'components';
 
@@ -16,27 +16,26 @@ import {
 } from 'assets/constants';
 
 // * Sass
-import './Publication.scss';
+import './PublicationCard.scss';
 
-export const Publication = ({ id, image, createdAt, ...props }) =>
-  <div className="publication">
+export const PublicationCard = ({ image, createdAt, ...props }) =>
+  <div className="publicationCard">
     <ResponsiveImage
       src={`${assets}/images/${image}`}
-      classes={['publication__imageContainer', 'withOverlay']}
+      classes={['publicationCard__imageContainer', 'withOverlay']}
     />
-    <PublicationDetails id={id} {...props} />
+    <PublicationCardDetails {...props} />
     <Link
-      to={`/publication/${id}`}
-      classes={['btn', 'primary', 'publication__readMore']}
+      to={`/publication/${props.id}`}
+      classes={['btn', 'primary', 'publicationCard__readMore']}
     >
       <span className="readMore__text">читати більше</span>
       <ChevronRight className="arrowIcon" />
     </Link>
-    <span className="publication__createdAt">{createdAt}</span>
+    <span className="publicationCard__createdAt">{createdAt}</span>
   </div>
 
-Publication.propTypes = {
-  id: string.isRequired,
+PublicationCard.propTypes = {
   image: string.isRequired,
   createdAt: string.isRequired
 };

@@ -1,21 +1,15 @@
 @import "assets/scss/vars";
 
-.publication {
+.publicationCard {
   display: grid;
-  grid-template-rows: auto auto auto 1fr;
-  box-shadow: 0 0 6px 1px rgba($black, .075);
+  grid-template-rows: repeat(3, auto) 1fr;
+  background-color: $light;
 
   &__imageContainer.imageContainer.withOverlay {
     height: 10rem;
 
     &::before {
-      transition: $transition;
-    }
-
-    &:hover {
-      &::before {
-        background: rgba($black, .5);
-      }
+      background: rgba($black, .5);
     }
   }
 
@@ -24,12 +18,12 @@
     grid-template-columns: auto 1fr;
     grid-gap: .25rem;
     align-items: center;
-    padding: .5rem 0;
     padding: .5rem 1rem;
     justify-self: start;
+    font-size: .8rem;
 
     .arrowIcon {
-      font-size: .8rem;
+      font-size: .9rem;
     }
   }
 
@@ -37,7 +31,7 @@
     align-self: end;
     justify-self: end;
     font-size: .75rem;
-    color: darken($light, 10%);
+    color: $gray;
     padding: 0 1rem 1rem;
   }
 }

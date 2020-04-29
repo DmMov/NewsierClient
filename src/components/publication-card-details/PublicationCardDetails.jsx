@@ -12,21 +12,27 @@ import {
 import { tag } from 'assets/constants';
 
 // * Sass
-import './PublicationDetails.scss';
+import './PublicationCardDetails.scss';
 
-export const PublicationDetails = ({ id, category, categoryId, title, publisher, publisherId, views, tags }) =>
-  <div className="publicationDetails">
-    <Link to={`/publications/by-category/${categoryId}`}>
-      <span className="publicationDetails__category">{category}</span>
+export const PublicationCardDetails = ({ id, category, categoryId, title, publisher, publisherId, views, tags }) =>
+  <div className="publicationCardDetails">
+    <Link
+      to={`/publications/by-category/${categoryId}`}
+      classes={['publicationCardDetails__category']}
+    >
+      {category}
     </Link>
     <Link to={`/publication/${id}`}>
-      <h4 className="publicationDetails__title">{title}</h4>
+      <h4 className="publicationCardDetails__title">{title}</h4>
     </Link>
-    <div className="publicationDetails__relatedInfo">
+    <div className="publicationCardDetails__relatedInfo">
       <p className="publisher">
         <span className="publisher__prefix">автор, </span>
-        <Link to={`/publications/by-publisher/${publisherId}`}>
-          <span className="publisher__name">{publisher}</span>
+        <Link
+          to={`/publications/by-publisher/${publisherId}`}
+          classes={['publisher__name']}
+        >
+          {publisher}
         </Link>
       </p>
       <FiberManualRecordRounded className="dotIcon" />
@@ -35,10 +41,10 @@ export const PublicationDetails = ({ id, category, categoryId, title, publisher,
         <span className="views__count">{views}</span>
       </p>
     </div>
-    {!!tags || tags.length != 0 && <TagsBox tags={tags} />}
+    <TagsBox tags={tags} />
   </div>
 
-PublicationDetails.propTypes = {
+PublicationCardDetails.propTypes = {
   id: string.isRequired,
   category: string.isRequired,
   categoryId: string.isRequired,
@@ -47,4 +53,4 @@ PublicationDetails.propTypes = {
   publisherId: string.isRequired,
   views: number.isRequired,
   tags: arrayOf(tag)
-}
+};
