@@ -1,8 +1,11 @@
 import React from 'react';
-import { string, func } from 'prop-types';
+import { string } from 'prop-types';
 
 // * Components
-import { ResponsiveImage } from 'components';
+import {
+  Link,
+  ResponsiveImage
+} from 'components';
 
 // * Constants
 import { assets } from 'assets/constants';
@@ -10,16 +13,20 @@ import { assets } from 'assets/constants';
 // * Sass
 import './AuthenticatedPanel.scss';
 
-export const AuthenticatedPanel = ({ image, signOut }) =>
-  <div className="authenticatedPanel">
+export const AuthenticatedPanel = ({ name, surname, image }) =>
+  <Link
+    to="/profile"
+    classes={['authenticatedPanel']}
+  >
+    <span className="authenticatedPanel__publisher">{`${name} ${surname}`}</span>
     <ResponsiveImage
       src={`${assets}/images/${image}`}
       classes={['authenticatedPanel__imageContainer']}
     />
-    <button className="btn authenticatedPanel__signOutBtn" onClick={signOut}>Вийти</button>
-  </div>
+  </Link>
 
 AuthenticatedPanel.propTypes = {
+  name: string.isRequired,
+  surname: string.isRequired,
   image: string.isRequired,
-  signOut: func.isRequired
-}
+};

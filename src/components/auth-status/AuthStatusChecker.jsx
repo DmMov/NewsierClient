@@ -16,7 +16,7 @@ export const AuthStatusChecker = () => {
   const publisher = useSelector(selectPublisher);
   const dispatch = useDispatch();
 
-  const signOut = () => {
+  const onSignOut = () => {
     remove('token');
     const token = get('token');
 
@@ -24,7 +24,7 @@ export const AuthStatusChecker = () => {
       dispatch(setPublisher(null));
   }
 
-  return publisher == null ?
+  return !publisher ?
     <AuthButtonSet /> :
-    <AuthenticatedPanel image={publisher.image} signOut={signOut} />
+    <AuthenticatedPanel {...publisher}/>
 }

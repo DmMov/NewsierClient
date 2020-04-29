@@ -5,20 +5,28 @@
   grid-template-columns: repeat(2, auto);
   grid-gap: 1rem;
   align-items: center;
+  padding: .5rem 1rem;
+  position: relative;
+  transition: $transition;
+
+  &__publisher {
+    text-transform: capitalize;
+    font-size: .85rem;
+    font-weight: 500;
+    color: $gray;
+  }
 
   &__imageContainer.imageContainer {
     width: 2rem;
     height: 2rem;
-    border-radius: 50px;
-    overflow: hidden;
+
+    .image {
+      border-radius: 50%;
+    }
   }
 
-  &__signOutBtn {
-    font-weight: 600;
-    color: darken($light, 10%);
-
-    &:hover {
-      color: $red;
-    }
+  &:hover {
+    cursor: pointer;
+    background-color: lighten($light, 5%);
   }
 }
