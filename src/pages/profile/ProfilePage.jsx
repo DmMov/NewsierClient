@@ -2,7 +2,8 @@ import React from 'react';
 
 // * Components
 import {
-  BackButton
+  BackButton,
+  SignOutButton
 } from 'components';
 
 // * Sass
@@ -10,7 +11,10 @@ import './ProfilePage.scss';
 
 const ProfilePage = () =>
   <div className="profilePage page">
-    <BackButton />
+    <div className="profilePage__btnSet">
+      <BackButton />
+      <SignOutButton />
+    </div>
   </div>
 
 export default ProfilePage;

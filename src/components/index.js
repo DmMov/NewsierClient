@@ -23,3 +23,4 @@ export { CommentList } from './comment-list/CommentList';
 export { CommentModule } from './comment/CommentModule';
 export { Loader } from './loader/Loader';
 export { BackButton } from './back-button/BackButton';
+export { SignOutButton } from './sign-out-button/SignOutButton';
