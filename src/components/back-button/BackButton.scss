@@ -1,0 +1,13 @@
+@import "assets/scss/vars";
+
+.backButton {
+  display: flex;
+  justify-self: start;
+  align-items: center;
+  color: $gray;
+
+  & &__icon {
+    font-size: .85rem;
+    margin-right: .5rem;
+  }
+}
