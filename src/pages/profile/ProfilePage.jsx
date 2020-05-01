@@ -4,7 +4,8 @@ import React from 'react';
 import {
   BackButton,
   SignOutButton,
-  Profile
+  Profile,
+  ProfileNav
 } from 'components';
 
 // * Sass
@@ -17,6 +18,7 @@ const ProfilePage = () =>
       <SignOutButton />
     </div>
     <Profile />
+    <ProfileNav />
   </div>
 
 export default ProfilePage;

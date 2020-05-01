@@ -1,0 +1,21 @@
+@import "assets/scss/vars";
+
+.profileNav {
+  display: flex;
+
+  &__link {
+    display: flex;
+    align-items: center;
+    padding: 0.75rem 1rem;
+    color: $gray;
+
+    &.active {
+      background-color: $light;
+    }
+
+    .icon {
+      font-size: 1.25rem;
+      margin-right: .25rem;
+    }
+  }
+}
