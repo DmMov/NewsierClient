@@ -8,6 +8,9 @@ import {
   ProfileNav
 } from 'components';
 
+// * Routes
+import { PublisherPublicationsRoute } from 'routes';
+
 // * Sass
 import './ProfilePage.scss';
 
@@ -19,6 +22,7 @@ const ProfilePage = () =>
     </div>
     <Profile />
     <ProfileNav />
+    <PublisherPublicationsRoute />
   </div>
 
 export default ProfilePage;

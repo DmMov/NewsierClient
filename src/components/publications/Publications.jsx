@@ -13,7 +13,7 @@ import {
 // * Selectors
 import { selectPublications } from 'utils/selectors';
 
-export const Publications = ({ url, mode }) => {
+export const Publications = ({ url, component }) => {
   const dispatch = useDispatch();
   const publications = useSelector(selectPublications);
 
@@ -28,7 +28,7 @@ export const Publications = ({ url, mode }) => {
     !!publications &&
       <PublicationList
         publications={publications}
-        mode={mode}
+        component={component}
       />
   );
 }

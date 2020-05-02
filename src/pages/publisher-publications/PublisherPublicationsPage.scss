@@ -1,0 +1,12 @@
+@import "assets/scss/vars";
+
+.publisherPublicationsPage {
+  margin-top: -1rem;
+  padding: 1rem;
+  background-color: $light;
+
+  .publicationList {
+    padding: 0;
+    grid-template-columns: 1fr;
+  }
+}
