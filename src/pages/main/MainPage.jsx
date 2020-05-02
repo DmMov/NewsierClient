@@ -3,13 +3,14 @@ import React from 'react';
 // * Components
 import {
   SliderModule,
-  PublicationsSectionModule
+  Publications
 } from 'components';
 
 const MainPage = () =>
   <div id="mainPage" className="page">
     <SliderModule />
-    <PublicationsSectionModule />
+    <h2 className="sectionTitle">публікації</h2>
+    <Publications url="/publications" mode="cards" />
   </div>
 
 export default MainPage;

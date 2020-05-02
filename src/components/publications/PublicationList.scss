@@ -1,0 +1,15 @@
+.publicationList {
+  display: grid;
+  grid-gap: 1rem;
+  max-width: 80rem;
+  margin: 0 auto;
+  padding: 2rem;
+
+  &.cards {
+    grid-template-columns: repeat(auto-fill, minmax(16rem, 1fr));
+  }
+
+  &.list {
+    grid-template-columns: 1fr;
+  }
+}
