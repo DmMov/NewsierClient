@@ -7,14 +7,18 @@ import {
   PublicationCard
 } from 'components';
 
+import './MainPage.scss';
+
 const MainPage = () =>
-  <div id="mainPage" className="page">
+  <div className="mainPage page">
     <SliderModule />
-    <h2 className="sectionTitle">публікації</h2>
-    <Publications
-      url="/publications"
-      component={PublicationCard}
-    />
+    <div className="mainPage__publicationsSection">
+      <h2 className="sectionTitle">публікації</h2>
+      <Publications
+        url="/publications"
+        component={PublicationCard}
+      />
+    </div>
   </div>
 
 export default MainPage;

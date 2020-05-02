@@ -1,8 +1,5 @@
 .publicationList {
   display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(15rem, 1fr));
   grid-gap: 1rem;
-  max-width: 80rem;
-  margin: 0 auto;
-  padding: 2rem;
-  grid-template-columns: repeat(auto-fill, minmax(16rem, 1fr));
 }

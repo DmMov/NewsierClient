@@ -14,7 +14,7 @@ import { tag } from 'assets/constants';
 // * Sass
 import './PublicationCardDetails.scss';
 
-export const PublicationCardDetails = ({ id, category, categoryId, title, publisher, publisherId, views, tags }) =>
+export const PublicationCardDetails = ({ id, category, categoryId, title, publisher, publisherId, views, value, tags }) =>
   <div className="publicationCardDetails">
     <Link
       to={`/publications/by-category/${categoryId}`}
@@ -41,6 +41,7 @@ export const PublicationCardDetails = ({ id, category, categoryId, title, publis
         <span className="views__count">{views}</span>
       </p>
     </div>
+    <span className="publicationCardDetails__value">{value}</span>
     <TagsBox tags={tags} />
   </div>
 

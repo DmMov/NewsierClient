@@ -10,10 +10,7 @@ import {
 } from 'components';
 
 // * Constants
-import {
-  assets,
-  publication
-} from 'assets/constants';
+import { assets } from 'assets/constants';
 
 // * Sass
 import './PublicationCard.scss';

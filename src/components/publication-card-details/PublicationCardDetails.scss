@@ -23,6 +23,11 @@
     }
   }
 
+  &__value {
+    font-size: .8rem;
+    color: $gray;
+  }
+
   &__relatedInfo {
     display: grid;
     grid-template-columns: auto auto 1fr;

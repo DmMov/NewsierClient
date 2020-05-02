@@ -3,7 +3,7 @@ import React from 'react';
 // * Components
 import {
   Publications,
-  PublicationCard
+  PublicationItem
 } from 'components';
 
 // * Sass
@@ -12,8 +12,8 @@ import './PublisherPublicationsPage.scss';
 const PublisherPublicationsPage = () =>
   <div className="publisherPublicationsPage page">
     <Publications
-      url="/publications"
-      component={PublicationCard}
+      url="/publications/by-publisher"
+      component={PublicationItem}
     />
   </div>
 

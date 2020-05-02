@@ -34,6 +34,10 @@
       }
     }
 
+    &__value {
+      color: lighten($gray, 25%);
+    }
+
     &__relatedInfo {
       color: lighten($gray, 25%);
     }
