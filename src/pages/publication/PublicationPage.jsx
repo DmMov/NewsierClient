@@ -2,8 +2,10 @@ import React from 'react';
 
 // * Components
 import {
+  BackButton,
   PublicationModule,
-  CommentsSectionModule
+  CommentAdding,
+  Comments
 } from 'components';
 
 // * Sass
@@ -11,8 +13,13 @@ import './PublicationPage.scss';
 
 const PublicationPage = () =>
   <div className="publicationPage page">
+    <BackButton />
     <PublicationModule />
-    <CommentsSectionModule />
+    <div className="publicationPage__commentsSection">
+      <h2 className="title">коментарі</h2>
+      <CommentAdding />
+      <Comments />
+    </div>
   </div>
 
 export default PublicationPage;

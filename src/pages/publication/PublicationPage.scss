@@ -5,7 +5,13 @@
   max-width: 80rem;
   padding: 1rem 2rem;
 
-  &__subTitle {
-    text-transform: capitalize;
+  &__commentsSection {
+    display: grid;
+    grid-gap: 1rem;
+
+    .title {
+      text-transform: capitalize;
+    }
   }
+
 }

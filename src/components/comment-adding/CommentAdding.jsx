@@ -14,24 +14,21 @@ import {
   postRequest
 } from 'utils/helpers';
 
-// * Selectors
-import { selectReplyAim } from 'utils/selectors';
-
 // * Actions
-import {
-  setReplyAim,
-  getComments
-} from 'store/actions';
+import { getComments } from 'store/actions';
+
+// * Selectors
+import { selectAuthStatus } from 'utils/selectors';
 
 const initialState = {
   value: ''
 }
 
-export const CommentAddingModule = () => {
+export const CommentAdding = () => {
   const { data, errors, change, validate, reset } = useFormValidation(initialState, initialState);
   const { publicationId } = useParams();
+  const authenticated = useSelector(selectAuthStatus);
   const dispatch = useDispatch();
-  const replyAim = useSelector(selectReplyAim);
 
   const fields = [
     {
@@ -50,8 +47,6 @@ export const CommentAddingModule = () => {
     }
   }
 
-  const cancel = () => dispatch(setReplyAim(null));
-
   const submit = async (e) => {
     e.preventDefault();
 
@@ -61,22 +56,18 @@ export const CommentAddingModule = () => {
       const requestData = {
         ...data,
         publicationId,
-        parentId: !!replyAim ? replyAim.id : null
       };
       const response = await postRequest('/comments', requestData);
 
       if (response.status === 200) {
         reset();
-        cancel();
         dispatch(getComments(publicationId));
       }
     }
   };
 
-  return <CommentAddingForm
+  return authenticated && <CommentAddingForm
     submit={submit}
     fields={fields}
-    cancel={cancel}
-    replyAim={replyAim}
   />
 }

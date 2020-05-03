@@ -8,6 +8,10 @@
   padding: 1rem 0;
   border-bottom: 1px solid darken($light, 10%);
 
+  &:last-child {
+    border: none;
+  }
+
   &__imageContainer {
     width: 7rem;
     height: 7rem;

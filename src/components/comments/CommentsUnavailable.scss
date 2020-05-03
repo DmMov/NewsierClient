@@ -1,0 +1,20 @@
+@import "assets/scss/vars";
+
+.commentsUnavailable {
+  font-size: .85em;
+  color: $gray;
+
+  &::first-letter {
+    text-transform: capitalize;
+  }
+
+  &__authLink {
+    text-transform: capitalize;
+    color: $primary;
+
+    &:hover {
+      color: darken($primary, 5%);
+      text-decoration: underline;
+    }
+  }
+}
