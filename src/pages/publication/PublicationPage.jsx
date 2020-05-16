@@ -1,16 +1,18 @@
 import React, { useEffect, useState } from 'react';
 import { useParams } from 'react-router-dom';
+import useDocumentTitle from '@rehooks/document-title';
 
 // * Components
 import {
   BackButton,
   Publication,
   CommentAdding,
-  Comments
+  Comments,
+  Spinner
 } from 'components';
 
 // * Helpers
-import { getRequest } from 'utils/helpers';
+import { getRequest, isEmpty } from 'utils/helpers';
 
 // * Sass
 import './PublicationPage.scss';
@@ -18,6 +20,7 @@ import './PublicationPage.scss';
 const PublicationPage = () => {
   const [publication, setPublication] = useState(null);
   const { publicationId } = useParams();
+  useDocumentTitle(`Newsier | ${!!publication ? publication.title : 'Завантаження...'}`);
 
   useEffect(() => {
     fetchPublication();
@@ -35,7 +38,13 @@ const PublicationPage = () => {
   return (
     <div className="publicationPage page">
       <BackButton />
-      {!!publication && <Publication {...publication} />}
+      {
+        !!publication ?
+          isEmpty(publication) ?
+            <p className="publicationPage__error">помилка, публікація не знайдена.</p> :
+            <Publication {...publication} /> :
+          <Spinner />
+      }
       <h2 className="publicationPage__commentsTitle">коментарі</h2>
       <CommentAdding />
       <Comments />

@@ -23,7 +23,7 @@ const initialState = {
   password: ''
 }
 
-export const SignInModule = () => {
+export const SignIn = () => {
   const { data, errors, change, validate, reset } = useFormValidation(initialState, initialState);
   const dispatch = useDispatch();
 

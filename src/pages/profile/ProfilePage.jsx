@@ -1,28 +1,39 @@
 import React from 'react';
+import { useSelector } from 'react-redux';
+import useDocumentTitle from '@rehooks/document-title';
+
+// * Routes
+import { PublisherPublicationsRoute } from 'routes';
 
 // * Components
 import {
   BackButton,
   SignOutButton,
-  Profile,
+  ProfileCard,
   ProfileNav
 } from 'components';
 
-// * Routes
-import { PublisherPublicationsRoute } from 'routes';
+// * Selectors
+import { selectPublisher } from 'utils/selectors';
 
 // * Sass
 import './ProfilePage.scss';
 
-const ProfilePage = () =>
-  <div className="profilePage page">
-    <div className="profilePage__btnSet">
-      <BackButton />
-      <SignOutButton />
+const ProfilePage = () => {
+  const publisher = useSelector(selectPublisher);
+  useDocumentTitle(`Newsier | Профіль ${publisher.name} ${publisher.surname}`);
+
+  return (
+    <div className="profilePage page">
+      <div className="profilePage__btnSet">
+        <BackButton />
+        <SignOutButton />
+      </div>
+      <ProfileCard publisher={publisher} />
+      <ProfileNav />
+      <PublisherPublicationsRoute />
     </div>
-    <Profile />
-    <ProfileNav />
-    <PublisherPublicationsRoute />
-  </div>
+  );
+}
 
 export default ProfilePage;
