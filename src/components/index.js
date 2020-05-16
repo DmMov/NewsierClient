@@ -12,7 +12,7 @@ export { PublicationCardDetails } from './publication-card-details/PublicationCa
 export { PublicationCard } from './publication-card/PublicationCard';
 export { Publications } from './publications/Publications';
 export { Banner } from './banner/Banner';
-export { PublicationModule } from './publication/PublicationModule';
+export { Publication } from './publication/Publication';
 export { PublisherBox } from './publisher-box/PublisherBox';
 export { TagsBox } from './tags-box/TagsBox';
 export { CommentAdding } from './comment-adding/CommentAdding';
