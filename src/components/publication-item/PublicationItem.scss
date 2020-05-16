@@ -31,7 +31,7 @@
   &__inlineWrap {
     color: $gray;
     display: grid;
-    grid-template-columns: repeat(5, auto);
+    grid-template-columns: repeat(3, auto);
     grid-gap: .5rem;
     align-items: center;
     justify-self: start;
@@ -96,6 +96,27 @@
 
     &:hover {
       color: $red;
+    }
+  }
+}
+
+@media (max-width: 500px) {
+  .publicationItem {
+    grid-template-columns: 1fr;
+    justify-items: center;
+    text-align: center;
+
+    &__imageContainer {
+      grid-column: 1 / 2;
+      grid-row: 1 / 2;
+    }
+
+    &__inlineWrap {
+      justify-self: center;
+    }
+
+    &__deleteBtn {
+      justify-self: center;
     }
   }
 }

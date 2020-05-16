@@ -56,3 +56,26 @@
     color: $gray;
   }
 }
+
+@media (max-width: 500px) {
+  .profileCard {
+    grid-template-columns: 1fr;
+    justify-items: center;
+    text-align: center;
+
+    &__imageContainer {
+      width: 8rem;
+      height: 8rem;
+      grid-column: 1 / 2;
+      grid-row: 1 / 2;
+    }
+
+    &__publisherFullName {
+      font-size: 1.5rem;
+    }
+
+    &__stats {
+      justify-self: center;
+    }
+  }
+}

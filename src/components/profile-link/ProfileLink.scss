@@ -1,11 +1,10 @@
 @import "assets/scss/vars";
 
 .profileLink {
-  display: grid;
-  grid-template-columns: auto auto;
-  grid-gap: 1rem;
+  display: flex;
   align-items: center;
   padding: .5rem 1rem;
+  justify-self: end;
   transition: $transition;
 
   &__publisher {
@@ -13,6 +12,8 @@
     font-size: .85rem;
     font-weight: 500;
     color: $gray;
+    text-align: right;
+    padding-right: 1rem;
   }
 
   &__imageContainer.imageContainer {

@@ -20,6 +20,5 @@ export const Header = ({ publisher }) =>
         newsier
       </h2>
     </Link>
-    <div></div>
     {!publisher ? <AuthNav /> : <ProfileLink {...publisher}/>}
   </header>

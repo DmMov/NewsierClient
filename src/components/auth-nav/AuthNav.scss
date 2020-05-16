@@ -2,4 +2,11 @@
   display: grid;
   grid-template-columns: repeat(2, auto);
   grid-gap: 1rem;
+  justify-self: end;
+}
+
+@media (max-width: 500px) {
+  .authNav {
+    justify-self: center;
+  }
 }

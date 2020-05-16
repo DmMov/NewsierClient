@@ -19,3 +19,13 @@
     }
   }
 }
+
+@media (max-width: 500px) {
+  .profileNav {
+    &__link {
+      .text {
+        display: none;
+      }
+    }
+  }
+}

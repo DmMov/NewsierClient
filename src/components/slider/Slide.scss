@@ -54,3 +54,13 @@
     }
   }
 }
+
+@media (max-width: 500px) {
+  .slide {
+    .publicationCardDetails {
+      &__title {
+        font-size: 1.25rem;
+      }
+    }
+  }
+}

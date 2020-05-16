@@ -14,6 +14,6 @@ export const ProfileNav = () =>
       classes={['btn', 'profileNav__link']}
     >
       <ListAlt className="icon" />
-      <span className="text">публікації</span>
+      <span className="text">мої публікації</span>
     </Link>
   </nav>
