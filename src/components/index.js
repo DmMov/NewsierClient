@@ -24,3 +24,4 @@ export { SignOutButton } from './sign-out-button/SignOutButton';
 export { Profile } from './profile/Profile';
 export { ProfileNav } from './profile-nav/ProfileNav';
 export { PublicationItem } from './publication-item/PublicationItem';
+export { Spinner } from './spinner/Spinner';

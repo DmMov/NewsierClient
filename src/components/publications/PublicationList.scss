@@ -1,5 +1,16 @@
+@import "assets/scss/vars";
+
 .publicationList {
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(15rem, 1fr));
   grid-gap: 1rem;
+
+  &__noPublications {
+    color: $gray;
+    font-size: .85rem;
+
+    &::first-letter {
+      text-transform: capitalize;
+    }
+  }
 }

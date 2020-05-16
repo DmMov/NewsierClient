@@ -3,6 +3,7 @@ import { useDispatch, useSelector } from 'react-redux';
 
 // * Components
 import { PublicationList } from './PublicationList';
+import { Spinner } from 'components';
 
 // * Actions
 import {
@@ -24,11 +25,10 @@ export const Publications = ({ url, component }) => {
     }
   }, [])
 
-  return (
-    !!publications &&
-      <PublicationList
-        publications={publications}
-        component={component}
-      />
-  );
+  return !!publications ?
+    <PublicationList
+      publications={publications}
+      component={component}
+    /> :
+    <Spinner />
 }

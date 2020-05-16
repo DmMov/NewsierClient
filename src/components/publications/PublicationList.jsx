@@ -6,7 +6,11 @@ import './PublicationList.scss';
 
 export const PublicationList = ({ publications, component: Component }) =>
   <div className="publicationList">
-    {publications.map(publication => <Component key={publication.id} {...publication} />)}
+    {
+      publications.length != 0 ?
+        publications.map(publication => <Component key={publication.id} {...publication} />) :
+        <p className="publicationList__noPublications">публікації відсутні.</p>
+    }
   </div>
 
 PublicationList.propTypes = {
