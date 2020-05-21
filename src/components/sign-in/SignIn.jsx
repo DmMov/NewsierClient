@@ -1,7 +1,7 @@
 import React from 'react';
 import { useDispatch } from 'react-redux';
 import { isEmail } from 'validator';
-import { get, set } from 'js-cookie';
+import { set } from 'js-cookie';
 
 // * Components
 import { SingInForm } from './SingInForm';
@@ -64,15 +64,12 @@ export const SignIn = () => {
     const isValid = checkIsValid(data, validate, validationParams);
 
     if (isValid) {
-      const response = await postRequest('/auth', data);
+      const { status, data } = await postRequest('/auth', data);
 
-      if (response.status === 200) {
-        set('token', response.data.token);
+      if (status === 200) {
+        set('token', data.token);
 
-        const token = get('token');
-
-        if(!!token)
-          dispatch(await getPublisher());
+        dispatch(await getPublisher());
       }
     }
   };
