@@ -5,16 +5,16 @@ import { Route } from 'react-router-dom';
 import { Loader } from 'components';
 
 // * Pages
-const MainPage = lazy(() => import('pages/main/MainPage'));
+const RootPage = lazy(() => import('pages/root/RootPage'));
 
-export const MainRoute = () =>
+export const RootRoute = () =>
   <Route
     exact
     path="/"
     component={
       () =>
         <Suspense fallback={<Loader />}>
-          <MainPage />
+          <RootPage />
         </Suspense>
     }
   />

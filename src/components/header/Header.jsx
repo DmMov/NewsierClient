@@ -4,7 +4,7 @@ import React from 'react';
 import {
   Link,
   AuthNav,
-  ProfileLink
+  CabinetLink
 } from 'components';
 
 // * Sass
@@ -20,5 +20,5 @@ export const Header = ({ publisher }) =>
         newsier
       </h2>
     </Link>
-    {!publisher ? <AuthNav /> : <ProfileLink {...publisher}/>}
+    {!publisher ? <AuthNav /> : <CabinetLink {...publisher}/>}
   </header>

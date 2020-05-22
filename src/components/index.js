@@ -1,6 +1,6 @@
 export { Header } from './header/Header';
 export { AuthNav } from './auth-nav/AuthNav';
-export { ProfileLink } from './profile-link/ProfileLink';
+export { CabinetLink } from './cabinet-link/CabinetLink';
 export { Form } from './form/Form';
 export { Field } from './field/Field';
 export { SignIn } from './sign-in/SignIn';
@@ -22,6 +22,7 @@ export { Loader } from './loader/Loader';
 export { BackButton } from './back-button/BackButton';
 export { SignOutButton } from './sign-out-button/SignOutButton';
 export { ProfileCard } from './profile-card/ProfileCard';
-export { ProfileNav } from './profile-nav/ProfileNav';
+export { CabinetMenu } from './cabinet-menu/CabinetMenu';
 export { PublicationItem } from './publication-item/PublicationItem';
 export { Spinner } from './spinner/Spinner';
+export { IconLink } from './icon-link/IconLink';

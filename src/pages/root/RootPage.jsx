@@ -8,15 +8,15 @@ import {
   PublicationCard
 } from 'components';
 
-import './MainPage.scss';
+import './RootPage.scss';
 
-const MainPage = () => {
+const RootPage = () => {
   useDocumentTitle('Newsier | Головна');
 
   return (
-    <div className="mainPage page">
+    <div className="rootPage page">
       <SliderModule />
-      <div className="mainPage__publicationsSection">
+      <div className="rootPage__publicationsSection">
         <h2 className="sectionTitle">публікації</h2>
         <Publications
           url="/publications"
@@ -27,4 +27,4 @@ const MainPage = () => {
   );
 }
 
-export default MainPage;
+export default RootPage;

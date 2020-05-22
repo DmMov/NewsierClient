@@ -4,9 +4,9 @@ import { BrowserRouter as Router } from 'react-router-dom';
 
 // * Routes
 import {
-  MainRoute,
+  RootRoute,
   SignInRoute,
-  ProfileRoute,
+  CabinetRoute,
   PublicationRoute
 } from 'routes';
 
@@ -25,9 +25,9 @@ export const App = () => {
   return <Router>
     <div id="app">
       <Header publisher={publisher} />
-      <MainRoute />
+      <RootRoute />
       <SignInRoute publisher={publisher} />
-      <ProfileRoute publisher={publisher} />
+      <CabinetRoute publisher={publisher} />
       <PublicationRoute />
     </div>
   </Router>

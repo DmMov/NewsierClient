@@ -11,21 +11,21 @@ import {
 import { assets } from 'assets/constants';
 
 // * Sass
-import './ProfileLink.scss';
+import './CabinetLink.scss';
 
-export const ProfileLink = ({ name, surname, image }) =>
+export const CabinetLink = ({ name, surname, image }) =>
   <Link
-    to="/profile"
-    classes={['profileLink']}
+    to="/cabinet"
+    classes={['cabinetLink']}
   >
-    <span className="profileLink__publisher">{`${name} ${surname}`}</span>
+    <span className="cabinetLink__publisher">{`${name} ${surname}`}</span>
     <ResponsiveImage
       src={`${assets}/images/${image}`}
-      classes={['profileLink__imageContainer']}
+      classes={['cabinetLink__imageContainer']}
     />
   </Link>
 
-ProfileLink.propTypes = {
+CabinetLink.propTypes = {
   name: string.isRequired,
   surname: string.isRequired,
   image: string.isRequired,

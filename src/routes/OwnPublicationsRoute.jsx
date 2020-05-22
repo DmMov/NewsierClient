@@ -9,8 +9,7 @@ const OwnPublicationsPage = lazy(() => import('pages/own-publications/OwnPublica
 
 export const OwnPublicationsRoute = () =>
   <Route
-    exact
-    path="/profile"
+    path="/cabinet/my-publications"
     component={
       () =>
         <Suspense fallback={<Loader />}>

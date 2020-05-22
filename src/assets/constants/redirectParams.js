@@ -1,9 +1,9 @@
 export const signInRedirectParams = {
   from: '/sign-in',
-  to: '/profile'
+  to: '/cabinet'
 }
 
 export const profileRedirectParams = {
-  from: '/profile',
+  from: '/cabinet',
   to: '/sign-in'
 }

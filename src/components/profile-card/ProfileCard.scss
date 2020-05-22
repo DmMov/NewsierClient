@@ -9,8 +9,8 @@
   background-color: $light;
 
   &__imageContainer {
-    width: 9rem;
-    height: 9rem;
+    width: 10rem;
+    height: 10rem;
     grid-column: 2 / 3;
     grid-row: 1 / 6;
     padding: .75rem;
@@ -64,8 +64,6 @@
     text-align: center;
 
     &__imageContainer {
-      width: 8rem;
-      height: 8rem;
       grid-column: 1 / 2;
       grid-row: 1 / 2;
     }
