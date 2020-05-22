@@ -5,15 +5,16 @@ import { Route } from 'react-router-dom';
 import { Loader } from 'components';
 
 // * Pages
-const PublisherPublicationsPage = lazy(() => import('pages/publisher-publications/PublisherPublicationsPage'));
+const OwnPublicationsPage = lazy(() => import('pages/own-publications/OwnPublicationsPage'));
 
-export const PublisherPublicationsRoute = () =>
+export const OwnPublicationsRoute = () =>
   <Route
+    exact
     path="/profile"
     component={
       () =>
         <Suspense fallback={<Loader />}>
-          <PublisherPublicationsPage />
+          <OwnPublicationsPage />
         </Suspense>
     }
   />

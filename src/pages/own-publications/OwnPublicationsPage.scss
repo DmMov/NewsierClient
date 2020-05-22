@@ -1,9 +1,15 @@
 @import "assets/scss/vars";
 
-.publisherPublicationsPage {
+.ownPublicationsPage {
+  display: grid;
+  grid-gap: 1rem;
   margin-top: -1rem;
   padding: 1rem;
   background-color: $light;
+
+  &__addingBtn {
+    justify-self: start;
+  }
 
   .publicationList {
     grid-template-columns: 1fr;

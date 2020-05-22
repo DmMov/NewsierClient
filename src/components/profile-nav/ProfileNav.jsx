@@ -10,6 +10,7 @@ import './ProfileNav.scss';
 export const ProfileNav = () =>
   <nav className="profileNav">
     <Link
+      exact
       to="/profile"
       classes={['btn', 'profileNav__link']}
     >

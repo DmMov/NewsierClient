@@ -3,7 +3,7 @@ import { useSelector } from 'react-redux';
 import useDocumentTitle from '@rehooks/document-title';
 
 // * Routes
-import { PublisherPublicationsRoute } from 'routes';
+import { OwnPublicationsRoute } from 'routes';
 
 // * Components
 import {
@@ -31,7 +31,7 @@ const ProfilePage = () => {
       </div>
       <ProfileCard publisher={publisher} />
       <ProfileNav />
-      <PublisherPublicationsRoute />
+      <OwnPublicationsRoute />
     </div>
   );
 }
