@@ -7,13 +7,13 @@ export const tag = shape({
 
 export const field = shape({
   control: string,
-  label: string.isRequired,
+  label: string,
   placeholder: string.isRequired,
   name: string.isRequired,
   value: string.isRequired,
+  error: string,
   type: string,
-  change: func.isRequired,
-  error: string
+  onChange: func.isRequired
 });
 
 export const comment = shape({

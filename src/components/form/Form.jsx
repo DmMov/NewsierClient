@@ -5,10 +5,10 @@ import { arrayOf, func, any, string } from 'prop-types';
 // * Sass
 import './Form.scss';
 
-export const Form = ({ classes, submit, title, buttonText, children }) =>
+export const Form = ({ onSubmit, classes, title, buttonText, children }) =>
   <form
+    onSubmit={onSubmit}
     className={classnames('form', classes)}
-    onSubmit={submit}
   >
     {title && <h2 className="form__title">{title}</h2>}
     {children}
@@ -31,8 +31,8 @@ export const Form = ({ classes, submit, title, buttonText, children }) =>
 
 Form.propTypes = {
   classes: arrayOf(string),
-  submit: func.isRequired,
+  onSubmit: func.isRequired,
   title: string,
   buttonText: string.isRequired,
   children: any
-}
+};

@@ -10,16 +10,16 @@ import {
 // * Constants
 import { field } from 'assets/constants';
 
-export const SingInForm = ({ fields, submit }) =>
+export const SingInForm = ({ fields, onSubmit }) =>
   <Form
     classes={['sign-in-form']}
-    submit={submit}
+    onSubmit={onSubmit}
     buttonText="увійти"
   >
-    { fields.map(field => <Field key={field.name} {...field} />) }
+    {fields.map(field => <Field key={field.name} {...field} />)}
   </Form>
 
 SingInForm.propTypes = {
   fields: arrayOf(field),
-  submit: func.isRequired
+  onSubmit: func.isRequired
 };

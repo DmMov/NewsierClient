@@ -10,10 +10,7 @@ import { SingInForm } from './SingInForm';
 import { useForm } from 'utils/hooks';
 
 // * Helpers
-import {
-  checkIsValid,
-  postRequest
-} from 'utils/helpers';
+import { postRequest } from 'utils/helpers';
 
 // * Actions
 import { getPublisher } from 'store/actions';
@@ -29,6 +26,20 @@ const initialState = {
   password: ''
 };
 
+const initialFields = [
+  {
+    name: 'email',
+    label: 'електронна адреса',
+    placeholder: 'example@email.com',
+  },
+  {
+    name: 'password',
+    type: 'password',
+    label: 'пароль',
+    placeholder: 'введіть пароль',
+  }
+];
+
 const validation = {
   email: [
     [required, 'емейл обов\'язковий.'],
@@ -43,36 +54,15 @@ const validation = {
 };
 
 export const SignIn = () => {
-  const { data, errors, change, validate } = useForm(initialState);
+  const { data, fields, validate } = useForm(initialState, initialFields);
   const dispatch = useDispatch();
 
-  const fields = [
-    {
-      value: data.email,
-      error: errors.email,
-      name: 'email',
-      label: 'електронна адреса',
-      placeholder: 'example@email.com',
-      change
-    },
-    {
-      value: data.password,
-      error: errors.password,
-      name: 'password',
-      type: 'password',
-      label: 'пароль',
-      placeholder: 'введіть пароль',
-      change
-    }
-  ];
-
-  const submit = async e => {
+  const onSubmit = async e => {
     e.preventDefault();
 
     const isValid = validate(validation);
 
     if (isValid) {
-      console.log('hello');
       const response = await postRequest('/auth', data);
 
       if (response.status === 200) {
@@ -83,5 +73,8 @@ export const SignIn = () => {
     }
   };
 
-  return <SingInForm fields={fields} submit={submit} />
+  return <SingInForm
+    fields={fields}
+    onSubmit={onSubmit}
+  />
 }

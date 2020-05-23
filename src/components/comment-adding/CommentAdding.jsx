@@ -27,6 +27,13 @@ const initialState = {
   value: ''
 };
 
+const initialFields = [
+  {
+    name: 'value',
+    placeholder: 'Залиште ваш коментар...',
+  }
+];
+
 const validation = {
   value: [
     [required, 'напишіть коментар'],
@@ -35,22 +42,12 @@ const validation = {
 };
 
 export const CommentAdding = () => {
-  const { data, errors, change, validate, reset } = useForm(initialState);
+  const { data, fields, validate, reset } = useForm(initialState, initialFields);
   const { publicationId } = useParams();
   const authenticated = useSelector(selectAuthStatus);
   const dispatch = useDispatch();
 
-  const fields = [
-    {
-      value: data.value,
-      error: errors.value,
-      name: 'value',
-      placeholder: 'Залиште ваш коментар...',
-      change
-    }
-  ];
-
-  const submit = async (e) => {
+  const onSubmit = async (e) => {
     e.preventDefault();
 
     const isValid = validate(validation);
@@ -70,7 +67,7 @@ export const CommentAdding = () => {
   };
 
   return authenticated && <CommentAddingForm
-    submit={submit}
+    onSubmit={onSubmit}
     fields={fields}
   />
 }

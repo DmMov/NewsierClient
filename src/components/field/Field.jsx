@@ -1,11 +1,11 @@
 import React from 'react';
+import { func, string } from 'prop-types';
 import classnames from 'classnames';
-import { string, func } from 'prop-types';
 
 // * Sass
 import './Field.scss';
 
-export const Field = ({ control: Control, label, placeholder, name, value, type, change, error }) =>
+export const Field = ({ control: Control, label, placeholder, name, value, type, error, onChange }) =>
   <label
     htmlFor={`${name}__control`}
     className={classnames('field', `${name}Field`, !!error && 'error')}
@@ -17,7 +17,7 @@ export const Field = ({ control: Control, label, placeholder, name, value, type,
       value={value}
       type={type}
       className={classnames('field__control', `${name}Field__control`)}
-      onChange={change}
+      onChange={onChange}
       placeholder={placeholder}
     />
     { error && <span className="field__error">{ error }</span> }
@@ -26,7 +26,7 @@ export const Field = ({ control: Control, label, placeholder, name, value, type,
 Field.defaultProps = {
   control: 'input',
   type: 'text'
-}
+};
 
 Field.propTypes = {
   control: string,
@@ -35,6 +35,6 @@ Field.propTypes = {
   name: string.isRequired,
   value: string.isRequired,
   type: string,
-  change: func.isRequired,
+  onChange: func.isRequired,
   error: string
-}
+};

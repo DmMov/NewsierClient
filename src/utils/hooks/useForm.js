@@ -1,6 +1,6 @@
 import { useState, useEffect } from 'react';
 
-export const useForm = (initialState) =>  {
+export const useForm = (initialState, initialFields) =>  {
   const [data, setData] = useState(initialState);
   const [errors, setErrors] = useState(initialState);
 
@@ -8,7 +8,7 @@ export const useForm = (initialState) =>  {
     reset();
   }, []);
 
-  const change = ({ target: { value, name, checked, type, files } }) => {
+  const onChange = ({ target: { value, name, checked, type, files } }) => {
     const typedValue = type === 'checkbox' ? checked : type === 'file' ? files[0] : value;
     setData(data => ({
       ...data,
@@ -49,5 +49,14 @@ export const useForm = (initialState) =>  {
     return validationResults.find(value => value == false) != false && true;
   };
 
-  return { data, errors, change, reset, validate };
+  const buildFields = () => initialFields.map(
+    field => ({
+      ...field,
+      value: data[field.name],
+      error: errors[field.name],
+      onChange
+    })
+  );
+
+  return { data, fields: buildFields(), onChange, reset, validate };
 }
