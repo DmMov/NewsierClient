@@ -7,9 +7,6 @@ import { ProfileCard } from 'components';
 // * Selectors
 import { selectPublisher } from 'utils/selectors';
 
-// * Sass
-import './ProfilePage.scss';
-
 const ProfilePage = () => {
   const publisher = useSelector(selectPublisher);
 

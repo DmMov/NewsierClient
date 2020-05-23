@@ -1,5 +1,5 @@
 import React from 'react';
-import { ListAlt, AccountBox } from "@material-ui/icons";
+import { ListAlt, AccountBox, PostAdd } from "@material-ui/icons";
 
 // * Components
 import { IconLink } from 'components';
@@ -18,6 +18,11 @@ const LINKS = [
     to: '/cabinet/my-publications',
     icon: ListAlt,
     text: 'мої публікації'
+  },
+  {
+    to: '/cabinet/publication-adding',
+    icon: PostAdd,
+    text: 'створити публікацію'
   }
 ];
 
