@@ -7,7 +7,7 @@ import { set } from 'js-cookie';
 import { SingInForm } from './SingInForm';
 
 // * Hooks
-import { useFormValidation } from 'utils/hooks';
+import { useForm } from 'utils/hooks';
 
 // * Helpers
 import {
@@ -18,13 +18,32 @@ import {
 // * Actions
 import { getPublisher } from 'store/actions';
 
+// * Validators
+import {
+  required,
+  minLength
+} from 'utils/validators';
+
 const initialState = {
   email: '',
   password: ''
-}
+};
+
+const validation = {
+  email: [
+    [required, 'емейл обов\'язковий.'],
+    [minLength(5), 'емейл повинен містити не менше 5 символів.'],
+    [isEmail, 'не коректний емейл.']
+  ],
+
+  password: [
+    [required, 'пароль обов\'язковий.'],
+    [minLength(5), 'пароль повинен містити не менше 5 символів.']
+  ]
+};
 
 export const SignIn = () => {
-  const { data, errors, change, validate, reset } = useFormValidation(initialState, initialState);
+  const { data, errors, change, validate } = useForm(initialState);
   const dispatch = useDispatch();
 
   const fields = [
@@ -47,27 +66,17 @@ export const SignIn = () => {
     }
   ];
 
-  const validationParams = {
-    email: {
-      condition: !isEmail(data.email),
-      errorText: 'недопустимий формат електронної адреси'
-    },
-    password: {
-      condition: data.password.length < 5,
-      errorText: 'пароль повинен містити не меньше 5 символів'
-    }
-  }
-
   const submit = async e => {
     e.preventDefault();
 
-    const isValid = checkIsValid(data, validate, validationParams);
+    const isValid = validate(validation);
 
     if (isValid) {
-      const { status, data } = await postRequest('/auth', data);
+      console.log('hello');
+      const response = await postRequest('/auth', data);
 
-      if (status === 200) {
-        set('token', data.token);
+      if (response.status === 200) {
+        set('token', response.data.token);
 
         dispatch(await getPublisher());
       }

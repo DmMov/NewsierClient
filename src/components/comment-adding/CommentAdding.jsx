@@ -6,13 +6,10 @@ import { useSelector, useDispatch } from 'react-redux';
 import { CommentAddingForm } from './CommentAddingForm';
 
 // * Hooks
-import { useFormValidation } from 'utils/hooks';
+import { useForm } from 'utils/hooks';
 
 // * Helpers
-import {
-  checkIsValid,
-  postRequest
-} from 'utils/helpers';
+import { postRequest } from 'utils/helpers';
 
 // * Actions
 import { getComments } from 'store/actions';
@@ -20,12 +17,25 @@ import { getComments } from 'store/actions';
 // * Selectors
 import { selectAuthStatus } from 'utils/selectors';
 
+// * Validators
+import {
+  required,
+  minLength
+} from 'utils/validators'
+
 const initialState = {
   value: ''
-}
+};
+
+const validation = {
+  value: [
+    [required, 'напишіть коментар'],
+    [minLength(5), 'коментар пивинен містити не менше 5 символів']
+  ]
+};
 
 export const CommentAdding = () => {
-  const { data, errors, change, validate, reset } = useFormValidation(initialState, initialState);
+  const { data, errors, change, validate, reset } = useForm(initialState);
   const { publicationId } = useParams();
   const authenticated = useSelector(selectAuthStatus);
   const dispatch = useDispatch();
@@ -40,17 +50,10 @@ export const CommentAdding = () => {
     }
   ];
 
-  const validationParams = {
-    value: {
-      condition: data.value.length < 5,
-      errorText: 'мінімальна довжина коментаря 5 символів'
-    }
-  }
-
   const submit = async (e) => {
     e.preventDefault();
 
-    const isValid = checkIsValid(data, validate, validationParams);
+    const isValid = validate(validation);
 
     if (isValid) {
       const requestData = {
