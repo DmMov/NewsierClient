@@ -1,0 +1,58 @@
+@import "assets/scss/vars";
+
+.newsierFooter {
+  display: grid;
+  grid-gap: 1rem;
+  justify-items: center;
+  padding: 2rem;
+  background-color: $black;
+  color: $gray;
+
+  &__menu {
+    display: flex;
+    align-items: center;
+
+    .dotIcon {
+      font-size: .3rem;
+      margin: .25rem;
+    }
+  }
+
+  &__sponsor {
+    font-size: .8rem;
+    transition: $transition;
+
+    .preText {
+      text-transform: capitalize;
+    }
+
+    .link {
+      color: #ffffff;
+
+      &:hover {
+        text-decoration: underline;
+      }
+    }
+
+  }
+
+  &__copyright {
+    display: flex;
+    align-items: center;
+    font-size: .8rem;
+
+    .icon {
+      font-size: 1rem;
+    }
+
+    .year, .newsier, .allRights {
+      margin-left: .25rem;
+    }
+
+    .newsier {
+      text-transform: capitalize;
+      color: $primary;
+      font-weight: 500;
+    }
+  }
+}

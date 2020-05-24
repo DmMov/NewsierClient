@@ -1,0 +1,16 @@
+@import "assets/scss/vars";
+
+.logo {
+  text-transform: capitalize;
+  font-family: 'KaushanScript', cursive;
+  font-size: 1.5rem;
+  font-weight: 700;
+
+  &.white {
+    color: #ffffff;
+  }
+
+  &.black {
+    color: $black;
+  }
+}

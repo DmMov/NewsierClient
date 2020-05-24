@@ -2,7 +2,7 @@ import React from 'react';
 
 // * Components
 import {
-  Link,
+  Logo,
   AuthNav,
   CabinetLink
 } from 'components';
@@ -12,13 +12,6 @@ import './Header.scss';
 
 export const Header = ({ publisher }) =>
   <header id="newsierHeader">
-    <Link
-      exact
-      to="/"
-    >
-      <h2 className="logo">
-        newsier
-      </h2>
-    </Link>
+    <Logo color="black" />
     {!publisher ? <AuthNav /> : <CabinetLink {...publisher}/>}
   </header>

@@ -11,7 +11,10 @@ import {
 } from 'routes';
 
 // * Components
-import { Header } from 'components';
+import {
+  Header,
+  Footer
+} from 'components';
 
 // * Selectors
 import { selectPublisher } from 'utils/selectors';
@@ -29,6 +32,7 @@ export const App = () => {
       <SignInRoute publisher={publisher} />
       <CabinetRoute publisher={publisher} />
       <PublicationRoute />
+      <Footer authorized={!!publisher} />
     </div>
   </Router>
 }

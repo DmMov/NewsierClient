@@ -26,3 +26,5 @@ export { CabinetMenu } from './cabinet-menu/CabinetMenu';
 export { PublicationItem } from './publication-item/PublicationItem';
 export { Spinner } from './spinner/Spinner';
 export { IconLink } from './icon-link/IconLink';
+export { Logo } from './logo/Logo';
+export { Footer } from './footer/Footer';
