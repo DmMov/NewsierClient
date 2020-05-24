@@ -5,7 +5,8 @@ import useDocumentTitle from '@rehooks/document-title';
 // * Routes
 import {
   OwnPublicationsRoute,
-  ProfileRoute
+  ProfileRoute,
+  PublicationAddingRoute
 } from 'routes';
 
 // * Components
@@ -34,6 +35,7 @@ const CabinetPage = () => {
       <CabinetMenu />
       <OwnPublicationsRoute />
       <ProfileRoute />
+      <PublicationAddingRoute />
     </div>
   );
 }

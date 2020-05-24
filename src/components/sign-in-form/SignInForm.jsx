@@ -4,7 +4,7 @@ import { isEmail } from 'validator';
 import { set } from 'js-cookie';
 
 // * Components
-import { SingInForm } from './SingInForm';
+import { Form } from 'components';
 
 // * Hooks
 import { useForm } from 'utils/hooks';
@@ -53,7 +53,7 @@ const validation = {
   ]
 };
 
-export const SignIn = () => {
+export const SignInForm = () => {
   const { data, fields, validate } = useForm(initialState, initialFields);
   const dispatch = useDispatch();
 
@@ -73,8 +73,10 @@ export const SignIn = () => {
     }
   };
 
-  return <SingInForm
-    fields={fields}
+  return <Form
+    classes={['sign-in-form']}
     onSubmit={onSubmit}
+    buttonText="увійти"
+    fields={fields}
   />
 }

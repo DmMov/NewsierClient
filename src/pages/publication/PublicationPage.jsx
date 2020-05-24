@@ -6,7 +6,7 @@ import useDocumentTitle from '@rehooks/document-title';
 import {
   BackButton,
   Publication,
-  CommentAdding,
+  CommentAddingForm,
   Comments,
   Spinner
 } from 'components';
@@ -46,7 +46,7 @@ const PublicationPage = () => {
           <Spinner />
       }
       <h2 className="publicationPage__commentsTitle">коментарі</h2>
-      <CommentAdding />
+      <CommentAddingForm />
       <Comments />
     </div>
   );

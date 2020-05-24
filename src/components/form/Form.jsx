@@ -1,17 +1,23 @@
 import React from 'react';
 import classnames from 'classnames';
-import { arrayOf, func, any, string } from 'prop-types';
+import { arrayOf, func, string } from 'prop-types';
+
+// * Components
+import { Field } from 'components';
+
+// * Constants
+import { field } from 'assets/constants';
 
 // * Sass
 import './Form.scss';
 
-export const Form = ({ onSubmit, classes, title, buttonText, children }) =>
+export const Form = ({ onSubmit, classes, title, buttonText, fields }) =>
   <form
     onSubmit={onSubmit}
     className={classnames('form', classes)}
   >
     {title && <h2 className="form__title">{title}</h2>}
-    {children}
+    {fields.map(field => <Field key={field.name} {...field} />)}
     <button
       type="submit"
       className={
@@ -34,5 +40,5 @@ Form.propTypes = {
   onSubmit: func.isRequired,
   title: string,
   buttonText: string.isRequired,
-  children: any
+  fields: arrayOf(field)
 };

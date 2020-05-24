@@ -2,9 +2,6 @@ import React from 'react';
 import { useParams } from 'react-router-dom';
 import { useSelector, useDispatch } from 'react-redux';
 
-// * Components
-import { CommentAddingForm } from './CommentAddingForm';
-
 // * Hooks
 import { useForm } from 'utils/hooks';
 
@@ -41,7 +38,7 @@ const validation = {
   ]
 };
 
-export const CommentAdding = () => {
+export const CommentAddingForm = () => {
   const { data, fields, validate, reset } = useForm(initialState, initialFields);
   const { publicationId } = useParams();
   const authenticated = useSelector(selectAuthStatus);
@@ -66,8 +63,11 @@ export const CommentAdding = () => {
     }
   };
 
-  return authenticated && <CommentAddingForm
-    onSubmit={onSubmit}
-    fields={fields}
-  />
+  return authenticated &&
+    <Form
+      onSubmit={onSubmit}
+      classes={['commentAddingForm']}
+      buttonText="залишити коментар"
+      fields={fields}
+    />;
 }

@@ -5,16 +5,15 @@ import { Route } from 'react-router-dom';
 import { Loader } from 'components';
 
 // * Pages
-const RootPage = lazy(() => import('pages/root/RootPage'));
+const PublicationAddingPage = lazy(() => import('pages/publication-adding/PublicationAddingPage'));
 
-export const RootRoute = () =>
+export const PublicationAddingRoute = () =>
   <Route
-    exact
-    path="/"
+    path="/cabinet/publication-adding"
     component={
       () =>
         <Suspense fallback={<Loader />}>
-          <RootPage />
+          <PublicationAddingPage />
         </Suspense>
     }
   />;

@@ -6,7 +6,7 @@ import bannerImage from 'assets/images/banners/4';
 
 // * Components
 import {
-  SignIn,
+  SignInForm,
   Banner
 } from 'components';
 
@@ -22,7 +22,7 @@ const SignInPage = () => {
         image={bannerImage}
         title="вхід"
       />
-      <SignIn />
+      <SignInForm />
     </div>
   );
 }
