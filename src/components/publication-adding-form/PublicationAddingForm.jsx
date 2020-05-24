@@ -1,35 +1,41 @@
 import React from 'react';
 import { useDispatch } from 'react-redux';
-import { isEmail } from 'validator';
 import { set } from 'js-cookie';
 
 // * Components
-import { Form } from 'components';
+import {
+  Form,
+  UploadField
+} from 'components';
 
-// * Hooks
+// * Utils
 import { useForm } from 'utils/hooks';
-
-// * Helpers
 import { postRequest } from 'utils/helpers';
+import {
+  required,
+  minLength,
+  maxLength
+} from 'utils/validators';
 
 // * Actions
 import { getPublisher } from 'store/actions';
-
-// * Validators
-import {
-  required,
-  minLength
-} from 'utils/validators';
 
 // * Sass
 import './PublicationAddingForm.scss';
 
 const initialState = {
+  file: null,
   title: '',
   value: ''
 };
 
 const initialFields = [
+  {
+    name: 'file',
+    type: 'file',
+    label: 'завантажити',
+    component: UploadField
+  },
   {
     name: 'title',
     label: 'заголовок',
@@ -44,10 +50,13 @@ const initialFields = [
 ];
 
 const validation = {
+  file: [
+    [required, 'зображення обов\'язкове.']
+  ],
   title: [
     [required, 'заголовок обов\'язковий.'],
     [minLength(32), 'заголовок повинен містити не менше 32 символів.'],
-    [minLength(256), 'заголовок повинен містити не більше 256 символів.']
+    [maxLength(256), 'заголовок повинен містити не більше 256 символів.']
   ],
   value: [
     [required, 'контент обов\'язковий.'],

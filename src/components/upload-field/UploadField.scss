@@ -1,0 +1,47 @@
+@import "assets/scss/vars";
+
+.uploadField {
+  $this: &;
+
+  display: grid;
+  color: $gray;
+
+  &__error {
+    color: $red;
+
+    &::first-letter {
+      text-transform: capitalize;
+    }
+
+    & ~ #{$this}__upload {
+      #{$this}__btn {
+        border-color: $red;
+        color: $red;
+      }
+    }
+  }
+
+  &__upload {
+    #{$this}__control {
+      display: none;
+    }
+
+    #{$this}__btn {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      border: 1px solid darken($light, 10%);
+
+      #{$this}__uploadIcon {
+        font-size: 1.25rem;
+        margin-right: .25rem;
+      }
+    }
+  }
+
+  &__fileName, &__error {
+    font-size: .75rem;
+    text-align: center;
+    padding: .25rem;
+  }
+}

@@ -1,5 +1,5 @@
 import React from 'react';
-import { func, string } from 'prop-types';
+import { func, string, oneOfType, bool, object, number, array } from 'prop-types';
 import classnames from 'classnames';
 
 // * Sass
@@ -33,7 +33,7 @@ Field.propTypes = {
   label: string,
   placeholder: string.isRequired,
   name: string.isRequired,
-  value: string.isRequired,
+  value: oneOfType([string, bool, object, number, array]).isRequired,
   type: string,
   onChange: func.isRequired,
   error: string

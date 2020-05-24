@@ -2,7 +2,14 @@ import { useState, useEffect } from 'react';
 
 export const useForm = (initialState, initialFields) =>  {
   const [data, setData] = useState(initialState);
-  const [errors, setErrors] = useState(initialState);
+
+  let initialErrors = {};
+
+  for (const key in initialState) {
+    initialErrors[key] = '';
+  }
+
+  const [errors, setErrors] = useState(initialErrors);
 
   useEffect(() => () => {
     reset();

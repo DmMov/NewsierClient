@@ -1,6 +1,6 @@
 import React from 'react';
 import classnames from 'classnames';
-import { arrayOf, func, string } from 'prop-types';
+import { arrayOf, func, string, any } from 'prop-types';
 
 // * Components
 import { Field } from 'components';
@@ -17,7 +17,14 @@ export const Form = ({ onSubmit, classes, title, buttonText, fields }) =>
     className={classnames('form', classes)}
   >
     {title && <h2 className="form__title">{title}</h2>}
-    {fields.map(field => <Field key={field.name} {...field} />)}
+    {
+      fields.map(
+        ({component, ...field}) => {
+          const Component = !!component ? component : Field;
+          return <Component key={field.name} {...field} />;
+        }
+      )
+    }
     <button
       type="submit"
       className={
@@ -33,12 +40,12 @@ export const Form = ({ onSubmit, classes, title, buttonText, fields }) =>
     >
       {buttonText}
     </button>
-  </form>
+  </form>;
 
 Form.propTypes = {
   classes: arrayOf(string),
   onSubmit: func.isRequired,
   title: string,
   buttonText: string.isRequired,
-  fields: arrayOf(field)
+  fields: arrayOf(field),
 };

@@ -3,6 +3,7 @@ export { AuthNav } from './auth-nav/AuthNav';
 export { CabinetLink } from './cabinet-link/CabinetLink';
 export { Form } from './form/Form';
 export { Field } from './field/Field';
+export { UploadField } from './upload-field/UploadField'
 export { SignInForm } from './sign-in-form/SignInForm';
 export { SliderModule } from './slider/SliderModule';
 export { RedirectChecker } from './redirect-checker/RedirectChecker';

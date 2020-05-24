@@ -1,4 +1,4 @@
-import { shape, string, func } from "prop-types";
+import { shape, string, func, oneOfType, bool, object, number, array } from "prop-types";
 
 export const tag = shape({
   id: string.isRequired,
@@ -8,9 +8,9 @@ export const tag = shape({
 export const field = shape({
   control: string,
   label: string,
-  placeholder: string.isRequired,
+  placeholder: string,
   name: string.isRequired,
-  value: string.isRequired,
+  value: oneOfType([string, bool, object, number, array]),
   error: string,
   type: string,
   onChange: func.isRequired
