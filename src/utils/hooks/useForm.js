@@ -29,7 +29,7 @@ export const useForm = (initialState, initialFields) =>  {
 
   const reset = () => {
     setData(initialState);
-    setErrors(initialState);
+    setErrors(initialErrors);
   }
 
   const validate = (validationSet) => {

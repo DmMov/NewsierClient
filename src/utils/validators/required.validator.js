@@ -10,7 +10,7 @@ export const required = value => {
     case 'number':
       return value > 0;
     case 'object':
-      return !isEmpty(value) && value !== null;
+      return !!value && !isEmpty(value);
   }
 
   return false;
