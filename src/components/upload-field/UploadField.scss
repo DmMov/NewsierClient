@@ -30,13 +30,19 @@
       display: flex;
       justify-content: center;
       align-items: center;
-      border: 1px solid darken($light, 10%);
+      border: 1px dashed darken($light, 10%);
 
       #{$this}__uploadIcon {
         font-size: 1.25rem;
         margin-right: .25rem;
       }
     }
+  }
+
+  &__uploadedImageContainer {
+    border: 1px dashed darken($light, 10%);
+    padding: 1rem;
+    margin-top: 1rem;
   }
 
   &__fileName, &__error {

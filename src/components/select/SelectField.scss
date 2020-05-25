@@ -1,0 +1,36 @@
+@import "assets/scss/vars";
+
+.selectField {
+  $this: &;
+
+  display: grid;
+  grid-gap: .5rem;
+
+  &.error {
+    #{$this}__label {
+      color: $red;
+    }
+
+    #{$this}__control {
+      border-color: $red;
+    }
+  }
+
+  &__control {
+    padding: .75rem 1rem;
+    border: 1px solid darken($light, 10%);
+    color: $gray;
+    background-color: transparent;
+    appearance: none;
+    background:  url("~assets/images/down-arrow.png") no-repeat right 1rem bottom 50%;
+    background-size:  10px 10px;
+    outline: none;
+  }
+
+  &__label {
+    text-transform: capitalize;
+    font-size: .8rem;
+    font-weight: 500;
+    color: $gray;
+  }
+}

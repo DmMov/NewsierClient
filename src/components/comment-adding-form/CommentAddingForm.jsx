@@ -2,23 +2,23 @@ import React from 'react';
 import { useParams } from 'react-router-dom';
 import { useSelector, useDispatch } from 'react-redux';
 
-// * Hooks
-import { useForm } from 'utils/hooks';
+// * Components
+import { Form } from 'components';
 
-// * Helpers
+// * Utils
+import { useForm } from 'utils/hooks';
 import { postRequest } from 'utils/helpers';
+import { selectAuthStatus } from 'utils/selectors';
+import {
+  required,
+  minLength
+} from 'utils/validators';
 
 // * Actions
 import { getComments } from 'store/actions';
 
-// * Selectors
-import { selectAuthStatus } from 'utils/selectors';
-
-// * Validators
-import {
-  required,
-  minLength
-} from 'utils/validators'
+// * Sass
+import './CommentAddingForm.scss';
 
 const initialState = {
   value: ''

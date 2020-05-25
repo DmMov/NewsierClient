@@ -3,7 +3,7 @@ import React, { useState, useEffect } from 'react';
 // * Components
 import { Slider } from './Slider';
 
-// * Helpers
+// * Utils
 import { getRequest } from 'utils/helpers';
 
 export const SliderModule = () => {
@@ -15,10 +15,10 @@ export const SliderModule = () => {
   }, []);
 
   const fetchPublications = async () => {
-    const response = await getRequest('/publications/popular?count=5');
+    const { status, data } = await getRequest('/publications/popular?count=5');
 
-    if (response.status == 200)
-      setPublications(() => response.data)
+    if (status === 200)
+      setPublications(data);
   }
 
   return publications.length != 0 && <Slider

@@ -1,5 +1,5 @@
 export { Header } from './header/Header';
-export { AuthNav } from './auth-nav/AuthNav';
+export { AuthMenu } from './auth-menu/AuthMenu';
 export { CabinetLink } from './cabinet-link/CabinetLink';
 export { Form } from './form/Form';
 export { Field } from './field/Field';
@@ -30,3 +30,4 @@ export { IconLink } from './icon-link/IconLink';
 export { Logo } from './logo/Logo';
 export { Footer } from './footer/Footer';
 export { PublicationAddingForm } from './publication-adding-form/PublicationAddingForm';
+export { Select } from './select/Select';

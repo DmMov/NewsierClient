@@ -6,20 +6,19 @@ import { set } from 'js-cookie';
 // * Components
 import { Form } from 'components';
 
-// * Hooks
+// * Utils
 import { useForm } from 'utils/hooks';
-
-// * Helpers
 import { postRequest } from 'utils/helpers';
-
-// * Actions
-import { getPublisher } from 'store/actions';
-
-// * Validators
 import {
   required,
   minLength
 } from 'utils/validators';
+
+// * Actions
+import { getPublisher } from 'store/actions';
+
+// * Sass
+import './SignInForm.scss';
 
 const initialState = {
   email: '',
@@ -30,13 +29,13 @@ const initialFields = [
   {
     name: 'email',
     label: 'електронна адреса',
-    placeholder: 'example@email.com',
+    placeholder: 'Example@email.com',
   },
   {
     name: 'password',
     type: 'password',
     label: 'пароль',
-    placeholder: 'введіть пароль',
+    placeholder: 'Введіть пароль...',
   }
 ];
 
@@ -74,7 +73,7 @@ export const SignInForm = () => {
   };
 
   return <Form
-    classes={['sign-in-form']}
+    classes={['signInForm']}
     onSubmit={onSubmit}
     buttonText="увійти"
     fields={fields}

@@ -3,7 +3,7 @@ import React from 'react';
 // * Components
 import {
   Logo,
-  AuthNav,
+  AuthMenu,
   CabinetLink
 } from 'components';
 
@@ -13,5 +13,5 @@ import './Header.scss';
 export const Header = ({ publisher }) =>
   <header id="newsierHeader">
     <Logo color="black" />
-    {!publisher ? <AuthNav /> : <CabinetLink {...publisher}/>}
+    {!publisher ? <AuthMenu /> : <CabinetLink {...publisher}/>}
   </header>

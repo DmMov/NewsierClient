@@ -4,10 +4,10 @@ import React from 'react';
 import { Link } from 'components';
 
 // * Sass
-import './AuthNav.scss';
+import './AuthMenu.scss';
 
-export const AuthNav = () =>
-  <nav className="authNav">
+export const AuthMenu = () =>
+  <nav className="authMenu">
     <Link
       to="/sign-up"
       classes={['btn']}

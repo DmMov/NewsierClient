@@ -1,11 +1,10 @@
 import React from 'react';
-import { useDispatch } from 'react-redux';
-import { set } from 'js-cookie';
 
 // * Components
 import {
   Form,
-  UploadField
+  UploadField,
+  Select
 } from 'components';
 
 // * Utils
@@ -17,16 +16,15 @@ import {
   maxLength
 } from 'utils/validators';
 
-// * Actions
-import { getPublisher } from 'store/actions';
-
 // * Sass
 import './PublicationAddingForm.scss';
 
 const initialState = {
   file: null,
   title: '',
-  value: ''
+  value: '',
+  categoryId: '',
+  tags: ''
 };
 
 const initialFields = [
@@ -46,6 +44,17 @@ const initialFields = [
     control: 'textarea',
     label: 'контент',
     placeholder: 'Заповніть контент публікації...',
+  },
+  {
+    name: 'categoryId',
+    label: 'категорія',
+    placeholder: 'Виберіть категорію...',
+    component: props => <Select url="/categories" {...props} />
+  },
+  {
+    name: 'tags',
+    label: 'теги',
+    placeholder: 'Світ, Хороші Новини, Wi-Fi...',
   }
 ];
 
@@ -61,12 +70,17 @@ const validation = {
   value: [
     [required, 'контент обов\'язковий.'],
     [minLength(300), 'контент повинен містити не менше 300 символів.']
-  ]
+  ],
+  categoryId: [
+    [required, 'категорія обов\'язкова.']
+  ],
+  tags: [
+    [maxLength(256), 'не більше 64 символів.']
+  ],
 };
 
 export const PublicationAddingForm = () => {
-  const { data, fields, validate } = useForm(initialState, initialFields);
-  const dispatch = useDispatch();
+  const { data, fields, validate, reset } = useForm(initialState, initialFields);
 
   const onSubmit = async e => {
     e.preventDefault();
@@ -74,13 +88,14 @@ export const PublicationAddingForm = () => {
     const isValid = validate(validation);
 
     if (isValid) {
-      const response = await postRequest('/auth', data);
+      const formData = new FormData();
+      for ( var key in data )
+        formData.append(key, data[key]);
 
-      if (response.status === 200) {
-        set('token', response.data.token);
+      const response = await postRequest('/publications', formData);
 
-        dispatch(await getPublisher());
-      }
+      if (response.status === 200)
+        reset();
     }
   };
 

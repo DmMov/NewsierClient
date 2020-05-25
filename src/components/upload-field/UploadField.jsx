@@ -1,6 +1,9 @@
 import React from 'react';
 import { CloudUpload } from '@material-ui/icons';
 
+// * Components
+import { ResponsiveImage } from 'components';
+
 // * Sass
 import './UploadField.scss';
 
@@ -11,5 +14,12 @@ export const UploadField = ({ label, onChange, error, value }) =>
       <input type="file" name="file" className="uploadField__control" onChange={onChange}/>
       <p className="btn uploadField__btn"><CloudUpload className="uploadField__uploadIcon" />{label}</p>
     </label>
-    {!!value && <span className="uploadField__fileName">{value.name}</span>}
-  </div>;
+    {
+      value &&
+        <ResponsiveImage
+          src={URL.createObjectURL(value)}
+          classes={['uploadField__uploadedImageContainer']}
+        />
+      }
+      {value && <span className="uploadField__fileName">{value.name}</span>}
+  </div>
