@@ -19,11 +19,11 @@ export const Comment = ({ comment }) => {
   const authenticated = useSelector(selectAuthStatus);
   const { publicationId } = useParams();
 
-  const onDelete = () => dispatch(deleteComment(comment.id, publicationId));
+  const onCommentDelete = () => dispatch(deleteComment(comment.id, publicationId));
 
   return <CommentCard
     authenticated={authenticated}
-    onDelete={onDelete}
+    onDelete={onCommentDelete}
     {...comment}
   />
 }

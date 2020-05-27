@@ -14,7 +14,7 @@ import { assets } from 'assets/constants';
 // * Sass
 import './PublicationItem.scss';
 
-export const PublicationItem = ({ id, image, title, category, categoryId, views, value, tags, createdAt }) =>
+export const PublicationItem = ({ id, image, title, category, categoryId, views, value, tags, createdAt, onDelete }) =>
   <div className="publicationItem">
     <ResponsiveImage
       src={`${assets}/images/${image}`}
@@ -43,7 +43,7 @@ export const PublicationItem = ({ id, image, title, category, categoryId, views,
     </div>
     <span className="publicationItem__value">{value}</span>
     <TagsBox tags={tags} />
-    <button className="publicationItem__deleteBtn btn">
+    <button className="publicationItem__deleteBtn btn" onClick={onDelete}>
       <Delete className="icon" />
       <span className="text">видалити</span>
     </button>

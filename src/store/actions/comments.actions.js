@@ -12,15 +12,15 @@ export const setComments = comments => ({
 });
 
 export const getComments = publicationId => async dispatch => {
-  const response = await getRequest(`/comments/by-publication/${publicationId}`);
+  const { status, data } = await getRequest(`/comments/by-publication/${publicationId}`);
 
-  if (response.status == 200)
-    dispatch(setComments(response.data));
+  if (status === 200)
+    dispatch(setComments(data));
 }
 
 export const deleteComment = (commentId, publicationId) => async dispatch => {
-  const response = await deleteRequest(`/comments/${commentId}`);
+  const { status } = await deleteRequest(`/comments/${commentId}`);
 
-  if (response.status == 204)
+  if (status === 204)
     dispatch(getComments(publicationId));
 }
