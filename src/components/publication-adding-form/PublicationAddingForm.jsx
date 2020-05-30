@@ -89,7 +89,7 @@ export const PublicationAddingForm = () => {
 
     if (isValid) {
       const formData = new FormData();
-      for ( var key in data )
+      for (var key in data)
         formData.append(key, data[key]);
 
       const response = await postRequest('/publications', formData);

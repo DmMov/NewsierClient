@@ -1,14 +1,14 @@
 import React from 'react';
 import useDocumentTitle from '@rehooks/document-title';
 
-// * Assets
-import bannerImage from 'assets/images/banners/4';
-
 // * Components
 import {
   SignInForm,
   Banner
 } from 'components';
+
+// * Assets
+import image from 'assets/images/banners/b-2';
 
 // * Sass
 import './SignInPage.scss';
@@ -19,7 +19,7 @@ const SignInPage = () => {
   return (
     <div id="sign-in-page" className="page">
       <Banner
-        image={bannerImage}
+        image={image}
         title="вхід"
       />
       <SignInForm />
