@@ -32,3 +32,4 @@ export { Logo } from './logo/Logo';
 export { Footer } from './footer/Footer';
 export { PublicationAddingForm } from './publication-adding-form/PublicationAddingForm';
 export { Select } from './select/Select';
+export { SponsorsSection } from './sponsors-section/SponsorsSection';

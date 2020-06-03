@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from 'react';
+import { string } from 'prop-types';
 
 // * Components
 import { SelectField } from './SelectField';
@@ -22,3 +23,7 @@ export const Select = ({ url, ...props }) => {
 
   return <SelectField {...props} options={options} />;
 }
+
+Select.propTypes = {
+  url: string.isRequired
+};

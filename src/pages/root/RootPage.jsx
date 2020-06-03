@@ -5,7 +5,8 @@ import useDocumentTitle from '@rehooks/document-title';
 import {
   SliderModule,
   Publications,
-  PublicationCard
+  PublicationCard,
+  SponsorsSection
 } from 'components';
 
 import './RootPage.scss';
@@ -23,6 +24,7 @@ const RootPage = () => {
           component={PublicationCard}
         />
       </div>
+      <SponsorsSection />
     </div>
   );
 }

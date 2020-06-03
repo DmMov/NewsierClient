@@ -18,7 +18,7 @@ module.exports = {
   },
   resolve: {
     modules: ['node_modules/', 'src/'],
-    extensions: [ '.js', '.jsx', '.json', '.jpg', '.css', '.scss', '.sass', '.ttf' ]
+    extensions: [ '.js', '.jsx', '.json', '.jpg', '.jpeg', '.png', '.css', '.scss', '.sass', '.ttf' ]
   },
   optimization: {
     splitChunks: {
