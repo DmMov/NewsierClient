@@ -2,7 +2,7 @@ import React, { Suspense, lazy } from 'react';
 import { Route } from 'react-router-dom';
 
 // * Pages
-const SignInPage = lazy(() => import('pages/sign-in/SignInPage'));
+const SignUpPage = lazy(() => import('pages/sign-up/SignUpPage'));
 
 // * Components
 import {
@@ -11,11 +11,11 @@ import {
 } from 'components';
 
 // * Constants
-import { signInRedirectParams } from 'assets/constants';
+import { signUpRedirectParams } from 'assets/constants';
 
-export const SignInRoute = ({ publisher }) =>
+export const SignUpRoute = ({ publisher }) =>
   <Route
-    path="/sign-in"
+    path="/sign-up"
     component={
       () =>
         <RedirectChecker
@@ -23,10 +23,10 @@ export const SignInRoute = ({ publisher }) =>
           component={
             () =>
               <Suspense fallback={<Loader />}>
-                <SignInPage />
+                <SignUpPage />
               </Suspense>
           }
-          redirectParams={signInRedirectParams}
+          redirectParams={signUpRedirectParams}
         />
     }
   />;

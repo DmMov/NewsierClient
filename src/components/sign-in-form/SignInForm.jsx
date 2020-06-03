@@ -45,7 +45,6 @@ const validation = {
     [minLength(5), 'емейл повинен містити не менше 5 символів.'],
     [isEmail, 'не коректний емейл.']
   ],
-
   password: [
     [required, 'пароль обов\'язковий.'],
     [minLength(5), 'пароль повинен містити не менше 5 символів.']
@@ -62,10 +61,10 @@ export const SignInForm = () => {
     const isValid = validate(validation);
 
     if (isValid) {
-      const response = await postRequest('/auth', data);
+      const response = await postRequest('/auth/sign-in', data);
 
       if (response.status === 200) {
-        set('token', response.data.token);
+        set('token', response.data);
 
         dispatch(await getPublisher());
       }

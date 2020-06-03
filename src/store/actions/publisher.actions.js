@@ -9,8 +9,8 @@ export const setPublisher = publisher => ({
 });
 
 export const getPublisher = () => async dispatch => {
-  const response = await getRequest('/auth');
+  const { status, data } = await getRequest('/publishers');
 
-  if (response.status == 200)
-    dispatch(setPublisher(response.data));
+  if (status === 200)
+    dispatch(setPublisher(data));
 }

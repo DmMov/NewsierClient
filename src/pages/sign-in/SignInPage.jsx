@@ -17,7 +17,7 @@ const SignInPage = () => {
   useDocumentTitle('Newsier | Вхід');
 
   return (
-    <div id="sign-in-page" className="page">
+    <div className="page signInPage">
       <Banner
         image={image}
         title="вхід"

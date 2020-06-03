@@ -5,6 +5,7 @@ export { Form } from './form/Form';
 export { Field } from './field/Field';
 export { UploadField } from './upload-field/UploadField'
 export { SignInForm } from './sign-in-form/SignInForm';
+export { SignUpForm } from './sign-up-form/SignUpForm';
 export { SliderModule } from './slider/SliderModule';
 export { RedirectChecker } from './redirect-checker/RedirectChecker';
 export { Link } from './link/Link';
