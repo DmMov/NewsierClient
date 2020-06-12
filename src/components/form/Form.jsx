@@ -1,9 +1,9 @@
 import React from 'react';
 import classnames from 'classnames';
-import { arrayOf, func, string, any } from 'prop-types';
+import { arrayOf, func, string } from 'prop-types';
 
 // * Components
-import { Field } from 'components';
+import { Field, Spinner } from 'components';
 
 // * Constants
 import { field } from 'assets/constants';
@@ -11,18 +11,17 @@ import { field } from 'assets/constants';
 // * Sass
 import './Form.scss';
 
-export const Form = ({ onSubmit, classes, title, buttonText, fields }) =>
+export const Form = ({ onSubmit, classes, title, buttonText, fields, spin }) =>
   <form
     onSubmit={onSubmit}
     className={classnames('form', classes)}
   >
+    {spin && <Spinner />}
     {title && <h2 className="form__title">{title}</h2>}
     {
       fields.map(
-        ({component, ...field}) => {
-          const Component = !!component ? component : Field;
-          return <Component key={field.name} {...field} />;
-        }
+        ({component: Component, ...field}) =>
+          Component ? <Component key={field.name} {...field} /> : <Field key={field.name} {...field} />
       )
     }
     <button

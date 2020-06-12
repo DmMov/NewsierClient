@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { useDispatch } from 'react-redux';
 import { set } from 'js-cookie';
 
@@ -8,6 +8,7 @@ import { Form } from 'components';
 // * Utils
 import { useForm } from 'utils/hooks';
 import { postRequest } from 'utils/helpers';
+import { equalFields } from 'utils/validators';
 
 // * Actions
 import { getPublisher } from 'store/actions';
@@ -21,13 +22,15 @@ import { validation } from './validation';
 import './SignUpForm.scss';
 
 export const SignUpForm = () => {
-  const { data, fields, validate } = useForm(initialState, initialFields);
+  const [spin, setSpin] = useState(false);
+  const { data, fields, validate, setErrors } = useForm(initialState, initialFields);
   const dispatch = useDispatch();
 
   const onSubmit = async e => {
     e.preventDefault();
+    setSpin(true);
 
-    const isValid = validate(validation);
+    const isValid = validate(validation, [equalFields('password', 'repeat')]);
 
     if (isValid) {
       const formData = new FormData();
@@ -41,10 +44,20 @@ export const SignUpForm = () => {
 
         dispatch(await getPublisher());
       }
+
+      else if(response.status === 400) {
+        setErrors(errors => ({
+          ...errors,
+          email: 'емейл не коректний або вже використовується іншим користувачем.',
+        }));
+      }
     }
+
+    setSpin(false);
   }
 
   return <Form
+    spin={spin}
     classes={['signUpForm']}
     onSubmit={onSubmit}
     buttonText="зареєструватись"

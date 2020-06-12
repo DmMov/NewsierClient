@@ -32,7 +32,7 @@ export const useForm = (initialState, initialFields) =>  {
     setErrors(initialErrors);
   }
 
-  const validate = (validationSet) => {
+  const validate = (validationSet, formValidators = null) => {
     let validationResults = [];
 
     for (const key in validationSet) {
@@ -53,6 +53,9 @@ export const useForm = (initialState, initialFields) =>  {
       }
     }
 
+    if(!!formValidators)
+      validationResults = [...validationResults, formValidators.map(formValidator => formValidator(data, setErrors))];
+
     return validationResults.find(value => value == false) != false && true;
   };
 
@@ -65,5 +68,5 @@ export const useForm = (initialState, initialFields) =>  {
     })
   );
 
-  return { data, fields: buildFields(), onChange, reset, validate };
+  return { data, fields: buildFields(), onChange, reset, validate, setErrors };
 }

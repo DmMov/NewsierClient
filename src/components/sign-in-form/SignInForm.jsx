@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { useDispatch } from 'react-redux';
 import { isEmail } from 'validator';
 import { set } from 'js-cookie';
@@ -52,11 +52,13 @@ const validation = {
 };
 
 export const SignInForm = () => {
-  const { data, fields, validate } = useForm(initialState, initialFields);
+  const [spin, setSpin] = useState(false);
+  const { data, fields, validate, setErrors } = useForm(initialState, initialFields);
   const dispatch = useDispatch();
 
   const onSubmit = async e => {
     e.preventDefault();
+    setSpin(true);
 
     const isValid = validate(validation);
 
@@ -68,13 +70,24 @@ export const SignInForm = () => {
 
         dispatch(await getPublisher());
       }
+
+      else if(response.status === 400) {
+        setErrors(errors => ({
+          ...errors,
+          email: 'не коректний емайл або пароль.',
+          password: 'не коректний емайл або пароль.'
+        }));
+      }
     }
+
+    setSpin(false);
   };
 
   return <Form
+    spin={spin}
     classes={['signInForm']}
     onSubmit={onSubmit}
     buttonText="увійти"
     fields={fields}
-  />
+  />;
 }
