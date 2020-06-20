@@ -6,7 +6,7 @@ import {
   minLength
 } from 'utils/validators';
 
-export const validation = {
+export const fieldsValidationSet = {
   name: [
     [required, 'ім\'я обов\'язкове.'],
     [minLength(3), 'ім\'я повинене містити не менше 3 символів.']

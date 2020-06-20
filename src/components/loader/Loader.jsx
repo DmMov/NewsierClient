@@ -15,7 +15,7 @@ export const Loader = () => {
   }, []);
 
   return createPortal(
-    <div className="loader"></div>,
+    <div className="loader" />,
     document.body
   );
 }

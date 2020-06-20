@@ -17,10 +17,8 @@ export const SignOutButton = () => {
     dispatch(setPublisher(null));
   }
 
-  return (
-    <button className="signOutButton btn" onClick={onClick}>
-      <ExitToApp className="signOutButton__icon" />
-      <span className="signOutButton__text">вийти</span>
-    </button>
-  )
+  return <button className="signOutButton btn" onClick={onClick}>
+    <ExitToApp className="signOutButton__icon" />
+    <span className="signOutButton__text">вийти</span>
+  </button>;
 }

@@ -16,7 +16,7 @@ import { getPublisher } from 'store/actions';
 // * Data
 import { initialState } from './initialState';
 import { initialFields } from './initialFields';
-import { validation } from './validation';
+import { fieldsValidationSet } from './fieldsValidationSet';
 
 // * Sass
 import './SignUpForm.scss';
@@ -30,7 +30,7 @@ export const SignUpForm = () => {
     e.preventDefault();
     setSpin(true);
 
-    const isValid = validate(validation, [equalFields('password', 'repeat')]);
+    const isValid = validate(fieldsValidationSet, [equalFields('password', 'repeat')]);
 
     if (isValid) {
       const formData = new FormData();

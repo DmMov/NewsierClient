@@ -32,11 +32,11 @@ export const useForm = (initialState, initialFields) =>  {
     setErrors(initialErrors);
   }
 
-  const validate = (validationSet, formValidators = null) => {
+  const validate = (fieldsValidationSet, formValidators = null) => {
     let validationResults = [];
 
-    for (const key in validationSet) {
-      for (const valitationItem of validationSet[key]) {
+    for (const key in fieldsValidationSet) {
+      for (const valitationItem of fieldsValidationSet[key]) {
         const [validator, message] = valitationItem;
         const validationResult = validator(data[key]);
 

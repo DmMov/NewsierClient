@@ -9,34 +9,17 @@ import { Form } from 'components';
 import { useForm } from 'utils/hooks';
 import { postRequest } from 'utils/helpers';
 import { selectAuthStatus } from 'utils/selectors';
-import {
-  required,
-  minLength
-} from 'utils/validators';
 
 // * Actions
 import { getComments } from 'store/actions';
 
+// * Data
+import { initialState } from './initialState';
+import { initialFields } from './initialFields';
+import { fieldsValidationSet } from './fieldsValidationSet';
+
 // * Sass
 import './CommentAddingForm.scss';
-
-const initialState = {
-  value: ''
-};
-
-const initialFields = [
-  {
-    name: 'value',
-    placeholder: 'Залиште ваш коментар...',
-  }
-];
-
-const validation = {
-  value: [
-    [required, 'напишіть коментар'],
-    [minLength(5), 'коментар пивинен містити не менше 5 символів']
-  ]
-};
 
 export const CommentAddingForm = () => {
   const { data, fields, validate, reset } = useForm(initialState, initialFields);
@@ -47,7 +30,7 @@ export const CommentAddingForm = () => {
   const onSubmit = async (e) => {
     e.preventDefault();
 
-    const isValid = validate(validation);
+    const isValid = validate(fieldsValidationSet);
 
     if (isValid) {
       const requestData = {

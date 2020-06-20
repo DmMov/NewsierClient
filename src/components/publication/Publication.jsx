@@ -38,11 +38,11 @@ export const Publication = ({ title, categoryId, category, image, value, views, 
     <PublisherBox {...props} />
     <ResponsiveImage
       src={`${assets}/images/${image}`}
-      classes={['publication__imageContainer', 'withOverlay']}
+      classes={['publication__imageContainer']}
     />
     <p className="publication__value">{value}</p>
     <TagsBox tags={tags} />
-  </div>
+  </div>;
 
 Publication.propTypes = {
   title: string.isRequired,
