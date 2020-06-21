@@ -14,7 +14,7 @@ export const SignOutButton = () => {
 
   const onClick = () => {
     remove('token');
-    dispatch(setPublisher(null));
+    dispatch(setPublisher({}));
   }
 
   return <button className="signOutButton btn" onClick={onClick}>

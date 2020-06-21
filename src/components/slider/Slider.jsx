@@ -1,37 +1,32 @@
-import React from 'react';
-import { object, number, array, func } from 'prop-types';
-import { CSSTransition, TransitionGroup } from 'react-transition-group';
+import React, { useState, useEffect } from 'react';
 
 // * Components
-import { Slide } from './Slide';
-import { Dots } from './Dots';
+import { SliderLayout } from './SliderLayout';
+import { Spinner } from 'components';
 
-// * Sass
-import './Slider.scss';
+// * Utils
+import { getRequest } from 'utils/helpers';
 
-export const Slider = ({ slide, index, dots, jumpTo }) =>
-  <div id="slider">
-    <TransitionGroup className="slidesWrap">
-      <CSSTransition
-        key={slide.id}
-        in={true}
-        appear={true}
-        timeout={1000}
-        classNames="fade"
-      >
-        <Slide slide={slide} index={index + 1} />
-      </CSSTransition>
-    </TransitionGroup>
-    <Dots
-      dots={dots}
-      jumpTo={jumpTo}
-      activeIndex={index}
-    />
-  </div>
+export const Slider = () => {
+  const [index, setIndex] = useState(0);
+  const [publications, setPublications] = useState([]);
 
-Slider.propTypes = {
-  slide: object.isRequired,
-  index: number.isRequired,
-  dots: array.isRequired,
-  jumpTo: func.isRequired
-};
+  useEffect(() => {
+    fetchPublications();
+  }, []);
+
+  const fetchPublications = async () => {
+    const { status, data } = await getRequest('/publications/popular?count=5');
+
+    if (status === 200)
+      setPublications(data);
+  }
+
+  return publications && publications.length != 0 ? <SliderLayout
+    slide={publications[index]}
+    index={index}
+    dots={publications}
+    jumpTo={setIndex}
+  /> :
+  <Spinner />;
+}

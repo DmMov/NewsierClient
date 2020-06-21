@@ -5,7 +5,7 @@ import { Route } from 'react-router-dom';
 import { Loader } from 'components';
 
 // * Pages
-const RootPage = lazy(() => import('pages/root/RootPage'));
+const RootPage = lazy(() => import(/* webpackChunkName: 'root-page' */ 'pages/root/RootPage'));
 
 export const RootRoute = () =>
   <Route

@@ -1,91 +1,29 @@
-import React from 'react';
+import React, { useState } from 'react';
 
 // * Components
-import {
-  Form,
-  UploadField,
-  Select
-} from 'components';
+import { Form } from 'components';
 
 // * Utils
 import { useForm } from 'utils/hooks';
 import { postRequest } from 'utils/helpers';
-import {
-  required,
-  minLength,
-  maxLength
-} from 'utils/validators';
+
+// * Data
+import { initialState } from './initialState';
+import { initialFields } from './initialFields';
+import { fieldsValidationSet } from './fieldsValidationSet';
 
 // * Sass
 import './PublicationAddingForm.scss';
 
-const initialState = {
-  file: null,
-  title: '',
-  value: '',
-  categoryId: '',
-  tags: ''
-};
-
-const initialFields = [
-  {
-    name: 'file',
-    type: 'file',
-    label: 'завантажити',
-    component: UploadField
-  },
-  {
-    name: 'title',
-    label: 'заголовок',
-    placeholder: 'Введіть заголовок публікації...',
-  },
-  {
-    name: 'value',
-    control: 'textarea',
-    label: 'контент',
-    placeholder: 'Заповніть контент публікації...',
-  },
-  {
-    name: 'categoryId',
-    label: 'категорія',
-    placeholder: 'Виберіть категорію...',
-    component: props => <Select url="/categories" {...props} />
-  },
-  {
-    name: 'tags',
-    label: 'теги',
-    placeholder: 'Світ, Хороші Новини, Wi-Fi...',
-  }
-];
-
-const validation = {
-  file: [
-    [required, 'зображення обов\'язкове.']
-  ],
-  title: [
-    [required, 'заголовок обов\'язковий.'],
-    [minLength(32), 'заголовок повинен містити не менше 32 символів.'],
-    [maxLength(256), 'заголовок повинен містити не більше 256 символів.']
-  ],
-  value: [
-    [required, 'контент обов\'язковий.'],
-    [minLength(300), 'контент повинен містити не менше 300 символів.']
-  ],
-  categoryId: [
-    [required, 'категорія обов\'язкова.']
-  ],
-  tags: [
-    [maxLength(256), 'не більше 64 символів.']
-  ],
-};
-
 export const PublicationAddingForm = () => {
+  const [spin, setSpin] = useState(false);
   const { data, fields, validate, reset } = useForm(initialState, initialFields);
 
   const onSubmit = async e => {
     e.preventDefault();
+    setSpin(true);
 
-    const isValid = validate(validation);
+    const isValid = validate(fieldsValidationSet);
 
     if (isValid) {
       const formData = new FormData();
@@ -97,9 +35,12 @@ export const PublicationAddingForm = () => {
       if (response.status === 200)
         reset();
     }
+
+    setSpin(false);
   };
 
   return <Form
+    spin={spin}
     classes={['publicationAddingForm']}
     onSubmit={onSubmit}
     buttonText="створити"

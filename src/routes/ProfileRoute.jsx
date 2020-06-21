@@ -5,7 +5,7 @@ import { Route } from 'react-router-dom';
 import { Loader } from 'components';
 
 // * Pages
-const ProfilePage = lazy(() => import('pages/profile/ProfilePage'));
+const ProfilePage = lazy(() => import(/* webpackChunkName: 'profile-page' */ 'pages/profile/ProfilePage'));
 
 export const ProfileRoute = () =>
   <Route

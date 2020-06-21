@@ -8,10 +8,13 @@ import {
 } from 'components';
 
 // * Pages
-const CabinetPage = lazy(() => import('pages/cabinet/CabinetPage'));
+const CabinetPage = lazy(() => import(/* webpackChunkName: 'cabinet-page' */ 'pages/cabinet/CabinetPage'));
 
 // * Constants
 import { profileRedirectParams } from 'assets/constants';
+
+// * Utils
+import { isEmpty } from 'utils/helpers';
 
 export const CabinetRoute = ({ publisher }) =>
   <Route
@@ -19,7 +22,7 @@ export const CabinetRoute = ({ publisher }) =>
     component={
       () =>
         <RedirectChecker
-          condition={publisher != null}
+          condition={!!publisher && !isEmpty(publisher)}
           component={
             () =>
               <Suspense fallback={<Loader />}>
@@ -29,4 +32,4 @@ export const CabinetRoute = ({ publisher }) =>
           redirectParams={profileRedirectParams}
         />
     }
-  />
+  />;

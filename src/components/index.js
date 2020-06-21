@@ -6,7 +6,7 @@ export { Field } from './field/Field';
 export { UploadField } from './upload-field/UploadField'
 export { SignInForm } from './sign-in-form/SignInForm';
 export { SignUpForm } from './sign-up-form/SignUpForm';
-export { SliderModule } from './slider/SliderModule';
+export { Slider } from './slider/Slider';
 export { RedirectChecker } from './redirect-checker/RedirectChecker';
 export { Link } from './link/Link';
 export { ResponsiveImage } from './responsive-image/ResponsiveImage';

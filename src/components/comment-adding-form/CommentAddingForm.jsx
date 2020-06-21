@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { useParams } from 'react-router-dom';
 import { useSelector, useDispatch } from 'react-redux';
 
@@ -22,6 +22,7 @@ import { fieldsValidationSet } from './fieldsValidationSet';
 import './CommentAddingForm.scss';
 
 export const CommentAddingForm = () => {
+  const [spin, setSpin] = useState(false);
   const { data, fields, validate, reset } = useForm(initialState, initialFields);
   const { publicationId } = useParams();
   const authenticated = useSelector(selectAuthStatus);
@@ -29,6 +30,7 @@ export const CommentAddingForm = () => {
 
   const onSubmit = async (e) => {
     e.preventDefault();
+    setSpin(true);
 
     const isValid = validate(fieldsValidationSet);
 
@@ -44,10 +46,13 @@ export const CommentAddingForm = () => {
         dispatch(getComments(publicationId));
       }
     }
+
+    setSpin(false);
   };
 
   return authenticated &&
     <Form
+      spin={spin}
       onSubmit={onSubmit}
       classes={['commentAddingForm']}
       buttonText="залишити коментар"

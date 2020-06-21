@@ -1,6 +1,7 @@
-import React from 'react';
-import { useSelector } from 'react-redux';
+import React, { useEffect } from 'react';
+import { useSelector, useDispatch } from 'react-redux';
 import { BrowserRouter as Router } from 'react-router-dom';
+import { get } from 'js-cookie';
 
 // * Routes
 import {
@@ -14,19 +15,37 @@ import {
 // * Components
 import {
   Header,
-  Footer
+  Footer,
+  Loader
 } from 'components';
 
 // * Selectors
 import { selectPublisher } from 'utils/selectors';
+
+// * Actions
+import { getPublisher, setPublisher } from 'store/actions';
 
 // * Sass
 import './App.scss';
 
 export const App = () => {
   const publisher = useSelector(selectPublisher);
+  const dispatch = useDispatch();
 
-  return <Router>
+  useEffect(() => {
+    getAuthenticatedPublisher();
+  }, []);
+
+  const getAuthenticatedPublisher = async () => {
+    const token = get('token');
+
+    if (!!token)
+      dispatch(await getPublisher());
+    else
+      dispatch(setPublisher({}));
+  }
+
+  return publisher ? <Router>
     <div id="app">
       <Header publisher={publisher} />
       <RootRoute />
@@ -36,5 +55,6 @@ export const App = () => {
       <PublicationRoute />
       <Footer authorized={!!publisher} />
     </div>
-  </Router>
+  </Router> :
+  <Loader />;
 }

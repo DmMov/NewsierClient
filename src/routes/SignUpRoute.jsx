@@ -2,13 +2,16 @@ import React, { Suspense, lazy } from 'react';
 import { Route } from 'react-router-dom';
 
 // * Pages
-const SignUpPage = lazy(() => import('pages/sign-up/SignUpPage'));
+const SignUpPage = lazy(() => import(/* webpackChunkName: 'sign-up-page' */ 'pages/sign-up/SignUpPage'));
 
 // * Components
 import {
   RedirectChecker,
   Loader
 } from 'components';
+
+// * Utils
+import { isEmpty } from 'utils/helpers';
 
 // * Constants
 import { signUpRedirectParams } from 'assets/constants';
@@ -19,7 +22,7 @@ export const SignUpRoute = ({ publisher }) =>
     component={
       () =>
         <RedirectChecker
-          condition={publisher == null}
+          condition={!publisher || isEmpty(publisher)}
           component={
             () =>
               <Suspense fallback={<Loader />}>
