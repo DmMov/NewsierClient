@@ -1,7 +1,5 @@
 .dots {
-  display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(1rem, 1fr));
-  grid-gap: .5rem;
+  display: flex;
   position: absolute;
   right: 0;
   bottom: 0;

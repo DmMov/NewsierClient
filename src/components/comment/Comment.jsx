@@ -25,7 +25,7 @@ export const Comment = ({ comment }) => {
     authenticated={authenticated}
     onDelete={onCommentDelete}
     {...comment}
-  />
+  />;
 }
 
 Comment.propTypes = {

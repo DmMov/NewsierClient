@@ -29,7 +29,7 @@ export const PublicationCard = ({ image, createdAt, ...props }) =>
       <span className="readMore__text">читати більше</span>
       <ChevronRight className="arrowIcon" />
     </Link>
-    <span className="publicationCard__createdAt">{createdAt}</span>
+    <span className="publicationCard__createdAt">{createdAt} року.</span>
   </div>
 
 PublicationCard.propTypes = {

@@ -21,20 +21,13 @@ import './Publication.scss';
 
 export const Publication = ({ title, categoryId, category, image, value, views, tags, ...props }) =>
   <div className="publication">
+    <Link
+      to={`/publications/by-category/${categoryId}`}
+      classes={['publication__category']}
+    >
+      {category}
+    </Link>
     <h1 className="publication__title">{title}</h1>
-    <div className="publication__inlineWrap">
-      <Link
-        to={`/publications/by-category/${categoryId}`}
-        classes={['publication__category']}
-      >
-        {category}
-      </Link>
-      <FiberManualRecord className="dotIcon" />
-      <p className="publication__views">
-        <Visibility className="statIcon" />
-        <span className="publication__views__count">{views}</span>
-      </p>
-    </div>
     <PublisherBox {...props} />
     <ResponsiveImage
       src={`${assets}/images/${image}`}
@@ -42,6 +35,10 @@ export const Publication = ({ title, categoryId, category, image, value, views, 
     />
     <p className="publication__value">{value}</p>
     <TagsBox tags={tags} />
+    <p className="publication__views">
+      <Visibility className="statIcon" />
+      <span className="publication__views__count">{views}</span>
+    </p>
   </div>;
 
 Publication.propTypes = {

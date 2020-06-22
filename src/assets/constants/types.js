@@ -23,5 +23,6 @@ export const comment = shape({
   publisher: string.isRequired,
   publisherImage: string.isRequired,
   parentId: string,
-  createdAt: string.isRequired,
+  createdAtDate: string.isRequired,
+  createdAtTime: string.isRequired
 });

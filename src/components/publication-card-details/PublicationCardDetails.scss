@@ -6,8 +6,9 @@
   padding: 1rem;
 
   &__category {
-    font-size: .85rem;
+    font-size: .7rem;
     font-weight: 500;
+    text-transform: uppercase;
     color: $primary;
 
     &:hover {
