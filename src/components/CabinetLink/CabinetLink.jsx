@@ -14,16 +14,13 @@ import { assets } from 'assets/constants';
 import './CabinetLink.scss';
 
 export const CabinetLink = ({ name, surname, image }) =>
-  <Link
-    to="/cabinet"
-    classes={['cabinetLink']}
-  >
+  <Link to="/cabinet" classes={['cabinetLink']}>
     <span className="cabinetLink__publisher">{`${name} ${surname}`}</span>
     <ResponsiveImage
       src={`${assets}/images/${image}`}
       classes={['cabinetLink__imageContainer']}
     />
-  </Link>
+  </Link>;
 
 CabinetLink.propTypes = {
   name: string.isRequired,

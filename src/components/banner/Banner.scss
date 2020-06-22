@@ -1,24 +1,22 @@
+@import "assets/scss/mixins";
+
 .banner {
   display: grid;
   position: relative;
   height: 8rem;
 
   &__imageContainer {
-    position: absolute;
-    top: 0;
-    right: 0;
-    bottom: 0;
-    left: 0;
+    @include stretch(absolute, 0);
   }
 
   &__title {
     position: relative;
-    z-index: 1;
     justify-self: center;
     align-self: center;
     color: #ffffff;
     text-transform: capitalize;
     font-size: 1.75rem;
     letter-spacing: 2px;
+    z-index: 1;
   }
 }

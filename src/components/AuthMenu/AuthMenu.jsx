@@ -8,16 +8,10 @@ import './AuthMenu.scss';
 
 export const AuthMenu = () =>
   <nav className="authMenu">
-    <Link
-      to="/sign-up"
-      classes={['btn']}
-    >
+    <Link to="/sign-up" classes={['btn']}>
       реєстрація
     </Link>
-    <Link
-      to="/sign-in"
-      classes={['btn', 'primary', 'filled', 'bordered']}
-    >
+    <Link to="/sign-in" classes={['btn', 'primary', 'filled', 'bordered']}>
       вхід
     </Link>
-  </nav>
+  </nav>;

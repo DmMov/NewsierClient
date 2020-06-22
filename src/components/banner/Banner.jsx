@@ -14,9 +14,9 @@ export const Banner = ({ image, title }) =>
       classes={['banner__imageContainer', 'withOverlay']}
     />
     <h2 className="banner__title">{title}</h2>
-  </div>
+  </div>;
 
 Banner.propTypes = {
   image: string.isRequired,
   title: string.isRequired
-}
+};

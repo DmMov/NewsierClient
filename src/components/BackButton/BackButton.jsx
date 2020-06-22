@@ -10,10 +10,8 @@ export const BackButton = () => {
 
   const onClick = () => history.goBack();
 
-  return (
-    <button className="btn backButton" onClick={onClick}>
-      <ArrowBackIos className="backButton__icon" />
-      <span className="backButton__text">назад</span>
-    </button>
-  );
+  return <button className="btn backButton" onClick={onClick}>
+    <ArrowBackIos className="backButton__icon" />
+    <span className="backButton__text">назад</span>
+  </button>;
 }
