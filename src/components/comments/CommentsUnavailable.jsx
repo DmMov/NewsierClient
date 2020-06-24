@@ -13,4 +13,4 @@ export const CommentsUnavailable = () =>
       to={`/sign-in`}
       classes={['commentsUnavailable__authLink']}
     > авторизуватись</Link>.
-  </div>
+  </div>;

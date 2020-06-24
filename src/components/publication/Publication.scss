@@ -13,6 +13,7 @@
   &__category {
     font-size: .7rem;
     font-weight: 500;
+    justify-self: start;
     text-transform: uppercase;
     color: $primary;
     transition: $transition;

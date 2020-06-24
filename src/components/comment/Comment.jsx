@@ -1,33 +1,35 @@
 import React from 'react';
-import { useDispatch, useSelector } from 'react-redux';
-import { useParams } from 'react-router-dom';
+import { string, bool, func } from 'prop-types';
 
 // * Components
-import { CommentCard } from './CommentCard';
+import { Link, ResponsiveImage } from 'components';
 
 // * Constants
-import { comment } from 'assets/constants';
+import { assets } from 'assets/constants';
 
-// * Actions
-import { deleteComment } from 'store/actions';
+// * Sass
+import './Comment.scss';
 
-// * Selectors
-import { selectAuthStatus } from 'utils/selectors';
-
-export const Comment = ({ comment }) => {
-  const dispatch = useDispatch();
-  const authenticated = useSelector(selectAuthStatus);
-  const { publicationId } = useParams();
-
-  const onCommentDelete = () => dispatch(deleteComment(comment.id, publicationId));
-
-  return <CommentCard
-    authenticated={authenticated}
-    onDelete={onCommentDelete}
-    {...comment}
-  />;
-}
+export const Comment = ({ value, canDelete, onDelete, publisherId, publisherImage, createdAtDate, createdAtTime, publisher }) =>
+  <div className="comment">
+    <Link to={`/publications/by-publisher/${publisherId}`} classes={['comment__imageLink']}>
+      <ResponsiveImage src={`${assets}/images/${publisherImage}`} classes={['comment__imageContainer']}/>
+    </Link>
+    <Link to={`/publications/by-publisher/${publisherId}`}>
+      <span className="comment__publisherName">{publisher}</span>
+    </Link>
+    <span className="comment__createdAt">{createdAtDate} року, о {createdAtTime}.</span>
+    <p className="comment__value">{value}</p>
+    {canDelete && <button className="comment__deleteBtn" onClick={onDelete}>+</button>}
+  </div>;
 
 Comment.propTypes = {
-  comment: comment
+  value: string.isRequired,
+  canDelete: bool.isRequired,
+  onDelete: func.isRequired,
+  publisherId: string.isRequired,
+  publisherImage: string.isRequired,
+  publisher: string.isRequired,
+  createdAtDate: string.isRequired,
+  createdAtTime: string.isRequired
 };

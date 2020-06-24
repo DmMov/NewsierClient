@@ -4,6 +4,7 @@ import { useDispatch, useSelector } from 'react-redux';
 
 // * Components
 import { CommentList } from './CommentList';
+import { CommentsUnavailable } from './CommentsUnavailable';
 
 // * Selectors
 import {
@@ -14,9 +15,9 @@ import {
 // * Actions
 import {
   getComments,
-  setComments
+  setComments,
+  deleteComment
 } from 'store/actions';
-import { CommentsUnavailable } from './CommentsUnavailable';
 
 export const Comments = () => {
   const dispatch = useDispatch();
@@ -32,5 +33,10 @@ export const Comments = () => {
     }
   }, []);
 
-  return authenticated ? <CommentList comments={comments} /> : <CommentsUnavailable />
+  const onCommentDelete = id =>
+    dispatch(deleteComment(id, publicationId));
+
+  return authenticated ?
+    <CommentList comments={comments} onCommentDelete={onCommentDelete}/> :
+    <CommentsUnavailable />;
 }
