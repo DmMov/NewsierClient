@@ -9,7 +9,7 @@
   padding: 1rem;
   background-color: $light;
 
-  &__imageContainer {
+  & &__imageContainer {
     @include square(10rem);
     grid-column: 2 / 3;
     grid-row: 1 / 6;
