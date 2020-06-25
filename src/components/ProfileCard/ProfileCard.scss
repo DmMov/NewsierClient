@@ -1,4 +1,5 @@
 @import "assets/scss/vars";
+@import "assets/scss/mixins";
 
 .profileCard {
   display: grid;
@@ -9,8 +10,7 @@
   background-color: $light;
 
   &__imageContainer {
-    width: 10rem;
-    height: 10rem;
+    @include square(10rem);
     grid-column: 2 / 3;
     grid-row: 1 / 6;
     padding: .75rem;

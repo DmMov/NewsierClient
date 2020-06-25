@@ -3,21 +3,11 @@ import { bool } from 'prop-types';
 import { Copyright, FiberManualRecord } from '@material-ui/icons';
 
 // * Components
-import {
-  Logo,
-  Link
-} from 'components';
+import { Logo, Link } from 'components';
+import { AuthCheckedLinks } from './AuthCheckedLinks';
 
 // * Sass
 import './Footer.scss';
-
-const AuthCheckedLinks = ({ authorized }) => authorized ?
-  <Link to="/cabinet" classes={['btn']}>кабінет</Link> :
-  <>
-    <Link to="/sign-in" classes={['btn']}>вхід</Link>
-    <FiberManualRecord className="dotIcon" />
-    <Link to="/sign-up" classes={['btn']}>реєстрація</Link>
-  </>;
 
 export const Footer = ({ authorized }) =>
   <footer className="newsierFooter">

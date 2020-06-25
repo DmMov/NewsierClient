@@ -8,13 +8,10 @@ import { Link } from 'components';
 import './Logo.scss';
 
 export const Logo = ({ color }) =>
-  <Link
-    to="/"
-    classes={['logo', color]}
-  >
+  <Link to="/" classes={['logo', color]}>
     newsier
-  </Link>
+  </Link>;
 
 Logo.propTypes = {
   color: oneOf(['white', 'black']).isRequired
-}
+};

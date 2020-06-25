@@ -10,11 +10,9 @@ import { selectPublisher } from 'utils/selectors';
 const ProfilePage = () => {
   const publisher = useSelector(selectPublisher);
 
-  return (
-    <div className="profilePage page">
-      <ProfileCard publisher={publisher} />
-    </div>
-  );
+  return <div className="profilePage page">
+    <ProfileCard {...publisher} />
+  </div>;
 }
 
 export default ProfilePage;

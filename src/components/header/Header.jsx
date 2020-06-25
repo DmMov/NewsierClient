@@ -1,11 +1,7 @@
 import React from 'react';
 
 // * Components
-import {
-  Logo,
-  AuthMenu,
-  CabinetLink
-} from 'components';
+import { Logo, AuthMenu, CabinetLink } from 'components';
 
 // * Utils
 import { isEmpty } from 'utils/helpers';

@@ -8,13 +8,10 @@ import { Link } from 'components';
 import "./IconLink.scss";
 
 export const IconLink = ({ classes, icon: Icon, text, ...props }) =>
-  <Link
-    {...props}
-    classes={['btn', 'iconLink', classes]}
-  >
+  <Link classes={['btn', 'iconLink', classes]} {...props}>
     <Icon className="iconLink__icon" />
     <span className="iconLink__text">{text}</span>
-  </Link>
+  </Link>;
 
 IconLink.propTypes = {
   classes: arrayOf(string),

@@ -12,10 +12,7 @@ import { field } from 'assets/constants';
 import './Form.scss';
 
 export const Form = ({ onSubmit, classes, title, buttonText, fields, spin }) =>
-  <form
-    onSubmit={onSubmit}
-    className={classnames('form', classes)}
-  >
+  <form onSubmit={onSubmit} className={classnames('form', classes)}>
     {spin && <Spinner />}
     {title && <h2 className="form__title">{title}</h2>}
     {
@@ -27,14 +24,7 @@ export const Form = ({ onSubmit, classes, title, buttonText, fields, spin }) =>
     <button
       type="submit"
       className={
-        classnames(
-          'btn',
-          'bordered',
-          'primary',
-          'filled',
-          'form__submitBtn',
-          ...classes.map(cl => `${cl}__submitBtn`)
-        )
+        classnames( 'btn', 'bordered', 'primary', 'filled', 'form__submitBtn', ...classes.map(cl => `${cl}__submitBtn`))
       }
     >
       {buttonText}
