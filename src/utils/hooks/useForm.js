@@ -54,7 +54,7 @@ export const useForm = (initialState, initialFields) =>  {
     }
 
     if(!!formValidators)
-      validationResults = [...validationResults, formValidators.map(formValidator => formValidator(data, setErrors))];
+      validationResults = [...validationResults, ...formValidators.map(formValidator => formValidator(data, setErrors))];
 
     return validationResults.find(value => value == false) != false && true;
   };

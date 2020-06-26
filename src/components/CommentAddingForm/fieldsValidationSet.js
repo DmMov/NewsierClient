@@ -3,7 +3,7 @@ import { required, minLength } from 'utils/validators';
 
 export const fieldsValidationSet = {
   value: [
-    [required, 'напишіть коментар'],
-    [minLength(5), 'коментар пивинен містити не менше 5 символів']
+    [required, 'enter your comment.'],
+    [minLength(5), 'comment must contain at least 5 characters']
   ]
 };

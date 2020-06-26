@@ -6,6 +6,7 @@ import { ResponsiveImage } from 'components';
 
 // * Sass
 import './UploadField.scss';
+import { string, func, object } from 'prop-types';
 
 export const UploadField = ({ label, onChange, error, value }) =>
   <div className="uploadField">
@@ -22,4 +23,11 @@ export const UploadField = ({ label, onChange, error, value }) =>
         />
       }
       {value && <span className="uploadField__fileName">{value.name}</span>}
-  </div>
+  </div>;
+
+UploadField.propTypes = {
+  label: string.isRequired,
+  onChange: func.isRequired,
+  error: string.isRequired,
+  value: object
+};

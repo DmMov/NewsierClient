@@ -14,17 +14,12 @@ import image from 'assets/images/banners/b-3';
 import './SignUpPage.scss';
 
 const SignUpPage = () => {
-  useDocumentTitle('Newsier | Реєстрація');
+  useDocumentTitle('Newsier | Sign Up');
 
-  return (
-    <div className="page signUpPage">
-      <Banner
-        image={image}
-        title="реєстрація"
-      />
-      <SignUpForm />
-    </div>
-  );
+  return <div className="page signUpPage">
+    <Banner image={image} title="sign up" />
+    <SignUpForm />
+  </div>;
 }
 
 export default SignUpPage;

@@ -19,6 +19,6 @@ export const SignOutButton = () => {
 
   return <button className="signOutButton btn" onClick={onClick}>
     <ExitToApp className="signOutButton__icon" />
-    <span className="signOutButton__text">вийти</span>
+    <span className="signOutButton__text">sign out</span>
   </button>;
 }

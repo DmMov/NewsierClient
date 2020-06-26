@@ -1,6 +1,6 @@
 export const initialFields = [
   {
     name: 'value',
-    placeholder: 'Залиште ваш коментар...'
+    placeholder: 'Enter your comment...'
   }
 ];

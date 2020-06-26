@@ -9,9 +9,9 @@ import './AuthMenu.scss';
 export const AuthMenu = () =>
   <nav className="authMenu">
     <Link to="/sign-up" classes={['btn']}>
-      реєстрація
+      sign up
     </Link>
     <Link to="/sign-in" classes={['btn', 'primary', 'filled', 'bordered']}>
-      вхід
+      sign in
     </Link>
   </nav>;

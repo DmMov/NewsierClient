@@ -13,7 +13,7 @@ import { assets } from 'assets/constants';
 // * Sass
 import './PublisherBox.scss';
 
-export const PublisherBox = ({ publisherId, publisherImage, publisher, createdAtDate, createdAtTime }) =>
+export const PublisherBox = ({ publisherId, publisherImage, publisher, createdAt }) =>
   <div className="publisherBox">
     <Link
       to={`/publications/by-publisher/${publisherId}`}
@@ -24,7 +24,7 @@ export const PublisherBox = ({ publisherId, publisherImage, publisher, createdAt
         classes={['publisherBox__imageContainer']}
       />
     </Link>
-    <span className="publisherBox__publisherPreText">автор</span>
+    <span className="publisherBox__publisherPreText">author</span>
     <Link
       to={`/publications/by-publisher/${publisherId}`}
     >
@@ -32,15 +32,12 @@ export const PublisherBox = ({ publisherId, publisherImage, publisher, createdAt
         {publisher}
       </span>
     </Link>
-    <p className="publisherBox__createdAt">
-      опубліковано <span className="atDate">{createdAtDate}</span> року, о <span className="atTime">{createdAtTime}</span>.
-    </p>
+    <span className="publisherBox__createdAt">{createdAt}</span>
   </div>;
 
 PublisherBox.propTypes = {
   publisherId: string.isRequired,
   publisherImage: string.isRequired,
   publisher: string.isRequired,
-  createdAtDate: string.isRequired,
-  createdAtTime: string.isRequired
+  createdAt: string.isRequired
 };

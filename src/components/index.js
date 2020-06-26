@@ -33,4 +33,3 @@ export { PublicationItem } from './publication-item/PublicationItem';
 export { Spinner } from './spinner/Spinner';
 export { PublicationAddingForm } from './publication-adding-form/PublicationAddingForm';
 export { Select } from './select/Select';
-export { SponsorsSection } from './sponsors-section/SponsorsSection';

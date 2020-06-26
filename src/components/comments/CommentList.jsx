@@ -15,7 +15,7 @@ export const CommentList = ({ comments, onCommentDelete }) =>
     {
       !!comments ? comments.length != 0 ?
         comments.map(comment => <Comment key={comment.id} onDelete={() => onCommentDelete(comment.id)} {...comment} />) :
-        <span className="commentList__noComments">публікація, поки що, не містить коментарів.</span> : null
+        <span className="commentList__noComments">this publication has no comments yet.</span> : null
     }
   </div>;
 

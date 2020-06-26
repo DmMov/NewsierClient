@@ -3,18 +3,10 @@ import { useSelector } from 'react-redux';
 import useDocumentTitle from '@rehooks/document-title';
 
 // * Routes
-import {
-  OwnPublicationsRoute,
-  ProfileRoute,
-  PublicationAddingRoute
-} from 'routes';
+import { OwnPublicationsRoute, ProfileRoute, PublicationAddingRoute } from 'routes';
 
 // * Components
-import {
-  BackButton,
-  SignOutButton,
-  CabinetMenu
-} from 'components';
+import { BackButton, SignOutButton, CabinetMenu } from 'components';
 
 // * Selectors
 import { selectPublisher } from 'utils/selectors';
@@ -24,20 +16,18 @@ import './CabinetPage.scss';
 
 const CabinetPage = () => {
   const publisher = useSelector(selectPublisher);
-  useDocumentTitle(`Newsier | Профіль ${publisher.name} ${publisher.surname}`);
+  useDocumentTitle(`Newsier | Cabinet of ${publisher.name} ${publisher.surname}`);
 
-  return (
-    <div className="cabinetPage page">
-      <div className="cabinetPage__btnSet">
-        <BackButton />
-        <SignOutButton />
-      </div>
-      <CabinetMenu />
-      <OwnPublicationsRoute />
-      <ProfileRoute />
-      <PublicationAddingRoute />
+  return <div className="cabinetPage page">
+    <div className="cabinetPage__btnSet">
+      <BackButton />
+      <SignOutButton />
     </div>
-  );
+    <CabinetMenu />
+    <OwnPublicationsRoute />
+    <ProfileRoute />
+    <PublicationAddingRoute />
+  </div>;
 }
 
 export default CabinetPage;

@@ -1,6 +1,6 @@
 import React from 'react';
 import { string, number, arrayOf } from 'prop-types';
-import { FiberManualRecord, Visibility } from '@material-ui/icons';
+import {  BarChart } from '@material-ui/icons';
 
 // * Components
 import {
@@ -25,22 +25,16 @@ export const PublicationCardDetails = ({ id, category, categoryId, title, publis
     <Link to={`/publication/${id}`}>
       <h4 className="publicationCardDetails__title">{title}</h4>
     </Link>
-    <div className="publicationCardDetails__relatedInfo">
-      <p className="publisher">
-        <span className="publisher__prefix">автор, </span>
-        <Link
-          to={`/publications/by-publisher/${publisherId}`}
-          classes={['publisher__name']}
-        >
-          {publisher}
-        </Link>
-      </p>
-      <FiberManualRecord className="dotIcon" />
-      <p className="views">
-        <Visibility className="statIcon" />
-        <span className="views__count">{views}</span>
-      </p>
-    </div>
+    <p className="publisher">
+      <span className="publisher__prefix">author, </span>
+      <Link to={`/publications/by-publisher/${publisherId}`} classes={['publisher__name']}>
+        {publisher}
+      </Link>
+    </p>
+    <p className="views">
+      <BarChart className="statIcon" />
+      <span className="views__count">{views} views</span>
+    </p>
     <span className="publicationCardDetails__value">{value}</span>
     <TagsBox tags={tags} />
   </div>

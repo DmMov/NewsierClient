@@ -48,7 +48,7 @@ export const SignUpForm = () => {
       else if(response.status === 400) {
         setErrors(errors => ({
           ...errors,
-          email: 'емейл не коректний або вже використовується іншим користувачем.',
+          email: 'email is incorrect or there is a user using this email.',
         }));
       }
     }
@@ -60,7 +60,7 @@ export const SignUpForm = () => {
     spin={spin}
     classes={['signUpForm']}
     onSubmit={onSubmit}
-    buttonText="зареєструватись"
+    buttonText="sign up"
     fields={fields}
   />;
 }

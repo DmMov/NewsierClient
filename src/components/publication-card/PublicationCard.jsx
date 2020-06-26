@@ -26,10 +26,10 @@ export const PublicationCard = ({ image, createdAt, ...props }) =>
       to={`/publication/${props.id}`}
       classes={['btn', 'primary', 'publicationCard__readMore']}
     >
-      <span className="readMore__text">читати більше</span>
+      <span className="readMore__text">see more</span>
       <ChevronRight className="arrowIcon" />
     </Link>
-    <span className="publicationCard__createdAt">{createdAt} року.</span>
+    <span className="publicationCard__createdAt">{createdAt}.</span>
   </div>
 
 PublicationCard.propTypes = {

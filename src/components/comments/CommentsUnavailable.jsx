@@ -8,9 +8,9 @@ import './CommentsUnavailable.scss';
 
 export const CommentsUnavailable = () =>
   <div className="commentsUnavailable">
-    коментарі недоступні, вам необхідно
+    comments unavailable, you must
     <Link
       to={`/sign-in`}
       classes={['commentsUnavailable__authLink']}
-    > авторизуватись</Link>.
+    > sign in</Link>.
   </div>;

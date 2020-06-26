@@ -19,23 +19,6 @@
     }
   }
 
-  &__sponsor {
-    font-size: .8rem;
-    transition: $transition;
-
-    .preText {
-      text-transform: capitalize;
-    }
-
-    .link {
-      color: #ffffff;
-
-      &:hover {
-        text-decoration: underline;
-      }
-    }
-  }
-
   &__copyright {
     display: flex;
     align-items: center;

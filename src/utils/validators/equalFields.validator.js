@@ -1,10 +1,10 @@
-export const equalFields = (basePropertyKey, propertyKyToCompare) => (data, setErrors) => {
-  if(data[propertyKyToCompare] === data[basePropertyKey])
+export const equalFields = (basePropertyKey, propertyKeyToCompare) => (data, setErrors) => {
+  if(data[propertyKeyToCompare] === data[basePropertyKey])
     return true;
 
   setErrors(errors => ({
     ...errors,
-    [propertyKyToCompare]: 'значення цього поля та поля паролю повинні бути однаковими.'
+    [propertyKeyToCompare]: errors[propertyKeyToCompare] === '' ? `this field must equal to the ${basePropertyKey} field.` : errors[propertyKeyToCompare]
   }));
 
   return false;

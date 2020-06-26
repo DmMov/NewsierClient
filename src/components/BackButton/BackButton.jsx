@@ -12,6 +12,6 @@ export const BackButton = () => {
 
   return <button className="btn backButton" onClick={onClick}>
     <ArrowBackIos className="backButton__icon" />
-    <span className="backButton__text">назад</span>
+    <span className="backButton__text">go back</span>
   </button>;
 }

@@ -25,6 +25,10 @@
     background:  url("~assets/images/down-arrow.png") no-repeat right 1rem bottom 50%;
     background-size:  10px 10px;
     outline: none;
+
+    option {
+      text-transform: capitalize;
+    }
   }
 
   &__label {

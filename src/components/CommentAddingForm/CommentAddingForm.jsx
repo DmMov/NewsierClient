@@ -55,7 +55,7 @@ export const CommentAddingForm = () => {
       spin={spin}
       onSubmit={onSubmit}
       classes={['commentAddingForm']}
-      buttonText="залишити коментар"
+      buttonText="send"
       fields={fields}
     />;
 }

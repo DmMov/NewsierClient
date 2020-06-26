@@ -13,7 +13,7 @@ export const IndexBox = ({ index }) =>
       —
     </span>
     <span className="index-box__text">
-      популярні
+      featured
     </span>
   </div>
 

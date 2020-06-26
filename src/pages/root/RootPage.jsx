@@ -5,25 +5,23 @@ import useDocumentTitle from '@rehooks/document-title';
 import {
   Slider,
   Publications,
-  PublicationCard,
-  SponsorsSection
+  PublicationCard
 } from 'components';
 
 import './RootPage.scss';
 
 const RootPage = () => {
-  useDocumentTitle('Newsier | Головна');
+  useDocumentTitle('Newsier | Home');
 
   return <div className="rootPage page">
     <Slider />
     <div className="rootPage__publicationsSection">
-      <h2 className="sectionTitle">публікації</h2>
+      <h2 className="sectionTitle">publications</h2>
       <Publications
         url="/publications"
         component={PublicationCard}
       />
     </div>
-    <SponsorsSection />
   </div>;
 }
 

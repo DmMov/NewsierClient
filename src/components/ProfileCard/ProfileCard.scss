@@ -4,18 +4,20 @@
 .profileCard {
   display: grid;
   grid-template-columns: 1fr auto;
+  grid-template-rows: auto auto 1fr;
   grid-gap: .5rem;
   grid-column-gap: 2rem;
+  align-items: start;
   padding: 1rem;
   background-color: $light;
 
   & &__imageContainer {
     @include square(10rem);
     grid-column: 2 / 3;
-    grid-row: 1 / 6;
-    padding: .75rem;
+    grid-row: 1 / 4;
+    padding: .5rem;
     border-radius: 50%;
-    border: 2px solid $primary;
+    border: 1px solid $primary;
     border-right-color: transparent;
     border-left-color: transparent;
 
@@ -54,6 +56,10 @@
   &__createdAt {
     font-size: .8rem;
     color: $gray;
+
+    .date {
+      color: $black;
+    }
   }
 }
 
@@ -63,7 +69,7 @@
     justify-items: center;
     text-align: center;
 
-    &__imageContainer {
+    & &__imageContainer {
       grid-column: 1 / 2;
       grid-row: 1 / 2;
     }

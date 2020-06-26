@@ -5,34 +5,34 @@ export const initialFields = [
   {
     name: 'file',
     type: 'file',
-    label: 'завантажити фото',
+    label: 'upload profile photo',
     component: UploadField
   },
   {
     name: 'name',
-    label: 'Ім\'я',
-    placeholder: 'Введіть ваше ім\'я',
+    label: 'name',
+    placeholder: 'Enter your name',
   },
   {
     name: 'surname',
-    label: 'Прізвище',
-    placeholder: 'Введіть ваше прізвище',
+    label: 'surname',
+    placeholder: 'Enter your surname',
   },
   {
     name: 'email',
-    label: 'електронна адреса',
-    placeholder: 'Example@email.com',
+    label: 'email',
+    placeholder: 'example@email.com',
   },
   {
     name: 'password',
     type: 'password',
-    label: 'пароль',
-    placeholder: 'Введіть пароль...',
+    label: 'password',
+    placeholder: 'Enter password...',
   },
   {
     name: 'repeat',
     type: 'password',
-    label: 'підтвердження паролю',
-    placeholder: 'Повторіть пароль...',
+    label: 'repeat password',
+    placeholder: 'Repeat password...',
   }
 ];

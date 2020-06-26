@@ -30,41 +30,32 @@
     color: $gray;
   }
 
-  &__relatedInfo {
-    display: grid;
-    grid-template-columns: auto auto 1fr;
-    align-items: center;
-    justify-self: start;
-    grid-gap: .5rem;
+  .publisher {
+    text-transform: capitalize;
+
+    &__name {
+      color: $primary;
+      font-weight: 500;
+
+      &:hover {
+        text-decoration: underline;
+      }
+    }
+  }
+
+  .publisher, .views {
     color: $gray;
     font-size: .8rem;
+  }
 
-    .publisher {
-      text-transform: capitalize;
+  .views {
+    display: grid;
+    grid-template-columns: auto 1fr;
+    grid-gap: 0.25rem;
+    align-items: center;
 
-      &__name {
-        color: $primary;
-        font-weight: 500;
-
-        &:hover {
-          text-decoration: underline;
-        }
-      }
-    }
-
-    .dotIcon {
-      font-size: .3rem;
-    }
-
-    .views {
-      display: grid;
-      grid-template-columns: auto 1fr;
-      grid-gap: 0.25rem;
-      align-items: center;
-
-      .statIcon {
-        font-size: .9rem;
-      }
+    .statIcon {
+      font-size: .9rem;
     }
   }
 }

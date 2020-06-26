@@ -18,15 +18,15 @@ export const ProfileCard = ({ image, name, surname, publications, comments, crea
       classes={['profileCard__imageContainer']}
     />
     <h2 className="profileCard__publisherFullName">{`${name} ${surname}`}</h2>
-    <span className="profileCard__createdAt">Користувач Newsier з {createdAt} року.</span>
+    <p className="profileCard__createdAt">Newsier Publisher since <span className="date">{createdAt}</span>.</p>
     <div className="profileCard__stats">
       <p className="statsItem">
-        <span className="statsItem__text">публікацій, </span>
+        <span className="statsItem__text">publications, </span>
         <span className="statsItem__value digit">{publications}</span>
       </p>
       <FiberManualRecord className="dotIcon" />
       <p className="statsItem">
-        <span className="statsItem__text">коментарів, </span>
+        <span className="statsItem__text">comments, </span>
         <span className="statsItem__value digit">{comments}</span>
       </p>
     </div>

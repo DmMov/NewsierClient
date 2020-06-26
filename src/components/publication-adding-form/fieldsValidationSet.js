@@ -1,27 +1,23 @@
 // * Utils
-import {
-  required,
-  minLength,
-  maxLength
-} from 'utils/validators';
+import { required, minLength, maxLength } from 'utils/validators';
 
 export const fieldsValidationSet = {
   file: [
-    [required, 'зображення обов\'язкове.']
+    [required, 'image is required.']
   ],
   title: [
-    [required, 'заголовок обов\'язковий.'],
-    [minLength(32), 'заголовок повинен містити не менше 32 символів.'],
-    [maxLength(256), 'заголовок повинен містити не більше 256 символів.']
+    [required, 'title is required.'],
+    [minLength(32), 'title must contain at least 32 characters.'],
+    [maxLength(256), 'title cannot contain more than 256 characters.']
   ],
   value: [
-    [required, 'контент обов\'язковий.'],
-    [minLength(300), 'контент повинен містити не менше 300 символів.']
+    [required, 'content is required.'],
+    [minLength(300), 'content must contain at least 300 characters.']
   ],
   categoryId: [
-    [required, 'категорія обов\'язкова.']
+    [required, 'category is required.']
   ],
   tags: [
-    [maxLength(256), 'не більше 64 символів.']
+    [maxLength(64), 'this field cannot contain more than 64 characters.']
   ],
 };

@@ -20,7 +20,7 @@ import './PublicationPage.scss';
 const PublicationPage = () => {
   const [publication, setPublication] = useState(null);
   const { publicationId } = useParams();
-  useDocumentTitle(`Newsier | ${!!publication ? publication.title : 'Завантаження...'}`);
+  useDocumentTitle(`Newsier | ${!!publication ? publication.title : 'Loading...'}`);
 
   useEffect(() => {
     fetchPublication();
@@ -35,21 +35,19 @@ const PublicationPage = () => {
       setPublication({});
   }
 
-  return (
-    <div className="publicationPage page">
-      <BackButton />
-      {
-        !!publication ?
-          isEmpty(publication) ?
-            <p className="publicationPage__error">помилка, публікація не знайдена.</p> :
-            <Publication {...publication} /> :
-          <Spinner />
-      }
-      <h2 className="publicationPage__commentsTitle">коментарі</h2>
-      <CommentAddingForm />
-      <Comments />
-    </div>
-  );
+  return <div className="publicationPage page">
+    <BackButton />
+    {
+      !!publication ?
+        isEmpty(publication) ?
+          <p className="publicationPage__error">error, publication not found.</p> :
+          <Publication {...publication} /> :
+        <Spinner />
+    }
+    <h2 className="publicationPage__commentsTitle">comments</h2>
+    <CommentAddingForm />
+    <Comments />
+  </div>;
 }
 
 export default PublicationPage;

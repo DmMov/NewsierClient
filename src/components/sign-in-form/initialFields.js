@@ -1,13 +1,13 @@
 export const initialFields = [
   {
     name: 'email',
-    label: 'електронна адреса',
-    placeholder: 'Example@email.com',
+    label: 'email',
+    placeholder: 'example@email.com',
   },
   {
     name: 'password',
     type: 'password',
-    label: 'пароль',
-    placeholder: 'Введіть пароль...',
+    label: 'password',
+    placeholder: 'Enter your password...',
   }
 ];

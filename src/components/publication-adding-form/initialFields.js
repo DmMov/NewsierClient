@@ -7,29 +7,29 @@ export const initialFields = [
   {
     name: 'file',
     type: 'file',
-    label: 'завантажити',
+    label: 'upload',
     component: UploadField
   },
   {
     name: 'title',
-    label: 'заголовок',
-    placeholder: 'Введіть заголовок публікації...',
+    label: 'title',
+    placeholder: 'Enter title...',
   },
   {
     name: 'value',
     control: 'textarea',
-    label: 'контент',
-    placeholder: 'Заповніть контент публікації...',
+    label: 'content',
+    placeholder: 'Enter content...',
   },
   {
     name: 'categoryId',
-    label: 'категорія',
-    placeholder: 'Виберіть категорію...',
+    label: 'categories',
+    placeholder: 'Select a category...',
     component: props => <Select url="/categories" {...props} />
   },
   {
     name: 'tags',
-    label: 'теги',
-    placeholder: 'Світ, Хороші Новини, Wi-Fi...',
+    label: 'tags',
+    placeholder: 'World, Good News, Wi-Fi...',
   }
 ];

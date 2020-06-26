@@ -55,7 +55,7 @@ export const SignInForm = () => {
     spin={spin}
     classes={['signInForm']}
     onSubmit={onSubmit}
-    buttonText="увійти"
+    buttonText="sign in"
     fields={fields}
   />;
 }

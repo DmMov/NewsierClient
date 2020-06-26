@@ -9,7 +9,7 @@ export const PublicationList = ({ publications, component: Component }) =>
     {
       publications.length != 0 ?
         publications.map(publication => <Component key={publication.id} {...publication} />) :
-        <p className="publicationList__noPublications">публікації відсутні.</p>
+        <p className="publicationList__noPublications">there are no publications.</p>
     }
   </div>
 

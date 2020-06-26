@@ -1,31 +1,27 @@
 import { isEmail } from 'validator';
 
 // * Utils
-import {
-  required,
-  minLength
-} from 'utils/validators';
+import { required, minLength } from 'utils/validators';
 
 export const fieldsValidationSet = {
   name: [
-    [required, 'ім\'я обов\'язкове.'],
-    [minLength(3), 'ім\'я повинене містити не менше 3 символів.']
+    [required, 'name is required.'],
+    [minLength(3), 'name must contain at least 3 characters.']
   ],
   surname: [
-    [required, 'прізвище обов\'язкове.'],
-    [minLength(3), 'прізвище повинене містити не менше 3 символів.']
+    [required, 'surname is required.'],
+    [minLength(3), 'surname must contain at least 3 characters.']
   ],
   email: [
-    [required, 'емейл обов\'язковий.'],
-    [minLength(5), 'емейл повинен містити не менше 5 символів.'],
-    [isEmail, 'не коректний емейл.']
+    [required, 'email is required.'],
+    [minLength(5), 'email must contain at least 5 characters.'],
+    [isEmail, 'incorrect email.']
   ],
   password: [
-    [required, 'пароль обов\'язковий.'],
-    [minLength(5), 'пароль повинен містити не менше 5 символів.']
+    [required, 'password is required.'],
+    [minLength(5), 'password must contain at least 5 characters.']
   ],
   repeat: [
-    [required, 'підтвердження паролю обов\'язкове.'],
-    [minLength(5), 'підтвердження паролю повинене містити не менше 5 символів.']
+    [required, 'password repeat is required.']
   ]
 };
