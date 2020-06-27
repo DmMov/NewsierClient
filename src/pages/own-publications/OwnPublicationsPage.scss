@@ -5,12 +5,4 @@
   grid-gap: 1rem;
   padding: 1rem;
   background-color: $light;
-
-  &__addingBtn {
-    justify-self: start;
-  }
-
-  .publicationList {
-    grid-template-columns: 1fr;
-  }
 }

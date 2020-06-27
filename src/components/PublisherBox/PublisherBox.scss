@@ -24,7 +24,7 @@
     grid-row: 1 / 4;
   }
 
-  &__imageContainer {
+  & &__imageContainer {
     @include square(3.5rem);
 
     .image {

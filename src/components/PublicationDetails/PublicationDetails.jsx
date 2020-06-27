@@ -12,24 +12,26 @@ import { tag } from 'assets/constants';
 import './PublicationDetails.scss';
 
 export const PublicationDetails = ({ id, category, categoryId, title, publisher, publisherId, views, value, tags }) =>
-  <div className="publicationCardDetails">
-    <Link to={`/publications/by-category/${categoryId}`} classes={['publicationCardDetails__category']}>
+  <div className="publicationDetails">
+    <Link to={`/publications/by-category/${categoryId}`} classes={['publicationDetails__category']}>
       {category}
     </Link>
     <Link to={`/publication/${id}`}>
-      <h4 className="publicationCardDetails__title">{title}</h4>
+      <h4 className="publicationDetails__title">{title}</h4>
     </Link>
-    <p className="publisher">
-      <span className="publisher__prefix">author, </span>
-      <Link to={`/publications/by-publisher/${publisherId}`} classes={['publisher__name']}>
-        {publisher}
-      </Link>
-    </p>
-    <p className="views">
-      <BarChart className="statIcon" />
-      <span className="views__count">{views} views</span>
-    </p>
-    <span className="publicationCardDetails__value">{value}</span>
+    <div className="publicationDetails__inlineWrap">
+      <p className="publicationDetails__publisher">
+        <span className="prefix">author, </span>
+        <Link to={`/publications/by-publisher/${publisherId}`} classes={['name']}>
+          {publisher}
+        </Link>
+      </p>
+      <span className="publicationDetails__verticalDash">|</span>
+      <p className="publicationDetails__views">
+        <BarChart className="statIcon" />
+        <span className="count">{views} views</span>
+      </p>
+    </div>
     <TagsBox tags={tags} />
   </div>;
 

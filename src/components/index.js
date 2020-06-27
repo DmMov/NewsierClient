@@ -27,8 +27,8 @@ export * from './Select';
 export * from './SignInForm';
 export * from './SignOutButton';
 export * from './SignUpForm';
+export * from './Slider';
 
-export { Slider } from './slider/Slider';
 export { TagsBox } from './tags-box/TagsBox';
 export { Spinner } from './spinner/Spinner';
 export * from './UploadField';

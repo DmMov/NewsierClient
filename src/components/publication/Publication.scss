@@ -28,11 +28,14 @@
     display: grid;
     grid-template-columns: auto 1fr;
     grid-gap: .5rem;
-    font-size: .85rem;
+    font-size: .8rem;
     align-content: center;
     color: $gray;
+    text-transform: capitalize;
+    font-weight: 500;
 
     .statIcon {
+      color: $primary;
       font-size: 1rem;
     }
   }

@@ -22,11 +22,12 @@ export const Slider = () => {
       setPublications(data);
   }
 
-  return publications && publications.length != 0 ? <SliderLayout
-    slide={publications[index]}
-    index={index}
-    dots={publications}
-    jumpTo={setIndex}
-  /> :
-  <Spinner />;
+  return !!publications && publications.length != 0 ?
+    <SliderLayout
+      slide={publications[index]}
+      index={index}
+      dots={publications}
+      jumpTo={setIndex}
+    /> :
+    <Spinner />;
 }

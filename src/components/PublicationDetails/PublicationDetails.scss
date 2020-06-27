@@ -1,6 +1,8 @@
 @import "assets/scss/vars";
 
-.publicationCardDetails {
+.publicationDetails {
+  $this: &;
+
   display: grid;
   grid-gap: .5rem;
   padding: 1rem;
@@ -25,37 +27,41 @@
     }
   }
 
-  &__value {
-    font-size: .8rem;
+  &__inlineWrap {
+    display: flex;
     color: $gray;
-  }
+    font-size: .75rem;
 
-  .publisher {
-    text-transform: capitalize;
+    #{$this}__publisher {
+      text-transform: capitalize;
 
-    &__name {
-      color: $primary;
-      font-weight: 500;
+      .name {
+        color: $primary;
+        font-weight: 600;
 
-      &:hover {
-        text-decoration: underline;
+        &:hover {
+          text-decoration: underline;
+        }
       }
     }
-  }
 
-  .publisher, .views {
-    color: $gray;
-    font-size: .8rem;
-  }
+    #{$this}__verticalDash {
+      margin: 0 .5rem;
+    }
 
-  .views {
-    display: grid;
-    grid-template-columns: auto 1fr;
-    grid-gap: 0.25rem;
-    align-items: center;
+    #{$this}__views {
+      display: grid;
+      grid-template-columns: auto 1fr;
+      grid-gap: 0.25rem;
+      align-items: center;
+      text-transform: capitalize;
+      font-weight: 500;
+      font-size: .7rem;
 
-    .statIcon {
-      font-size: .9rem;
+      .statIcon {
+        font-size: .9rem;
+        color: $primary;
+      }
     }
   }
 }
