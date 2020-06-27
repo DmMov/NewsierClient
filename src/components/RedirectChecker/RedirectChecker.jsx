@@ -3,7 +3,7 @@ import { Redirect } from 'react-router-dom';
 import { bool, any, shape, string } from 'prop-types';
 
 export const RedirectChecker = ({ condition, component: Component, redirectParams: { from, to }}) =>
-  condition ? <Component /> : <Redirect from={from} to={to} />
+  condition ? <Component /> : <Redirect from={from} to={to} />;
 
 RedirectChecker.propTypes = {
   condition: bool.isRequired,

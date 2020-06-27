@@ -13,10 +13,7 @@ import './Publication.scss';
 
 export const Publication = ({ title, categoryId, category, image, value, views, tags, ...props }) =>
   <div className="publication">
-    <Link
-      to={`/publications/by-category/${categoryId}`}
-      classes={['publication__category']}
-    >
+    <Link to={`/publications/by-category/${categoryId}`} classes={['publication__category']}>
       {category}
     </Link>
     <h1 className="publication__title">{title}</h1>

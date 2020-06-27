@@ -43,7 +43,7 @@ export const PublicationAddingForm = () => {
     spin={spin}
     classes={['publicationAddingForm']}
     onSubmit={onSubmit}
-    buttonText="створити"
+    buttonText="create"
     fields={fields}
   />;
 }

@@ -8,7 +8,7 @@ import './ResponsiveImage.scss';
 export const ResponsiveImage = ({ src, classes }) =>
   <div className={classnames('imageContainer', classes)}>
     <img src={src} className="image"/>
-  </div>
+  </div>;
 
 ResponsiveImage.propTypes = {
   src: string.isRequired,

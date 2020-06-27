@@ -3,10 +3,7 @@ import { object, number } from 'prop-types';
 
 // * Components
 import { IndexBox } from './IndexBox';
-import {
-  ResponsiveImage,
-  PublicationCardDetails
-} from 'components';
+import { ResponsiveImage, PublicationDetails } from 'components';
 
 // * Constants
 import { assets } from 'assets/constants';
@@ -21,8 +18,8 @@ export const Slide = ({ slide, index }) =>
       classes={['slide__imageContainer', 'withOverlay']}
     />
     <IndexBox index={index} />
-    <PublicationCardDetails {...slide} />
-  </div>
+    <PublicationDetails {...slide} />
+  </div>;
 
 Slide.propTypes = {
   slide: object.isRequired,

@@ -2,10 +2,7 @@ import React from 'react';
 import { string } from 'prop-types';
 
 // * Components
-import {
-  ResponsiveImage,
-  Link
-} from 'components';
+import {ResponsiveImage, Link } from 'components';
 
 // * Constants
 import { assets } from 'assets/constants';
@@ -25,12 +22,8 @@ export const PublisherBox = ({ publisherId, publisherImage, publisher, createdAt
       />
     </Link>
     <span className="publisherBox__publisherPreText">author</span>
-    <Link
-      to={`/publications/by-publisher/${publisherId}`}
-    >
-      <span className="publisherBox__publisherName">
-        {publisher}
-      </span>
+    <Link to={`/publications/by-publisher/${publisherId}`}>
+      <span className="publisherBox__publisherName">{publisher}</span>
     </Link>
     <span className="publisherBox__createdAt">{createdAt}</span>
   </div>;

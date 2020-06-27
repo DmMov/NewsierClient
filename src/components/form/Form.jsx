@@ -16,6 +16,9 @@ export const Form = ({ onSubmit, classes, title, buttonText, fields, spin }) =>
     {spin && <Spinner />}
     {title && <h2 className="form__title">{title}</h2>}
     {
+      console.log(fields)
+    }
+    {
       fields.map(
         ({component: Component, ...field}) =>
           Component ? <Component key={field.name} {...field} /> : <Field key={field.name} {...field} />

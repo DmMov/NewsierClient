@@ -3,11 +3,7 @@ import { string } from 'prop-types';
 import { ChevronRight } from '@material-ui/icons';
 
 // * Components
-import {
-  ResponsiveImage,
-  PublicationCardDetails,
-  Link
-} from 'components';
+import { ResponsiveImage, PublicationDetails, Link } from 'components';
 
 // * Constants
 import { assets } from 'assets/constants';
@@ -21,7 +17,7 @@ export const PublicationCard = ({ image, createdAt, ...props }) =>
       src={`${assets}/images/${image}`}
       classes={['publicationCard__imageContainer', 'withOverlay']}
     />
-    <PublicationCardDetails {...props} />
+    <PublicationDetails {...props} />
     <Link
       to={`/publication/${props.id}`}
       classes={['btn', 'primary', 'publicationCard__readMore']}
@@ -30,7 +26,7 @@ export const PublicationCard = ({ image, createdAt, ...props }) =>
       <ChevronRight className="arrowIcon" />
     </Link>
     <span className="publicationCard__createdAt">{createdAt}.</span>
-  </div>
+  </div>;
 
 PublicationCard.propTypes = {
   image: string.isRequired,

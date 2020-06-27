@@ -2,11 +2,7 @@ import React from 'react';
 import useDocumentTitle from '@rehooks/document-title';
 
 // * Components
-import {
-  Slider,
-  Publications,
-  PublicationCard
-} from 'components';
+import { Slider, Publications } from 'components';
 
 import './RootPage.scss';
 
@@ -17,10 +13,7 @@ const RootPage = () => {
     <Slider />
     <div className="rootPage__publicationsSection">
       <h2 className="sectionTitle">publications</h2>
-      <Publications
-        url="/publications"
-        component={PublicationCard}
-      />
+      <Publications url="/publications" />
     </div>
   </div>;
 }

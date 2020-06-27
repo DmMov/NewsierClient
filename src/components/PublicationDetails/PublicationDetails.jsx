@@ -3,23 +3,17 @@ import { string, number, arrayOf } from 'prop-types';
 import {  BarChart } from '@material-ui/icons';
 
 // * Components
-import {
-  Link,
-  TagsBox
-} from 'components';
+import { Link, TagsBox } from 'components';
 
 // * Constants
 import { tag } from 'assets/constants';
 
 // * Sass
-import './PublicationCardDetails.scss';
+import './PublicationDetails.scss';
 
-export const PublicationCardDetails = ({ id, category, categoryId, title, publisher, publisherId, views, value, tags }) =>
+export const PublicationDetails = ({ id, category, categoryId, title, publisher, publisherId, views, value, tags }) =>
   <div className="publicationCardDetails">
-    <Link
-      to={`/publications/by-category/${categoryId}`}
-      classes={['publicationCardDetails__category']}
-    >
+    <Link to={`/publications/by-category/${categoryId}`} classes={['publicationCardDetails__category']}>
       {category}
     </Link>
     <Link to={`/publication/${id}`}>
@@ -37,9 +31,9 @@ export const PublicationCardDetails = ({ id, category, categoryId, title, publis
     </p>
     <span className="publicationCardDetails__value">{value}</span>
     <TagsBox tags={tags} />
-  </div>
+  </div>;
 
-PublicationCardDetails.propTypes = {
+PublicationDetails.propTypes = {
   id: string.isRequired,
   category: string.isRequired,
   categoryId: string.isRequired,

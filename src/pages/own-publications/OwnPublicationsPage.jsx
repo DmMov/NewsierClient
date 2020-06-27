@@ -2,7 +2,7 @@ import React from 'react';
 import { useDispatch } from 'react-redux';
 
 // * Components
-import { Publications, PublicationItem } from 'components';
+import { Publications } from 'components';
 
 // * Actions
 import { deletePublication } from 'store/actions';
@@ -16,10 +16,7 @@ const OwnPublicationsPage = () => {
   const onPublicationDelete = id => dispatch(deletePublication(id));
 
   return <div className="ownPublicationsPage page">
-    <Publications
-      url="/publications/by-publisher"
-      component={props => <PublicationItem onDelete={() => onPublicationDelete(props.id)} {...props} />}
-    />
+    <Publications url="/publications/by-publisher" />
   </div>;
 }
 

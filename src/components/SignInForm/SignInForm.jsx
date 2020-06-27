@@ -42,8 +42,8 @@ export const SignInForm = () => {
       else if (response.status === 400) {
         setErrors(errors => ({
           ...errors,
-          email: 'не коректний емайл або пароль.',
-          password: 'не коректний емайл або пароль.'
+          email: 'incorrect email or password.',
+          password: 'incorrect email or password.'
         }));
       }
     }

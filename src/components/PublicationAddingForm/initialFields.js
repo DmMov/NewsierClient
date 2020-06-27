@@ -8,7 +8,7 @@ export const initialFields = [
     name: 'file',
     type: 'file',
     label: 'upload',
-    component: UploadField
+    component: props => <UploadField {...props} />
   },
   {
     name: 'title',

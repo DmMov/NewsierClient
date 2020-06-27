@@ -2,10 +2,7 @@ import React from 'react';
 import useDocumentTitle from '@rehooks/document-title';
 
 // * Components
-import {
-  SignUpForm,
-  Banner
-} from 'components';
+import { SignUpForm, Banner } from 'components';
 
 // * Assets
 import image from 'assets/images/banners/b-3';

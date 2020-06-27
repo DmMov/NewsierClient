@@ -1,19 +1,25 @@
 import React from 'react';
-import { arrayOf, object, any } from 'prop-types';
+import { arrayOf, object } from 'prop-types';
+
+// * Components
+import { PublicationCard } from 'components';
 
 // * Sass
 import './PublicationList.scss';
 
-export const PublicationList = ({ publications, component: Component }) =>
+export const PublicationList = ({ publications }) =>
   <div className="publicationList">
     {
       publications.length != 0 ?
-        publications.map(publication => <Component key={publication.id} {...publication} />) :
-        <p className="publicationList__noPublications">there are no publications.</p>
+        publications.map(
+          publication => <PublicationCard key={publication.id} {...publication} />
+        ) :
+        <p className="publicationList__noPublications">
+          there are no publications.
+        </p>
     }
-  </div>
+  </div>;
 
 PublicationList.propTypes = {
-  publications: arrayOf(object).isRequired,
-  component: any
+  publications: arrayOf(object).isRequired
 };

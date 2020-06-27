@@ -1,3 +1,5 @@
+import React from 'react';
+
 // * Components
 import { UploadField } from 'components';
 
@@ -6,7 +8,7 @@ export const initialFields = [
     name: 'file',
     type: 'file',
     label: 'upload profile photo',
-    component: UploadField
+    component: props => <UploadField {...props} />
   },
   {
     name: 'name',
