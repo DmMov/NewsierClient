@@ -1,57 +1,45 @@
-// * Roboto
+// * Raleway
 @font-face {
-  font-family: "Roboto";
-  src: url("../fonts/Roboto/Roboto-Light") format('truetype');
+  font-family: "Raleway";
+  src: url("../fonts/Raleway/Raleway-Light") format('truetype');
   font-weight: 300;
 }
 
 @font-face {
-  font-family: "Roboto";
-  src: url("../fonts/Roboto/Roboto-Regular") format('truetype');
+  font-family: "Raleway";
+  src: url("../fonts/Raleway/Raleway-Regular") format('truetype');
   font-weight: 400;
 }
 
 @font-face {
-  font-family: "Roboto";
-  src: url("../fonts/Roboto/Roboto-Medium") format('truetype');
+  font-family: "Raleway";
+  src: url("../fonts/Raleway/Raleway-Medium") format('truetype');
   font-weight: 500;
 }
 
 @font-face {
-  font-family: "Roboto";
-  src: url("../fonts/Roboto/Roboto-Bold") format('truetype');
+  font-family: "Raleway";
+  src: url("../fonts/Raleway/Raleway-Bold") format('truetype');
   font-weight: 700;
 }
 
 @font-face {
-  font-family: "Roboto";
-  src: url("../fonts/Roboto/Roboto-Black") format('truetype');
+  font-family: "Raleway";
+  src: url("../fonts/Raleway/Raleway-ExtraBold") format('truetype');
+  font-weight: 800;
+}
+
+@font-face {
+  font-family: "Raleway";
+  src: url("../fonts/Raleway/Raleway-Black") format('truetype');
   font-weight: 900;
 }
 
-// * IBM Plex Serif
+// * Paytone One
 @font-face {
-  font-family: "IBM Plex Serif";
-  src: url("../fonts/IBM_Plex_Serif/IBMPlexSerif-Regular") format('truetype');
+  font-family: "Paytone One";
+  src: url("../fonts/Paytone_One/PaytoneOne-Regular") format('truetype');
   font-weight: 400;
-}
-
-@font-face {
-  font-family: "IBM Plex Serif";
-  src: url("../fonts/IBM_Plex_Serif/IBMPlexSerif-Medium") format('truetype');
-  font-weight: 500;
-}
-
-@font-face {
-  font-family: "IBM Plex Serif";
-  src: url("../fonts/IBM_Plex_Serif/IBMPlexSerif-SemiBold") format('truetype');
-  font-weight: 600;
-}
-
-@font-face {
-  font-family: "IBM Plex Serif";
-  src: url("../fonts/IBM_Plex_Serif/IBMPlexSerif-Bold") format('truetype');
-  font-weight: 700;
 }
 
 // * KaushanScript

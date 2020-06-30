@@ -1,6 +1,6 @@
 import React from 'react';
 import { string, number, arrayOf } from 'prop-types';
-import {  BarChart } from '@material-ui/icons';
+import { BarChart } from '@material-ui/icons';
 
 // * Components
 import { Link, TagsBox } from 'components';
@@ -29,9 +29,10 @@ export const PublicationDetails = ({ id, category, categoryId, title, publisher,
       <span className="publicationDetails__verticalDash">|</span>
       <p className="publicationDetails__views">
         <BarChart className="statIcon" />
-        <span className="count">{views} views</span>
+        <span className="count digit">{views} views</span>
       </p>
     </div>
+    <span className="publicationDetails__value">{value}</span>
     <TagsBox tags={tags} />
   </div>;
 

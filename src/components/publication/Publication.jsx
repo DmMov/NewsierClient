@@ -23,7 +23,7 @@ export const Publication = ({ title, categoryId, category, image, value, views, 
     <TagsBox tags={tags} />
     <p className="publication__views">
       <BarChart className="statIcon" />
-      <span className="publication__views__count">{views} views</span>
+      <span className="count digit">{views} views</span>
     </p>
   </div>;
 

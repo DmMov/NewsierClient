@@ -6,7 +6,7 @@ import './IndexBox.scss';
 
 export const IndexBox = ({ index }) =>
   <div className="index-box">
-    <div className="index-box__square">
+    <div className="index-box__square digit">
       {index}
     </div>
     <span className="index-box__dash">

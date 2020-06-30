@@ -27,7 +27,7 @@
       }
     }
 
-    &__inlineWrap {
+    &__inlineWrap, &__value {
       color: lighten($gray, 10%);
     }
 
