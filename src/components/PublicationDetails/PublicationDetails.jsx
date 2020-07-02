@@ -21,7 +21,7 @@ export const PublicationDetails = ({ id, category, categoryId, title, publisher,
     </Link>
     <div className="publicationDetails__inlineWrap">
       <p className="publicationDetails__publisher">
-        <span className="prefix">author, </span>
+        <span className="prefix">by </span>
         <Link to={`/publications/by-publisher/${publisherId}`} classes={['name']}>
           {publisher}
         </Link>

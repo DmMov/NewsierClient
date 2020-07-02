@@ -33,9 +33,8 @@
     font-size: .75rem;
 
     #{$this}__publisher {
-      text-transform: capitalize;
-
       .name {
+        text-transform: capitalize;
         color: $primary;
         font-weight: 600;
 
