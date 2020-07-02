@@ -1,13 +1,10 @@
 @import "assets/scss/vars";
+@import "assets/scss/mixins";
 
 @keyframes spinner {
-  from {
-    transform: rotate(0deg);
-  }
+  from { transform: rotate(0deg); }
 
-  to {
-    transform: rotate(360deg);
-  }
+  to { transform: rotate(360deg); }
 }
 
 .spinner {
@@ -18,8 +15,7 @@
 
   &::before {
     content: '';
-    width: 4rem;
-    height: 4rem;
+    @include square(4rem);
     border: 3px solid transparent;
     border-radius: 50%;
     border-right-color: $primary;

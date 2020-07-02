@@ -3,7 +3,7 @@ import { string, number, arrayOf } from 'prop-types';
 import { BarChart } from '@material-ui/icons';
 
 // * Components
-import { Link, TagsBox } from 'components';
+import { Link, Tags } from 'components';
 
 // * Constants
 import { tag } from 'assets/constants';
@@ -33,7 +33,7 @@ export const PublicationDetails = ({ id, category, categoryId, title, publisher,
       </p>
     </div>
     <span className="publicationDetails__value">{value}</span>
-    <TagsBox tags={tags} />
+    <Tags tags={tags} />
   </div>;
 
 PublicationDetails.propTypes = {
