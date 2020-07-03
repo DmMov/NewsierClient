@@ -8,16 +8,16 @@ import { Publications } from 'components';
 import { deletePublication } from 'store/actions';
 
 // * Sass
-import './OwnPublicationsPage.scss';
+import './MyPublicationsPage.scss';
 
-const OwnPublicationsPage = () => {
+const MyPublicationsPage = () => {
   const dispatch = useDispatch();
 
   const onPublicationDelete = id => dispatch(deletePublication(id));
 
-  return <div className="ownPublicationsPage page">
+  return <div className="myPublicationsPage page">
     <Publications url="/publications/by-publisher" />
   </div>;
 }
 
-export default OwnPublicationsPage;
+export default MyPublicationsPage;

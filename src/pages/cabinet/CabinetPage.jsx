@@ -3,7 +3,7 @@ import { useSelector } from 'react-redux';
 import useDocumentTitle from '@rehooks/document-title';
 
 // * Routes
-import { OwnPublicationsRoute, ProfileRoute, PublicationAddingRoute } from 'routes';
+import { MyPublicationsRoute, ProfileRoute, PublicationAddingRoute } from 'routes';
 
 // * Components
 import { BackButton, SignOutButton, CabinetMenu } from 'components';
@@ -24,7 +24,7 @@ const CabinetPage = () => {
       <SignOutButton />
     </div>
     <CabinetMenu />
-    <OwnPublicationsRoute />
+    <MyPublicationsRoute />
     <ProfileRoute />
     <PublicationAddingRoute />
   </div>;

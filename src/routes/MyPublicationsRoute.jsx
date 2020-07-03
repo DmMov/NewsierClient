@@ -5,15 +5,15 @@ import { Route } from 'react-router-dom';
 import { Loader } from 'components';
 
 // * Pages
-const OwnPublicationsPage = lazy(() => import(/* webpackChunkName: 'own-publications-page' */ 'pages/own-publications/OwnPublicationsPage'));
+const MyPublicationsPage = lazy(() => import(/* webpackChunkName: 'my-publications-page' */ 'pages/MyPublications/MyPublicationsPage'));
 
-export const OwnPublicationsRoute = () =>
+export const MyPublicationsRoute = () =>
   <Route
     path="/cabinet/my-publications"
     component={
       () =>
         <Suspense fallback={<Loader />}>
-          <OwnPublicationsPage />
+          <MyPublicationsPage />
         </Suspense>
     }
   />

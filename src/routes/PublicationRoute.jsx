@@ -5,7 +5,7 @@ import { Route } from 'react-router-dom';
 import { Loader } from 'components';
 
 // * Pages
-const PublicationPage = lazy(() => import(/* webpackChunkName: 'publication-page' */ 'pages/publication/PublicationPage'));
+const PublicationPage = lazy(() => import(/* webpackChunkName: 'publication-page' */ 'pages/Publication/PublicationPage'));
 
 export const PublicationRoute = () =>
   <Route

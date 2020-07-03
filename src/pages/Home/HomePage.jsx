@@ -4,18 +4,18 @@ import useDocumentTitle from '@rehooks/document-title';
 // * Components
 import { Slider, Publications } from 'components';
 
-import './RootPage.scss';
+import './HomePage.scss';
 
-const RootPage = () => {
+const HomePage = () => {
   useDocumentTitle('Newsier | Home');
 
-  return <div className="rootPage page">
+  return <div className="homePage page">
     <Slider />
-    <div className="rootPage__publicationsSection">
+    <div className="homePage__publicationsSection">
       <h2 className="sectionTitle">publications</h2>
       <Publications url="/publications" />
     </div>
   </div>;
 }
 
-export default RootPage;
+export default HomePage;

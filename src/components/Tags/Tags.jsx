@@ -13,11 +13,9 @@ import './Tags.scss';
 export const Tags = ({ tags }) => !!tags && tags.length != 0 &&
   <div className="tags">
     {
-      tags.map(
-        tag =>
-          <Link key={tag.id} to={`/publications/by-tag/${tag.id}`}>
-            <span className="tags__tag">#{tag.value}</span>
-          </Link>
+      tags.map(tag => <Link key={tag.id} to={`/publications/by-tag/${tag.id}`} classes={['tags__tag']}>
+        #{tag.value}
+      </Link>
       )
     }
   </div>;

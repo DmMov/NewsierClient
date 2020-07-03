@@ -2,13 +2,10 @@ import React, { Suspense, lazy } from 'react';
 import { Route } from 'react-router-dom';
 
 // * Pages
-const SignInPage = lazy(() => import(/* webpackChunkName: 'sign-in-page' */ 'pages/sign-in/SignInPage'));
+const SignInPage = lazy(() => import(/* webpackChunkName: 'sign-in-page' */ 'pages/SignIn/SignInPage'));
 
 // * Components
-import {
-  RedirectChecker,
-  Loader
-} from 'components';
+import { RedirectChecker, Loader } from 'components';
 
 // * Utils
 import { isEmpty } from 'utils/helpers';

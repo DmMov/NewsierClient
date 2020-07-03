@@ -1,8 +1,8 @@
-export { RootRoute } from './RootRoute';
-export { SignInRoute } from './SignInRoute';
-export { SignUpRoute } from './SignUpRoute';
-export { PublicationRoute } from './PublicationRoute';
-export { CabinetRoute } from './CabinetRoute';
-export { OwnPublicationsRoute } from './OwnPublicationsRoute';
-export { ProfileRoute } from './ProfileRoute';
-export { PublicationAddingRoute } from './PublicationAddingRoute';
+export * from './CabinetRoute';
+export * from './HomeRoute';
+export * from './MyPublicationsRoute';
+export * from './ProfileRoute';
+export * from './PublicationAddingRoute';
+export * from './PublicationRoute';
+export * from './SignInRoute';
+export * from './SignUpRoute';

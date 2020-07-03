@@ -5,16 +5,16 @@ import { Route } from 'react-router-dom';
 import { Loader } from 'components';
 
 // * Pages
-const RootPage = lazy(() => import(/* webpackChunkName: 'root-page' */ 'pages/root/RootPage'));
+const HomePage = lazy(() => import(/* webpackChunkName: 'home-page' */ 'pages/Home/HomePage'));
 
-export const RootRoute = () =>
+export const HomeRoute = () =>
   <Route
     exact
     path="/"
     component={
       () =>
         <Suspense fallback={<Loader />}>
-          <RootPage />
+          <HomePage />
         </Suspense>
     }
   />;

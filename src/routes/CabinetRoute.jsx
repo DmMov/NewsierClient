@@ -2,13 +2,10 @@ import React, { Suspense, lazy } from 'react';
 import { Route } from 'react-router-dom';
 
 // * Components
-import {
-  RedirectChecker,
-  Loader
-} from 'components';
+import { RedirectChecker, Loader } from 'components';
 
 // * Pages
-const CabinetPage = lazy(() => import(/* webpackChunkName: 'cabinet-page' */ 'pages/cabinet/CabinetPage'));
+const CabinetPage = lazy(() => import(/* webpackChunkName: 'cabinet-page' */ 'pages/Cabinet/CabinetPage'));
 
 // * Constants
 import { profileRedirectParams } from 'assets/constants';

@@ -4,20 +4,10 @@ import { BrowserRouter as Router } from 'react-router-dom';
 import { get } from 'js-cookie';
 
 // * Routes
-import {
-  RootRoute,
-  SignInRoute,
-  SignUpRoute,
-  CabinetRoute,
-  PublicationRoute
-} from 'routes';
+import { HomeRoute, SignInRoute, SignUpRoute, CabinetRoute, PublicationRoute } from 'routes';
 
 // * Components
-import {
-  Header,
-  Footer,
-  Loader
-} from 'components';
+import { Header, Footer, Loader } from 'components';
 
 // * Selectors
 import { selectPublisher } from 'utils/selectors';
@@ -48,7 +38,7 @@ export const App = () => {
   return publisher ? <Router>
     <div id="app">
       <Header publisher={publisher} />
-      <RootRoute />
+      <HomeRoute />
       <SignInRoute publisher={publisher} />
       <SignUpRoute publisher={publisher} />
       <CabinetRoute publisher={publisher} />
