@@ -1,6 +1,6 @@
 export * from './AuthMenu';
 export * from './BackButton';
-export * from './NewsierBanner';
+export * from './Banner';
 export * from './CabinetLink';
 export * from './CabinetMenu';
 export * from './Comment';
