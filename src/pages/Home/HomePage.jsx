@@ -20,7 +20,6 @@ const HomePage = () => {
 
   const getSlides = async () => {
     const { status, data } = await getRequest('/publications/popular?count=5');
-    console.log("data", data, "status", status)
 
     if (status === 200)
       setSlides(data);
