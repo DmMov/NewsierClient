@@ -1,4 +1,6 @@
-.sliderLayout {
+@import "assets/scss/vars";
+
+.slider {
   height: 40rem;
   max-height: 84vh;
   overflow: hidden;
@@ -37,4 +39,14 @@
     }
   }
   /*#endregion*/
+}
+
+.noSlides {
+  font-size: .8rem;
+  color: $gray;
+  text-align: center;
+
+  &::first-letter {
+    text-transform: capitalize;
+  }
 }

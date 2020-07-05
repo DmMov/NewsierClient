@@ -1,16 +1,35 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 import useDocumentTitle from '@rehooks/document-title';
 
 // * Components
-import { Slider, Publications } from 'components';
+import { Slider, Publications, PublicationSlide } from 'components';
 
+// * Utils
+import { getRequest } from 'utils/helpers';
+
+// * Sass
 import './HomePage.scss';
 
 const HomePage = () => {
   useDocumentTitle('Newsier | Home');
+  const [slides, setSlides] = useState(null);
+
+  useEffect(() => {
+    getSlides();
+  }, []);
+
+  const getSlides = async () => {
+    const { status, data } = await getRequest('/publications/popular?count=5');
+    console.log("data", data, "status", status)
+
+    if (status === 200)
+      setSlides(data);
+    else
+      setSlides([]);
+  }
 
   return <div className="homePage page">
-    <Slider />
+    <Slider slides={slides} slide={PublicationSlide} />
     <div className="homePage__publicationsSection">
       <h2 className="sectionTitle">publications</h2>
       <Publications url="/publications" />

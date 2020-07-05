@@ -1,12 +1,11 @@
 @import "assets/scss/vars";
 @import "assets/scss/mixins";
 
-.slide {
+.publicationSlide {
   display: grid;
   grid-template-rows: auto 1fr;
   grid-gap: 3rem;
   padding: 2rem;
-  @include stretch(absolute, 0);
 
   &__imageContainer.imageContainer {
     @include stretch(absolute, 0);
@@ -31,7 +30,7 @@
       color: lighten($gray, 10%);
     }
 
-    .tagsBox {
+    .tags {
       &__tag {
         color: lighten($gray, 10%);
       }
@@ -40,7 +39,7 @@
 }
 
 @media (max-width: 1000px) {
-  .slide {
+  .publicationSlide {
     .publicationCardDetails {
       &__title {
         font-size: 1.5rem;
@@ -51,7 +50,7 @@
 }
 
 @media (max-width: 500px) {
-  .slide {
+  .publicationSlide {
     .publicationCardDetails {
       &__title {
         font-size: 1.25rem;

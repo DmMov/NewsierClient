@@ -1,0 +1,29 @@
+@import 'assets/scss/vars';
+@import 'assets/scss/mixins';
+
+.indexBox {
+  display: grid;
+  position: relative;
+  grid-template-columns: auto auto 1fr;
+  align-self: start;
+  align-items: center;
+  grid-gap: .75rem;
+  z-index: 1;
+
+  &__index {
+    font-size: 5rem;
+    font-weight: 700;
+    color: rgba($primary, .35);
+  }
+
+  &__featured {
+    font-size: .8rem;
+    font-weight: 500;
+    letter-spacing: 2px;
+    color: #ffffff;
+    text-transform: capitalize;
+    position: absolute;
+    left: 1.5rem;
+    bottom: 2rem;
+  }
+}
