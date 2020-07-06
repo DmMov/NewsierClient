@@ -24,7 +24,7 @@ export const ProfileCard = ({ image, name, surname, publications, comments, crea
         <span className="statsItem__text">publications, </span>
         <span className="statsItem__value digit">{publications}</span>
       </p>
-      <FiberManualRecord className="dotIcon" />
+      <span className="vertical">|</span>
       <p className="statsItem">
         <span className="statsItem__text">comments, </span>
         <span className="statsItem__value digit">{comments}</span>

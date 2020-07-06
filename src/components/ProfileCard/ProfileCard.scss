@@ -41,11 +41,15 @@
     text-transform: capitalize;
     color: $gray;
 
-    .dotIcon {
-      font-size: .3rem;
+    .vertical {
+      font-size: .5rem;
     }
 
     .statsItem {
+      &__text {
+        font-weight: 500;
+      }
+
       &__value {
         color: $primary;
         font-size: .75rem;
@@ -59,6 +63,7 @@
 
     .date {
       color: $black;
+      font-weight: 500;
     }
   }
 }
